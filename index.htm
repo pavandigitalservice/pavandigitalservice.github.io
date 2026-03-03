@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pavan Shilpi - Official Website</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Pavan Shilpi, a passionate Android developer creating innovative and high-quality apps. View my portfolio and get in touch for your next project.">
+    <meta name="keywords" content="Pavan Shilpi, Android Developer, Mobile App Developer, Portfolio, Quiz Master App, Pavan Digital Service, Android Apps, Freelance Developer">
+
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com https://pagead2.googlesyndication.com https://generativelanguage.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https: data:; connect-src 'self' https://api.web3forms.com https://generativelanguage.googleapis.com; frame-src https://pagead2.googlesyndication.com;">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+    <!-- Typed.js for typing animation -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" integrity="sha384-eVE2uDDdfpB4R0x6U27G2I2p5G32P5vP+4a1eETR73d/4wFf/2/S0G22N/A573a" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
@@ -11,56 +25,107 @@
 <body>
 
     <nav>
-        <div class="logo">pavan digital service</div>
+        <div class="logo"><a href="index.htm">pavan digital service</a></div>
         <div class="nav-links">
-            </div>
+            <a href="#my-apps">Apps</a>
+            <a href="#about-me">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="#contact-me">Contact</a>
+        </div>
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
     </nav>
 
-    <header class="hero" style="text-align: center; padding: 100px 10%; background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); color: white;">
-    <h1 style="font-size: 3.5rem; margin-bottom: 10px;">Hi, I'm <span style="color: #38bdf8;">PAVAN SHILPI</span></h1>
-    <p style="font-size: 1.2rem; color: #94a3b8; max-width: 700px; margin: 0 auto 30px;">
-        एक पैशनेट एंड्रॉयड डेवलपर जो आपके लिए इनोवेटिव और हाई-क्वालिटी ऐप्स बनाता है। 
-        नीचे मेरे द्वारा बनाए गए कुछ बेहतरीन प्रोजेक्ट्स देखें।
-    </p>
-    <a href="#my-apps" class="btn-download" style="background: #38bdf8; color: #0f172a;">मेरे ऐप्स देखें</a>
-</header>
-<section id="my-apps" style="padding: 80px 10%; background: #f1f5f9;">
-    <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: #1e293b;">Featured Applications</h2>
+    <header class="hero">
+        <h1>Hi, I'm <span class="highlight">PAVAN SHILPI</span></h1>
+        <p class="subtitle">मैं एक <span id="typed-element"></span> हूँ</p>
+        <a href="#my-apps" class="btn-download btn-hero">मेरे ऐप्स देखें</a>
+    </header>
+<section id="my-apps" class="section section-light">
+    <h2 class="section-title">Featured Applications</h2>
     
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+    <div class="grid-container">
         
-        <div class="animate-on-scroll" style="background: white; padding: 20px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 10px 25px rgba(0,0,0,0.05)';">
-            <img src="logo.png" alt="Quiz Master" style="width: 80px; height: 80px; border-radius: 15px; margin-bottom: 15px;">
-            <h3 style="margin-bottom: 10px;">Quiz Master App</h3>
-            <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 20px;">चुनौतीपूर्ण क्विज़ खेलें और अपना सामान्य ज्ञान बढ़ाएं।</p>
-            <a href="https://www.indusappstore.com/apps/educational/quiz-master/com.pavan.quizmaster?page=details&id=com.pavan.quizmaster" style="color: #2563eb; font-weight: 600; text-decoration: none;">Download Now →</a>
+        <div class="app-card animate-on-scroll">
+            <img src="logo.png" alt="Quiz Master" class="app-card-logo">
+            <h3>Quiz Master App</h3>
+            <p>चुनौतीपूर्ण क्विज़ खेलें और अपना सामान्य ज्ञान बढ़ाएं।</p>
+            <a href="https://www.indusappstore.com/apps/educational/quiz-master/com.pavan.quizmaster?page=details&id=com.pavan.quizmaster" class="app-card-link">Download Now →</a>
         </div>
 
-        <div class="animate-on-scroll" style="background: white; padding: 20px; border-radius: 20px; border: 2px dashed #cbd5e1; text-align: center; display: flex; flex-direction: column; justify-content: center; min-height: 250px; transition-delay: 0.2s; transition-property: transform, box-shadow, opacity, transform;" onmouseover="this.style.transform='translateY(-8px)';" onmouseout="this.style.transform='translateY(0)';">
-            <h3 style="color: #94a3b8;">New App Coming Soon</h3>
-            <p style="color: #cbd5e1;">हम आपके लिए कुछ नया और रोमांचक बना रहे हैं।</p>
+        <div class="app-card app-card--placeholder animate-on-scroll" style="animation-delay: 0.2s;">
+            <h3>New App Coming Soon</h3>
+            <p>हम आपके लिए कुछ नया और रोमांचक बना रहे हैं।</p>
         </div>
 
     </div>
 </section>
-<section id="about-me" style="padding: 80px 10%; background: #ffffff;">
-    <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: #1e293b;">मेरे बारे में</h2>
-    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 50px; max-width: 900px; margin: 0 auto;">
-        <!-- अपनी प्रोफाइल फोटो यहाँ लगाएँ, उदाहरण: <img src="your-photo.jpg" ...> -->
-        <img src="my photo.jpeg" alt="Pavan Shilpi" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
-        <div style="max-width: 500px;">
-            <h3 style="font-size: 1.8rem; color: #1e293b; margin-bottom: 15px;">पवन शिल्पी</h3>
-            <p style="color: #64748b; margin-bottom: 15px;">
+<section id="about-me" class="section">
+    <h2 class="section-title">मेरे बारे में</h2>
+    <div class="about-me-container">
+        <img src="my photo.jpeg" alt="Pavan Shilpi" class="about-me-img">
+        <div class="about-me-content">
+            <h3>पवन शिल्पी</h3>
+            <p>
                 मैं एक रचनात्मक और जुनूनी एंड्रॉइड डेवलपर हूं जिसे सुंदर, कार्यात्मक और उपयोगकर्ता-अनुकूल एप्लिकेशन बनाने का शौक है। प्रौद्योगिकी और डिजाइन के प्रति मेरे प्रेम ने मुझे हमेशा सर्वश्रेष्ठ उपयोगकर्ता अनुभव प्रदान करने के लिए प्रेरित किया है।
             </p>
-            <p style="color: #64748b;">
+            <p>
                 जब मैं कोडिंग नहीं कर रहा होता हूं, तो मुझे नई तकनीकों की खोज करना, पढ़ना और संगीत सुनना पसंद है। मेरा लक्ष्य ऐसे ऐप्स बनाना है जो लोगों के जीवन को आसान और बेहतर बनाएं।
             </p>
         </div>
     </div>
 </section>
-<section id="contact-me">
-    <h2 style="text-align: center; margin-bottom: 50px; font-size: 2.5rem; color: #1e293b;">मुझसे संपर्क करें</h2>
+
+<section id="blog" class="section">
+    <h2 class="section-title">Latest From The Blog</h2>
+    <div class="blog-grid">
+        <!-- Blog Post 1 -->
+        <div class="blog-card animate-on-scroll">
+            <img src="https://via.placeholder.com/400x250" alt="Blog Post Image" class="blog-card-img">
+            <div class="blog-card-content">
+                <span class="blog-card-date">March 03, 2026</span>
+                <h3>एंड्रॉइड डेवलपमेंट के लिए 5 ज़रूरी टिप्स</h3>
+                <p>एक सफल एंड्रॉइड डेवलपर बनने के लिए आपको किन बातों का ध्यान रखना चाहिए? इस पोस्ट में हम 5 महत्वपूर्ण टिप्स साझा कर रहे हैं।</p>
+                <a href="blog-post-1.html" class="blog-card-link">Read More →</a>
+            </div>
+        </div>
+        <!-- Blog Post 2 -->
+        <div class="blog-card animate-on-scroll" style="animation-delay: 0.2s;">
+             <img src="https://via.placeholder.com/400x250" alt="Blog Post Image" class="blog-card-img">
+            <div class="blog-card-content">
+                <span class="blog-card-date">February 25, 2026</span>
+                <h3>अपनी ऐप से कमाई कैसे करें?</h3>
+                <p>इस गाइड में, हम मोबाइल ऐप से कमाई करने के विभिन्न तरीकों पर चर्चा करेंगे, जैसे विज्ञापन, इन-ऐप खरीदारी, और सब्सक्रिप्शन मॉडल।</p>
+                <a href="blog-post-1.html" class="blog-card-link">Read More →</a>
+            </div>
+        </div>
+        <!-- Blog Post 3 -->
+        <div class="blog-card animate-on-scroll" style="animation-delay: 0.4s;">
+             <img src="https://via.placeholder.com/400x250" alt="Blog Post Image" class="blog-card-img">
+            <div class="blog-card-content">
+                <span class="blog-card-date">February 18, 2026</span>
+                <h3>UI/UX का महत्व मोबाइल ऐप्स में</h3>
+                <p>एक बेहतरीन यूजर इंटरफेस और यूजर एक्सपीरियंस आपके ऐप की सफलता के लिए क्यों महत्वपूर्ण है? आइए जानते हैं।</p>
+                <a href="blog-post-1.html" class="blog-card-link">Read More →</a>
+            </div>
+        </div>
+    </div>
+    <div class="section-cta">
+        <a href="blog.html" class="btn-download">सभी पोस्ट देखें</a>
+    </div>
+</section>
+<!-- Google AdSense Ad Unit -->
+<section class="section section-light ad-section">
+    <h3>Advertisement</h3>
+    <!-- AdSense से स्वीकृत होने के बाद, इस div को अपने AdSense विज्ञापन कोड से बदलें। -->
+    <div class="ad-placeholder">Your Ad Here</div>
+</section>
+
+<section id="contact-me" class="section section-light">
+    <h2 class="section-title">मुझसे संपर्क करें</h2>
     <div class="contact-form-container animate-on-scroll">
         <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
             <!-- अपनी Web3Forms एक्सेस कुंजी यहाँ पेस्ट करें -->
@@ -79,45 +144,43 @@
                 <button type="submit" class="btn-download btn-submit">संदेश भेजें</button>
             </div>
         </form>
-        <div id="form-result" style="margin-top: 20px; text-align: center; font-weight: 600;"></div>
+        <div id="form-result"></div>
     </div>
 </section>
-<footer style="background: #1e293b; color: white; padding: 60px 10% 20px; text-align: center;">
-    <div style="margin-bottom: 30px;">
-        <h2 style="color: #fff; margin-bottom: 15px;">Our Service Your Future </h2>
-        <p style="color: #cbd5e1; max-width: 500px; margin: 0 auto;"></p>
+<footer>
+    <div class="footer-content">
+        <h2>Our Service Your Future </h2>
+        <p></p>
     </div>
     
     <!-- अपने सोशल मीडिया प्रोफाइल लिंक यहाँ जोड़ें -->
-    <div class="social-links" style="margin-bottom: 30px;">
+    <div class="social-links">
         <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
         <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         <!-- आप और भी आइकन जोड़ सकते हैं, जैसे: <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a> -->
     </div>
 
-    <hr style="border: 0; border-top: 1px solid #334155; margin-bottom: 20px;">
+    <hr>
     
-    <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 20px;">
-        <a href="privacy-policy.html" style="color: #cbd5e1; text-decoration: none;">Privacy Policy</a>
-        <a href="terms-of-service.html" style="color: #cbd5e1; text-decoration: none;">Terms of Service</a>
-        <a href="#contact-me" style="color: #cbd5e1; text-decoration: none;">Contact Us</a>
+    <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="#contact-me">Contact Us</a>
     </div>
 
-    <p style="font-size: 0.9rem; color: #94a3b8;">&copy; 2026 Pavan Digital Service. All rights reserved.</p>
+    <p class="copyright">&copy; 2026 Pavan Digital Service. All rights reserved.</p>
 </footer>
-<div id="ai-chat-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; font-family: Arial, sans-serif;">
-    <button id="chat-btn" style="background: #007bff; color: white; border: none; padding: 15px; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
-        💬
-    </button>
-    <div id="chat-box" style="display: none; width: 300px; height: 400px; background: white; border: 1px solid #ccc; border-radius: 10px; flex-direction: column; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-        <div style="background: #007bff; color: white; padding: 10px; border-radius: 10px 10px 0 0;">Jarvis AI Assistant</div>
-        <div id="messages" style="flex: 1; overflow-y: auto; padding: 10px; font-size: 14px;"></div>
-        <input type="text" id="user-input" placeholder="पूछिए..." style="width: 100%; border: none; border-top: 1px solid #ccc; padding: 10px; box-sizing: border-box;">
+<div id="ai-chat-container">
+    <button id="chat-btn">👩‍💻</button>
+    <div id="chat-box">
+        <div id="chat-header">Aria AI Assistant</div>
+        <div id="messages"></div>
+        <input type="text" id="user-input" placeholder="पूछिए...">
     </div>
 </div>
 
-</body>
 <script src="chat.js"></script>
 <script src="animations.js"></script>
 <script src="contact.js"></script>
+<script src="main.js"></script>
 </html>

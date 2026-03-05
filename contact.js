@@ -3,34 +3,32 @@ document.addEventListener('DOMContentLoaded', function () {
     const result = document.getElementById('form-result');
 
     form.addEventListener('submit', function(e) {
-        e.preventDefault();
+        e.preventDefault(); // Prevent the default form submission
+
+        const scriptURL = form.action; // Get the Google Script URL from the form's action attribute
         const formData = new FormData(form);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
 
-        result.innerHTML = "कृपया प्रतीक्षा करें..."
+        result.innerHTML = "कृपया प्रतीक्षा करें...";
+        result.style.color = "#1e293b"; // Reset message color
 
-        fetch('https://api.web3forms.com/submit', {
+        fetch(scriptURL, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: json
+                body: formData
             })
-            .then(async (response) => {
-                let json = await response.json();
-                if (response.status == 200) {
+            .then(response => response.json()) // Expect a JSON response from the Google Script
+            .then(data => {
+                if (data.result === "success") {
                     result.innerHTML = "आपका संदेश सफलतापूर्वक भेज दिया गया है!";
                     result.style.color = "green";
+                    form.reset(); // Reset the form on success
                 } else {
-                    result.innerHTML = json.message;
-                    result.style.color = "red";
+                    // If the script returns an error, display it
+                    throw new Error(data.error || 'Unknown error occurred');
                 }
             })
             .catch(error => {
-                result.innerHTML = "कुछ गलत हो गया!";
-            })
-            .then(() => form.reset());
+                result.innerHTML = "कुछ गलत हो गया! कृपया बाद में प्रयास करें।";
+                result.style.color = "red";
+            });
     });
 });

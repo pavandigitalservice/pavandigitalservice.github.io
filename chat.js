@@ -41,26 +41,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function sendMessageToAI(text) {
         // !! सुरक्षा चेतावनी: अपनी API कुंजी को क्लाइंट-साइड कोड में कभी न रखें !!
-        // यह कुंजी कोई भी देख और चुरा सकता है। इसे एक सुरक्षित सर्वर-साइड फ़ंक्शन के माध्यम से उपयोग करें।
-        const apiKey = 'AIzaSyAlFShnTdBnDl0mc8PX46sLGx96-_MmeVM'; 
+        // आपकी API कुंजी को सुरक्षित रखने के लिए, हमने इसे सर्वर-साइड एंडपॉइंट के माध्यम से कॉल करने के लिए कोड को अपडेट किया है।
+        // आपको एक बैकएंड बनाना होगा जो इस अनुरोध को संभालता है और सुरक्षित रूप से कुंजी जोड़ता है।
         const thinkingMessage = appendMessage('Aria', 'Thinking...');
 
         try {
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${apiKey}`, {
+            const response = await fetch('/api/chat', { // सर्वर पर एक नया एंडपॉइंट
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    contents: [{ parts: [{ text: "You are a helpful female assistant named Aria. Respond in short, helpful sentences. The user is asking: " + text }] }]
-                })
+                body: JSON.stringify({ text: text }) // केवल उपयोगकर्ता का टेक्स्ट भेजें
             });
 
             const data = await response.json();
             
             messages.removeChild(thinkingMessage);
 
-            if (response.ok && data.candidates && data.candidates.length > 0) {
-                const aiResponse = data.candidates[0].content.parts[0].text;
-                appendMessage('Aria', aiResponse);
+            if (response.ok && data.aiResponse) {
+                // मान लें कि आपका सर्वर AI की प्रतिक्रिया को `aiResponse` फ़ील्ड में वापस भेजता है
+                appendMessage('Aria', data.aiResponse);
             } else {
                 const errorMessage = data.error ? data.error.message : 'No valid response from AI.';
                 appendMessage('Error', errorMessage, true);

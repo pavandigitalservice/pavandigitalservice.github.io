@@ -187,21 +187,27 @@
 </section>
 
 <section id="contact-me" class="section section-light">
-    <h2 class="section-title">मुझसे संपर्क करें</h2>
+    <h2 class="section-title">अपना प्रोजेक्ट शुरू करें</h2>
     <div class="contact-form-container animate-on-scroll">
         <form id="contact-form">
             <div class="form-grid">
                 <input type="text" name="name" placeholder="आपका नाम" required>
                 <input type="email" name="email" placeholder="आपका ईमेल" required>
             </div>
-            <div class="full-width-input">
-                <input type="text" name="subject" placeholder="विषय" required>
+            <div class="form-grid">
+                <input type="tel" name="phone" placeholder="मोबाइल नंबर" required>
+                <select name="service" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; background: white; width: 100%;">
+                    <option value="" disabled selected>आप क्या बनवाना चाहते हैं?</option>
+                    <option value="Website Development">वेबसाइट (Website)</option>
+                    <option value="Android App">एंड्रॉइड ऐप (Android App)</option>
+                    <option value="Other">अन्य जानकारी</option>
+                </select>
             </div>
             <div class="full-width-input">
-                <textarea name="message" rows="6" placeholder="आपका संदेश..." required></textarea>
+                <textarea name="message" rows="6" placeholder="अपने प्रोजेक्ट के बारे में थोड़ा बताएं..." required></textarea>
             </div>
             <div class="submit-button-container">
-                <button type="submit" class="btn-download btn-submit" id="submit-btn">संदेश भेजें</button>
+                <button type="submit" class="btn-download btn-submit" id="submit-btn">रिक्वेस्ट भेजें</button>
             </div>
         </form>
         <div id="form-result" style="text-align: center; margin-top: 15px; font-weight: bold;"></div>
@@ -245,7 +251,7 @@
 <script>
     // फॉर्म सबमिशन के लिए नया और साफ़ कोड
     // स्टेप 1 में कॉपी किया गया नया URL यहाँ पेस्ट करें
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbyZXN0Oqr-OpEN4qvbVqAxGq5lLe75kU-AINir2Om7ZQWeWdAVbP21o2iUYgajPCAqlDg/exec';
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxgMZQwApP3CZoKXvQboLoBkGAw13CTxrCqauWJ9IhpUigfQ5YQaATELrrNm0BK9NwfWg/exec';
     const form = document.getElementById('contact-form');
     const resultDiv = document.getElementById('form-result');
     const submitBtn = document.getElementById('submit-btn');

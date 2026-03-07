@@ -241,6 +241,40 @@
 
 <script src="chat.js"></script>
 <script src="animations.js"></script>
-<script src="contact.js"></script>
+<!-- <script src="contact.js"></script> -->
+<script>
+    // नया फॉर्म सबमिशन कोड
+    const form = document.getElementById('contact-form');
+    const resultDiv = document.getElementById('form-result');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerText;
+        
+        submitBtn.disabled = true;
+        submitBtn.innerText = "भेजा जा रहा है...";
+        resultDiv.innerHTML = "";
+        
+        const formData = new FormData(form);
+        // यह आपके HTML फॉर्म के action="URL" से लिंक उठाएगा
+        const scriptURL = form.getAttribute('action'); 
+
+        fetch(scriptURL, { method: 'POST', body: formData})
+            .then(response => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalBtnText;
+                resultDiv.innerHTML = "<p style='color: green; text-align: center; margin-top: 10px;'>आपका संदेश सफलतापूर्वक भेज दिया गया है!</p>";
+                form.reset();
+            })
+            .catch(error => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalBtnText;
+                resultDiv.innerHTML = "<p style='color: red; text-align: center; margin-top: 10px;'>कुछ गलती हुई! कृपया इंटरनेट चेक करें या लिंक की परमिशन चेक करें।</p>";
+                console.error('Error!', error.message);
+            });
+    });
+</script>
 <script src="main.js"></script>
 </html>

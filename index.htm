@@ -189,7 +189,7 @@
 <section id="contact-me" class="section section-light">
     <h2 class="section-title">मुझसे संपर्क करें</h2>
     <div class="contact-form-container animate-on-scroll">
-        <form id="contact-form" action="https://script.google.com/macros/s/AKfycby67l2GMgZewJ8HNcWrAROGGDmDF8vcTV6IWdYlW18LCsV9YS84FMbvFM3MEjdwmADC8A/exec" method="POST">
+        <form id="contact-form" name="contact-form">
             <div class="form-grid">
                 <input type="text" name="name" placeholder="आपका नाम" required>
                 <input type="email" name="email" placeholder="आपका ईमेल" required>
@@ -201,10 +201,10 @@
                 <textarea name="message" rows="6" placeholder="आपका संदेश..." required></textarea>
             </div>
             <div class="submit-button-container">
-                <button type="submit" class="btn-download btn-submit">संदेश भेजें</button>
+                <button type="submit" class="btn-download btn-submit" id="submit-btn">संदेश भेजें</button>
             </div>
         </form>
-        <div id="form-result"></div>
+        <div id="form-result" style="text-align: center; margin-top: 15px; font-weight: bold;"></div>
     </div>
 </section>
 <footer>
@@ -243,35 +243,30 @@
 <script src="animations.js"></script>
 <!-- <script src="contact.js"></script> -->
 <script>
-    // नया फॉर्म सबमिशन कोड
-    const form = document.getElementById('contact-form');
+    // फॉर्म सबमिशन के लिए नया और साफ़ कोड
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby67l2GMgZewJ8HNcWrAROGGDmDF8vcTV6IWdYlW18LCsV9YS84FMbvFM3MEjdwmADC8A/exec';
+    const form = document.forms['contact-form'];
     const resultDiv = document.getElementById('form-result');
+    const submitBtn = document.getElementById('submit-btn');
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', e => {
         e.preventDefault();
-        
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.innerText;
         
         submitBtn.disabled = true;
         submitBtn.innerText = "भेजा जा रहा है...";
         resultDiv.innerHTML = "";
-        
-        const formData = new FormData(form);
-        // यह आपके HTML फॉर्म के action="URL" से लिंक उठाएगा
-        const scriptURL = form.getAttribute('action'); 
 
-        fetch(scriptURL, { method: 'POST', body: formData})
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
             .then(response => {
+                resultDiv.innerHTML = "<span style='color: green;'>आपका संदेश सफलतापूर्वक भेज दिया गया है!</span>";
                 submitBtn.disabled = false;
-                submitBtn.innerText = originalBtnText;
-                resultDiv.innerHTML = "<p style='color: green; text-align: center; margin-top: 10px;'>आपका संदेश सफलतापूर्वक भेज दिया गया है!</p>";
+                submitBtn.innerText = "संदेश भेजें";
                 form.reset();
             })
             .catch(error => {
+                resultDiv.innerHTML = "<span style='color: red;'>कुछ गलती हुई! कृपया इंटरनेट चेक करें।</span>";
                 submitBtn.disabled = false;
-                submitBtn.innerText = originalBtnText;
-                resultDiv.innerHTML = "<p style='color: red; text-align: center; margin-top: 10px;'>कुछ गलती हुई! कृपया इंटरनेट चेक करें या लिंक की परमिशन चेक करें।</p>";
+                submitBtn.innerText = "संदेश भेजें";
                 console.error('Error!', error.message);
             });
     });

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game - Pavan Digital Service</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        canvas {
+            background: #f8fafc;
+            border: 2px solid #cbd5e1;
+            border-radius: 5px;
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+        }
+        .game-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 95%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        .game-container input {
+            padding: 10px;
+            width: 100px;
+            text-align: center;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+            font-size: 1rem;
+        }
+        #player-name {
+            width: 200px; /* Wider input for name */
+            margin-bottom: 10px;
+        }
+        .game-container button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #2563eb;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .game-container button:hover {
+            background-color: #1e40af;
+        }
+        #game-message {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            min-height: 30px;
+        }
+        #score-display {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2563eb;
+            margin: 15px 0;
+        }
+        .leaderboard-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 1200px;
+            margin: 30px auto 0;
+            width: 95%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .leaderboard-list {
+            list-style: none;
+            padding: 0;
+        }
+        .leaderboard-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 10px;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 1.1rem;
+        }
+        .leaderboard-item:last-child { border-bottom: none; }
+        .rank { font-weight: bold; color: #2563eb; margin-right: 10px; }
+    </style>
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div id="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Particles.js container -->
+    <div id="tsparticles"></div>
+
+    <nav>
+        <div class="logo"><a href="index.htm" style="text-decoration: none; color: #2563eb;">pavan digital service</a></div>
+        <div class="nav-links">
+            <a href="index.htm#my-apps">Apps</a>
+            <a href="index.htm#about-me">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="game.html">Game</a>
+            <a href="index.htm#contact-me">Contact</a>
+        </div>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+    </nav>
+
+    <section class="section section-light">
+        <h1 class="section-title" style="font-size: 3rem;">Endless Runner</h1>
+        <div class="game-container">
+            <p>बाधाओं से बचने के लिए <strong>Spacebar</strong> दबाएं या स्क्रीन पर <strong>Tap</strong> करें।</p>
+            
+            <canvas id="gameCanvas"></canvas>
+            <p id="score-display">स्कोर: 0</p>
+            <button id="start-button">गेम शुरू करें</button>
+            
+            <div id="name-input-container" style="display:none; margin-top: 20px;">
+                <p style="margin-bottom: 10px;">नया हाई स्कोर! अपना नाम दर्ज करें:</p>
+                <input type="text" id="player-name" placeholder="आपका नाम" maxlength="15">
+                <button id="save-score-btn">सेव करें</button>
+            </div>
+
+            <p id="game-message"></p>
+        </div>
+        
+        <div class="leaderboard-container">
+            <h2 style="text-align: center; color: #1e293b; margin-bottom: 20px;">🏆 लीडरबोर्ड (Top 5)</h2>
+            <ul id="leaderboard-list" class="leaderboard-list">
+                <!-- Scores will load here -->
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <hr>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="index.htm#contact-me">Contact Us</a>
+        </div>
+        <p class="copyright">&copy; 2026 Pavan Digital Service. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        const startButton = document.getElementById('start-button');
+        const scoreDisplay = document.getElementById('score-display');
+        const messageEl = document.getElementById('game-message');
+        
+        const nameInputContainer = document.getElementById('name-input-container');
+        const playerNameInput = document.getElementById('player-name');
+        const saveScoreBtn = document.getElementById('save-score-btn');
+        const leaderboardList = document.getElementById('leaderboard-list');
+
+        // Game Variables
+        let player = { x: 50, y: 0, width: 40, height: 64, dy: 0, jumpStrength: -12, grounded: false, invincible: false };
+        let obstacles = [];
+        let powerUps = []; // New array for power-ups
+        let score = 0;
+        let gameSpeed = 5;
+        let isGameRunning = false;
+        let animationId;
+        const gravity = 0.6;
+        let groundY = 0; // Will be set by resizeCanvas
+        let invincibilityTimer; // Timer for the power-up
+
+        // --- Sprite/Graphics Loading ---
+        const playerSprite1 = new Image();
+        playerSprite1.src = 'character.png'; // यहाँ अपनी कैरेक्टर इमेज का नाम लिखें
+        
+        const playerSprite2 = new Image();
+        playerSprite2.src = 'character.png'; // अगर दूसरी रनिंग फ्रेम है तो उसे यहाँ लिखें
+        
+        const playerSprites = [playerSprite1, playerSprite2];
+        let playerFrame = 0;
+        let frameCounter = 0;
+
+        const obstacleSprite = new Image();
+        obstacleSprite.src = 'obstacle.png'; // बाधा (Obstacle) इमेज
+
+        const powerUpSprite = new Image();
+        powerUpSprite.src = 'powerup.png'; // पावर-अप इमेज
+
+        const backgroundImage = new Image();
+        backgroundImage.src = 'background.jpg'; // बैकग्राउंड इमेज
+
+        // --- Audio Effects ---
+        const jumpSound = new Audio('jump.mp3');
+        const bgMusic = new Audio('bgmusic.mp3');
+        bgMusic.loop = true; // Loop the music
+
+        function resizeCanvas() {
+            const container = canvas.parentElement;
+            // Use clientWidth for responsive sizing
+            const newWidth = container.clientWidth;
+            
+            canvas.width = newWidth;
+            // Let's aim for a 16:9 aspect ratio, but don't let it get too tall on mobile.
+            let idealHeight = canvas.width * (9 / 16);
+            const maxCanvasHeight = window.innerHeight * 0.65; // Use up to 65% of the viewport height
+
+            canvas.height = Math.min(idealHeight, maxCanvasHeight);
+
+            // Ensure a minimum height
+            if (canvas.height < 200) canvas.height = 200;
+
+            // Dynamically set ground and player size
+            groundY = canvas.height - (canvas.height * 0.15); // Ground is at 85% of canvas height
+            player.height = canvas.height / 6; // Player is 1/6th of canvas height
+            player.width = player.height * 0.625; // Maintain aspect ratio (50/80)
+
+            // Redraw the initial state if the game is not running
+            if (!isGameRunning) {
+                drawInitialState();
+            }
+        }
+
+        function startGame() {
+            if (isGameRunning) return;
+            
+            // Reset variables
+            // Place player on the ground to start
+            player.y = groundY - player.height;
+            player.grounded = true;
+            player.invincible = false; // Reset invincibility
+            clearTimeout(invincibilityTimer); // Clear any running timer
+
+            player.dy = 0;
+            obstacles = [];
+            powerUps = []; // Reset power-ups
+            score = 0;
+            gameSpeed = 5;
+            isGameRunning = true;
+            
+            messageEl.textContent = '';
+            startButton.style.display = 'none';
+            nameInputContainer.style.display = 'none';
+            scoreDisplay.textContent = 'स्कोर: 0';
+
+            bgMusic.currentTime = 0;
+            bgMusic.play().catch(error => console.log("Music play failed:", error));
+            
+            animate();
+        }
+
+        function jump() {
+            if (player.grounded && isGameRunning) {
+                player.dy = player.jumpStrength;
+                player.grounded = false;
+                jumpSound.currentTime = 0; // Reset sound to start
+                jumpSound.play().catch(error => console.log("Jump sound failed:", error));
+            }
+        }
+
+        function animate() {
+            if (!isGameRunning) return;
+            
+            animationId = requestAnimationFrame(animate);
+            
+            // Draw background image
+            ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+
+            // Draw Ground Line
+            ctx.beginPath();
+            ctx.moveTo(0, groundY);
+            ctx.lineTo(canvas.width, groundY);
+            ctx.stroke();
+
+            // Player Physics
+            player.dy += gravity;
+            player.y += player.dy;
+
+            // Ground Collision
+            if (player.y + player.height > groundY) {
+                player.y = groundY - player.height;
+                player.dy = 0;
+                player.grounded = true;
+            }
+
+            // Animate player sprite
+            frameCounter++;
+            if (frameCounter % 10 === 0) { // Change frame every 10 animation frames
+                playerFrame = (playerFrame + 1) % playerSprites.length;
+            }
+
+            // Draw Player with invincibility effect
+            if (player.invincible) {
+                // Flashing effect
+                ctx.globalAlpha = (Math.floor(Date.now() / 100) % 2 === 0) ? 1 : 0.5;
+            }
+            // Draw Player
+            ctx.drawImage(playerSprites[playerFrame], player.x, player.y, player.width, player.height);
+            ctx.globalAlpha = 1; // Reset alpha
+
+            // Power-up Spawning Logic
+            // Spawn less frequently and only if one isn't already on screen
+            if (Math.random() < 0.002 && powerUps.length === 0) {
+                const powerUpSize = 30;
+                powerUps.push({
+                    x: canvas.width,
+                    y: groundY - player.height - Math.random() * 50, // Spawn above the ground
+                    width: powerUpSize,
+                    height: powerUpSize
+                });
+            }
+
+            // Power-up Logic
+            powerUps.forEach((powerUp, index) => {
+                powerUp.x -= gameSpeed;
+                ctx.drawImage(powerUpSprite, powerUp.x, powerUp.y, powerUp.width, powerUp.height);
+
+                // Collision with player
+                if (player.x < powerUp.x + powerUp.width && player.x + player.width > powerUp.x && player.y < powerUp.y + powerUp.height && player.y + player.height > powerUp.y) {
+                    powerUps.splice(index, 1); // Remove power-up
+                    activateInvincibility();
+                }
+                if (powerUp.x + powerUp.width < 0) { powerUps.splice(index, 1); } // Remove if off-screen
+            });
+
+            // Obstacle Logic
+            // Adjust obstacle frequency based on speed
+            if (Math.random() < 0.01 + (gameSpeed / 1000)) {
+                const obsSize = Math.random() * (player.height * 0.5) + (player.height * 0.4); // Rocks are between 40% and 90% of player height
+                obstacles.push({
+                    x: canvas.width,
+                    y: groundY - obsSize,
+                    width: obsSize,
+                    height: obsSize
+                });
+            }
+
+            obstacles.forEach((obs, index) => {
+                obs.x -= gameSpeed;
+                ctx.drawImage(obstacleSprite, obs.x, obs.y, obs.width, obs.height);
+                // Collision Detection - only if not invincible
+                if (
+                    !player.invincible &&
+                    player.x < obs.x + obs.width &&
+                    player.x + player.width > obs.x &&
+                    player.y < obs.y + obs.height &&
+                    player.y + player.height > obs.y
+                ) {
+                    endGame();
+                }
+
+                // Remove off-screen obstacles and increase score
+                if (obs.x + obs.width < 0) {
+                    obstacles.splice(index, 1);
+                    score++;
+                    scoreDisplay.textContent = 'स्कोर: ' + score;
+                    if(score % 5 === 0) gameSpeed += 0.5; // Increase speed
+                }
+            });
+        }
+
+        function endGame() {
+            isGameRunning = false;
+            cancelAnimationFrame(animationId);
+            bgMusic.pause(); // Stop music on game over
+            messageEl.textContent = 'गेम ओवर!';
+            messageEl.style.color = 'red';
+            startButton.textContent = 'फिर से खेलें';
+            startButton.style.display = 'inline-block';
+            checkHighScore();
+        }
+
+        function activateInvincibility() {
+            player.invincible = true;
+            clearTimeout(invincibilityTimer); // Clear previous timer if any
+            invincibilityTimer = setTimeout(() => {
+                player.invincible = false;
+            }, 5000); // 5 seconds of invincibility
+        }
+
+
+        // --- Leaderboard Logic ---
+        // Using 'runnerHighScores' key to separate from previous game
+        let highScores = JSON.parse(localStorage.getItem('runnerHighScores')) || [];
+
+        function updateLeaderboard() {
+            leaderboardList.innerHTML = highScores.map((score, index) => {
+                return `<li class="leaderboard-item">
+                    <span><span class="rank">#${index + 1}</span> ${score.name}</span>
+                    <span>${score.score} स्कोर</span>
+                </li>`;
+            }).join('');
+
+            if (highScores.length === 0) {
+                leaderboardList.innerHTML = '<li style="text-align:center; color:#94a3b8;">अभी कोई स्कोर नहीं है।</li>';
+            }
+        }
+
+        function checkHighScore() {
+            const lowestScore = highScores.length < 5 ? 0 : highScores[4].score;
+            if (score > lowestScore || highScores.length < 5) {
+                if (score > 0) {
+                    nameInputContainer.style.display = 'block';
+                    messageEl.textContent += ' बधाई! नया हाई स्कोर।';
+                }
+            }
+        }
+
+        function saveScore() {
+            const name = playerNameInput.value.trim() || 'Anonymous';
+            const newScore = { name, score };
+            
+            highScores.push(newScore);
+            highScores.sort((a, b) => b.score - a.score); // Sort Descending
+            highScores.splice(5); // Keep top 5
+            
+            localStorage.setItem('runnerHighScores', JSON.stringify(highScores));
+            updateLeaderboard();
+            
+            nameInputContainer.style.display = 'none';
+        }
+
+        function drawInitialState() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.moveTo(0, groundY);
+            ctx.lineTo(canvas.width, groundY);
+            ctx.strokeStyle = 'transparent'; // Make ground line invisible, background image has ground
+            ctx.stroke();
+            ctx.font = "20px Poppins";
+            ctx.fillStyle = "#64748b";
+            ctx.textAlign = "center";
+            ctx.fillText("Start Game पर क्लिक करें", canvas.width / 2, canvas.height / 2);
+            ctx.textAlign = "left"; // Reset for other drawings
+        }
+        // Controls
+        startButton.addEventListener('click', startGame);
+        saveScoreBtn.addEventListener('click', saveScore);
+        
+        window.addEventListener('keydown', function(e) {
+            if (e.code === 'Space') {
+                e.preventDefault(); // Stop scrolling
+                jump();
+            }
+        });
+
+        // Touch support for mobile
+        canvas.addEventListener('touchstart', function(e) {
+            e.preventDefault();
+            jump();
+        });
+        canvas.addEventListener('mousedown', function(e) {
+            jump();
+        });
+
+        // --- Resource Preloading & Initial Setup ---
+        let resourcesLoaded = 0;
+        const totalResources = playerSprites.length + 1 + 1 + 1; // 2 player sprites + 1 obstacle + 1 background + 1 powerup
+
+        function resourceLoaded() {
+            resourcesLoaded++;
+            if (resourcesLoaded === totalResources) {
+                // All images are loaded, enable the start button
+                startButton.disabled = false;
+                startButton.textContent = 'गेम शुरू करें';
+                resizeCanvas(); // This will call drawInitialState
+            }
+        }
+
+        // Error handling fallback - ensures game starts even if images are missing
+        function resourceError() {
+            console.warn("इमेज लोड नहीं हुई। कृपया चेक करें कि फाइल सही जगह पर है।");
+            resourceLoaded(); 
+        }
+
+        playerSprites.forEach(sprite => { sprite.onload = resourceLoaded; sprite.onerror = resourceError; });
+        backgroundImage.onload = resourceLoaded; backgroundImage.onerror = resourceError;
+        obstacleSprite.onload = resourceLoaded; obstacleSprite.onerror = resourceError;
+        powerUpSprite.onload = resourceLoaded; powerUpSprite.onerror = resourceError;
+
+        startButton.disabled = true;
+        startButton.textContent = 'ग्राफिक्स लोड हो रहे हैं...';
+
+        window.addEventListener('resize', resizeCanvas);
+        updateLeaderboard();
+    </script>
+    <script src="animations.js"></script>
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="particles-config.js"></script>
+</body>
+</html>

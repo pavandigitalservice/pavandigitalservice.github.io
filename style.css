@@ -170,6 +170,8 @@ nav {
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .app-card:hover {
@@ -192,6 +194,7 @@ nav {
     color: var(--text-light);
     font-size: 0.9rem;
     margin-bottom: 30px;
+    flex-grow: 1;
 }
 
 .app-card-link {
@@ -492,6 +495,8 @@ footer hr {
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
 }
 
 .blog-card:hover {
@@ -507,6 +512,9 @@ footer hr {
 
 .blog-card-content {
     padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .blog-card-date {
@@ -527,6 +535,7 @@ footer hr {
     color: var(--text-light);
     margin-bottom: 20px;
     line-height: 1.7;
+    flex-grow: 1;
 }
 
 .blog-card-link {

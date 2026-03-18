@@ -74,51 +74,25 @@
             </div>
 
             <!-- Comments Section -->
-            <div class="comments-section">
-                <h2>टिप्पणियाँ (2)</h2>
-
-                <div class="comment-list">
-                    <!-- Single Comment -->
-                    <div class="comment">
-                        <img src="https://via.placeholder.com/60" alt="User Avatar" class="comment-avatar">
-                        <div class="comment-body">
-                            <div class="comment-header">
-                                <span class="comment-author">एक पाठक</span>
-                                <span class="comment-date">March 03, 2026</span>
-                            </div>
-                            <p class="comment-text">बहुत ही जानकारीपूर्ण लेख! कोटलिन और आर्किटेक्चर कंपोनेंट्स के बारे में जानना बहुत मददगार था। धन्यवाद!</p>
-                        </div>
-                    </div>
-
-                    <!-- Single Comment -->
-                    <div class="comment">
-                        <img src="https://via.placeholder.com/60" alt="User Avatar" class="comment-avatar">
-                        <div class="comment-body">
-                            <div class="comment-header">
-                                <span class="comment-author">डेवलपर दोस्त</span>
-                                <span class="comment-date">March 04, 2026</span>
-                            </div>
-                            <p class="comment-text">शानदार टिप्स! मैं प्रदर्शन अनुकूलन पर और अधिक ध्यान दूंगा।</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="comment-form-container">
-                    <h3>एक टिप्पणी छोड़ें</h3>
-                    <form id="comment-form">
-                        <div class="form-grid">
-                            <input type="text" name="name" placeholder="आपका नाम" required>
-                            <input type="email" name="email" placeholder="आपका ईमेल (वैकल्पिक)">
-                        </div>
-                        <div class="full-width-input">
-                            <textarea name="comment" rows="5" placeholder="आपकी टिप्पणी..." required></textarea>
-                        </div>
-                        <div class="submit-button-container">
-                            <button type="submit" class="btn-download btn-submit">टिप्पणी पोस्ट करें</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            <div id="disqus_thread" style="margin-top: 40px;"></div>
+            <script>
+                /**
+                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+                */
+                var disqus_config = function () {
+                    this.page.url = 'https://your-website-domain.com/blog-2.html';  // अपनी वेबसाइट के डोमेन से बदलें
+                    this.page.identifier = 'blog-post-2'; // इस पेज के लिए यूनिक आईडी
+                };
+                
+                (function() { // इस लाइन के नीचे एडिट न करें
+                var d = document, s = d.createElement('script');
+                s.src = 'https://YOUR_SHORTNAME.disqus.com/embed.js'; // YOUR_SHORTNAME को अपने Disqus shortname से बदलें
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         </div>
     </section>
 

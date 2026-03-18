@@ -38,6 +38,84 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: stretch;
+            flex-direction: row-reverse;
+            max-width: 1200px;
+            background: transparent;
+            box-shadow: none;
+        }
+        #contact-form, .shop-services {
+            flex: 1;
+            min-width: 320px;
+            max-width: 500px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+        .shop-services h3 {
+            color: #1e293b;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .shop-services ul {
+            list-style: none;
+            padding: 0;
+            color: #64748b;
+        }
+        .shop-services li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        .shop-services li i {
+            color: #2563eb;
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Basic Dark Mode Support */
+        body.dark-mode #contact-form,
+        body.dark-mode .shop-services {
+            background: #1e293b;
+        }
+        body.dark-mode .shop-services h3,
+        body.dark-mode #contact-form label {
+            color: #e2e8f0;
+        }
+        body.dark-mode .shop-services ul {
+            color: #94a3b8;
+        }
+        .store-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .store-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #1e293b;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .store-btn:hover {
+            background: #2563eb;
+        }
+    </style>
 </head>
 <body>
     <!-- Loading Spinner -->
@@ -78,10 +156,14 @@
     <div class="grid-container">
         
         <div class="app-card animate-on-scroll">
-            <img src="logo.png" alt="Quiz Master" class="app-card-logo">
+            <img src="logo.png" alt="Quiz Master" class="app-card-logo" style="display: block; margin: 0 auto;">
             <h3>Quiz Master App</h3>
             <p>चुनौतीपूर्ण क्विज़ खेलें और अपना सामान्य ज्ञान बढ़ाएं।</p>
-            <a href="https://www.indusappstore.com/apps/educational/quiz-master/com.pavan.quizmaster?page=details&id=com.pavan.quizmaster" class="app-card-link">Download Now →</a>
+            <div class="store-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.pavan.quizmaster" class="store-btn" target="_blank"><i class="fab fa-google-play"></i> Play Store</a>
+                <a href="https://www.amazon.com/gp/product/B0GHMVWGZF" class="store-btn" target="_blank"><i class="fab fa-amazon"></i> Amazon Store</a>
+                <a href="https://www.indusappstore.com/apps/educational/quiz-master/com.pavan.quizmaster?page=details&id=com.pavan.quizmaster" class="store-btn" target="_blank"><i class="fas fa-store"></i> Indus App Store</a>
+            </div>
         </div>
 
         <div class="app-card animate-on-scroll" style="animation-delay: 0.2s;">
@@ -194,8 +276,22 @@
             </div>
             <button type="submit" class="btn-submit">Send Message <i class="fas fa-paper-plane"></i></button>
         </form>
-        <div id="msg-status"></div>
+
+        <div class="shop-services">
+            <h3>हमारी अन्य सेवाएं (Other Services)</h3>
+            <ul>
+                <li><i class="fas fa-print"></i> फोटोकॉपी (Photocopy)</li>
+                <li><i class="fas fa-id-card"></i> लेमिनेशन (Lamination)</li>
+                <li><i class="fas fa-file-invoice"></i> प्रिंटआउट (Printout)</li>
+                <li><i class="fas fa-camera-retro"></i> पासपोर्ट साइज फोटो (Passport Photo)</li>
+                <li><i class="fas fa-keyboard"></i> ऑनलाइन फॉर्म भराई (Online Form)</li>
+                <li><i class="fas fa-pen-to-square"></i> आवेदन टाइपिंग (Aavedan Typing)</li>
+                <li><i class="fas fa-address-card"></i> पैन कार्ड सेवा (PAN Card Service)</li>
+                <li><i class="fas fa-ellipsis-h"></i> और भी बहुत कुछ... (etc.)</li>
+            </ul>
+        </div>
     </div>
+    <div id="msg-status" style="text-align: center; margin-top: 20px; font-weight: bold;"></div>
 </section>
 
 <script>

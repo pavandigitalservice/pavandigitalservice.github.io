@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavan Shilpi - Android App Developer & Web Designer Portfolio</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Pavan Shilpi, a passionate Android developer creating innovative and high-quality apps. View my portfolio and get in touch for your next project.">
+    <meta name="keywords" content="Pavan Shilpi, Android Developer, Mobile App Developer, Portfolio, Quiz Master App, Pavan Digital Service, Android Apps, Freelance Developer">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://your-website-domain.com/index.htm">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-website-domain.com/">
+    <meta property="og:title" content="Pavan Shilpi - Android App Developer & Web Designer">
+    <meta property="og:description" content="Pavan Shilpi, a passionate Android developer creating innovative and high-quality apps. View my portfolio and get in touch for your next project.">
+    <meta property="og:image" content="https://your-website-domain.com/my%20photo.jpeg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://your-website-domain.com/">
+    <meta property="twitter:title" content="Pavan Shilpi - Android App Developer & Web Designer">
+    <meta property="twitter:description" content="Pavan Shilpi, a passionate Android developer creating innovative and high-quality apps. View my portfolio and get in touch for your next project.">
+    <meta property="twitter:image" content="https://your-website-domain.com/my%20photo.jpeg">
+
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://pagead2.googlesyndication.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https: data:; connect-src 'self' https://api.web3forms.com https://script.google.com https://script.googleusercontent.com; frame-src https://pagead2.googlesyndication.com;">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+    <!-- Typed.js for typing animation -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" integrity="sha384-eVE2uDDdfpB4R0x6U27G2I2p5G32P5vP+4a1eETR73d/4wFf/2/S0G22N/A573a" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: stretch;
+            flex-direction: row-reverse;
+            max-width: 1200px;
+            background: transparent;
+            box-shadow: none;
+        }
+        #contact-form, .shop-services {
+            flex: 1;
+            min-width: 320px;
+            max-width: 500px;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+        }
+        .shop-services h3 {
+            color: #1e293b;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .shop-services ul {
+            list-style: none;
+            padding: 0;
+            color: #64748b;
+        }
+        .shop-services li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+        }
+        .shop-services li i {
+            color: #2563eb;
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Basic Dark Mode Support */
+        body.dark-mode #contact-form,
+        body.dark-mode .shop-services {
+            background: #1e293b;
+        }
+        body.dark-mode .shop-services h3,
+        body.dark-mode #contact-form label {
+            color: #e2e8f0;
+        }
+        body.dark-mode .shop-services ul {
+            color: #94a3b8;
+        }
+        .store-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .store-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #1e293b;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        .store-btn:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div id="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Particles.js container -->
+    <div id="tsparticles"></div>
+
+    <nav>
+        <div class="logo"><a href="index.html">pavan digital service</a></div>
+        <div class="nav-links">
+            <a href="#my-apps">Apps</a>
+            <a href="#about-me">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="game.html">Game</a>
+            <a href="#contact-me">Contact</a>
+        </div>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+    </nav>
+
+    <header class="hero">
+        <h1>Hi, I'm <span class="highlight">PAVAN SHILPI</span> - Android & Web Developer</h1>
+        <p>This is my official website where I showcase my expertise as a professional App and Web Developer</p> <br>
+        <a href="#my-apps" class="btn-download btn-hero">मेरे ऐप्स देखें</a>
+    </header>
+<section id="my-apps" class="section section-light">
+    <h2 class="section-title">Featured Applications</h2>
+    
+    <div class="grid-container">
+        
+        <div class="app-card animate-on-scroll">
+            <img src="logo.png" alt="Quiz Master" class="app-card-logo" style="display: block; margin: 0 auto;">
+            <h3>Quiz Master App</h3>
+            <p>चुनौतीपूर्ण क्विज़ खेलें और अपना सामान्य ज्ञान बढ़ाएं।</p>
+            <div class="store-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.pavan.quizmaster" class="store-btn" target="_blank"><i class="fab fa-google-play"></i> Play Store</a>
+                <a href="https://www.amazon.com/gp/product/B0GHMVWGZF" class="store-btn" target="_blank"><i class="fab fa-amazon"></i> Amazon Store</a>
+                <a href="https://www.indusappstore.com/apps/educational/quiz-master/com.pavan.quizmaster?page=details&id=com.pavan.quizmaster" class="store-btn" target="_blank"><i class="fas fa-store"></i> Indus App Store</a>
+            </div>
+        </div>
+
+           
+
+        <div class="app-card app-card--placeholder animate-on-scroll" style="animation-delay: 0.4s;">
+            <h3>New App Coming Soon</h3>
+            <p>हम आपके लिए कुछ नया और रोमांचक बना रहे हैं।</p>
+        </div>
+
+    </div>
+</section>
+<section id="about-me" class="section">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-me-container">
+        <img src="my photo.jpeg" alt="Pavan Shilpi" class="about-me-img">
+        <div class="about-me-content">
+            <h3>पवन शिल्पी</h3>
+            <p>
+                मैं एक रचनात्मक और जुनूनी एंड्रॉइड डेवलपर हूं जिसे सुंदर, कार्यात्मक और उपयोगकर्ता-अनुकूल एप्लिकेशन बनाने का शौक है। प्रौद्योगिकी और डिजाइन के प्रति मेरे प्रेम ने मुझे हमेशा सर्वश्रेष्ठ उपयोगकर्ता अनुभव प्रदान करने के लिए प्रेरित किया है।
+            </p>
+            <p>
+                जब मैं कोडिंग नहीं कर रहा होता हूं, तो मुझे नई तकनीकों की खोज करना, पढ़ना और संगीत सुनना पसंद है। मेरा लक्ष्य ऐसे ऐप्स बनाना है जो लोगों के जीवन को आसान और बेहतर बनाएं।
+            </p>
+        </div>
+    </div>
+</section>
+
+<header class="hero">
+    <h1><span class="highlight">Our Vision</span> </h1>
+    <p><strong>"एक आत्मनिर्भर, सशक्त और संपूर्ण विकसित भारत का निर्माण"</strong></p> <br>
+   <p> भारत को वैश्विक पटल पर सर्वोच्च बनाने के लिए हमें बहुआयामी सुधारों की आवश्यकता है। हमारा दृष्टिकोण देश की <strong>शिक्षा व्यवस्था को मजबूत करने, युवाओं के लिए रोजगार के नए अवसर पैदा करने, मैन्युफैक्चरिंग (घरेलू उत्पादन) को बढ़ावा देने</strong> और अंतरराष्ट्रीय स्तर पर <strong>भारतीय रुपए को शक्तिशाली बनाने</strong> पर केंद्रित है।</p>
+   <p>इसके साथ ही, एक सच्चे लोकतंत्र की स्थापना के लिए <strong>चुनावी प्रणाली में सुधार, करप्शन (भ्रष्टाचार) के खिलाफ कड़ा मुकाबला, पर्यावरण प्रदूषण से मुक्ति</strong> और समाज के हर वर्ग को <strong>शोषण से बचाना</strong> हमारी सबसे बड़ी प्राथमिकता है। इन सभी बुनियादी बदलावों को कैसे संभव किया जाए और वर्तमान में हमारी क्या समस्याएं हैं।</p> 
+   <a href="#blog" class="btn-download btn-hero">इस पर विस्तृत विश्लेषण नीचे ब्लॉग में पढ़ें। </a>
+</header>
+
+<section id="blog" class="section">
+    <h2 class="section-title">Vision Latest Blog</h2>
+    <div class="blog-grid">
+        <!-- Blog Post 1 -->
+        <div class="blog-card animate-on-scroll">
+            <img src="politics.png" alt="Android Development Tips" class="blog-card-img">
+            <div class="blog-card-content">
+                <span class="blog-card-date">March 03, 2026</span>
+                <h3>राजनीतिक सुधार</h3>
+                <p>वर्तमान चुनावी प्रणाली में बड़े बदलाव के लिए पढ़े-लिखे युवाओं ,शिक्षक ,किसानों ,और जागरूक नागरिकों को स्वयं आगे आना होगा। यदि देश के करोड़ों सक्षम लोग किसी पार्टी के भरोसे रहने के बजाय अपने-अपने क्षेत्रों से निर्दलीय रूप से चुनाव मैदान में उतरें और फॉर्म भरें, तो हम धनबल और बाहुबल से मुक्त, एक पूर्णतः पारदर्शी और वास्तविक लोकतांत्रिक भारत का निर्माण कर सकते हैं।</p>
+                <a href="blog-post-1.html" class="blog-card-link">Read More →</a>
+            </div>
+        </div>
+        <!-- Blog Post 2 -->
+        <div class="blog-card animate-on-scroll" style="animation-delay: 0.2s;">
+             <img src="education.png" alt="App Monetization Strategies" class="blog-card-img">
+            <div class="blog-card-content">
+                <span class="blog-card-date">February 25, 2026</span>
+                <h3>भारत की शिक्षा व्यावस्था और उसमे सुधार </h3>
+                <p>सिर्फ डिग्रियां बांटने वाली शिक्षा व्यवस्था से देश का विकास संभव नहीं है। भारत के भविष्य को सुरक्षित करने के लिए हमें किताबी ज्ञान से आगे बढ़कर व्यावहारिक हुनर (Skill-based Education) और रोजगारोन्मुखी शिक्षा नीति की आवश्यकता है। वर्तमान समस्याओं और इसके सटीक समाधानों को विस्तार से पढ़ें।</p>
+                <a href="blog-2.html" class="blog-card-link">Read More →</a>
+            </div>
+        </div>
+        <!-- Blog Post 3 -->
+        <div class="blog-card animate-on-scroll" style="animation-delay: 0.4s;">
+             <img src="growindia.png" alt="UI/UX Design Importance" class="blog-card-img">
+            <div class="blog-card-content">
+                <span class="blog-card-date">February 18, 2026</span>
+                <h3>विकसित भारत</h3>
+                <p>विकसित भारत के निर्माण के सफर में सबसे पहला और सबसे बड़ा रोड़ा है देश पर बढ़ता हुआ कर्ज। किसी भी राष्ट्र की आर्थिक आज़ादी इस बात पर निर्भर करती है कि वह कर्ज के जाल से कितना मुक्त है।</p>
+                <a href="blog-3.html" class="blog-card-link">Read More →</a>
+            </div>
+        </div>
+    </div>
+    <div class="section-cta">
+        <a href="blog.html" class="btn-download">सभी पोस्ट देखें</a>
+    </div>
+</section>
+<!-- Google AdSense Ad Unit -->
+<section class="section section-light ad-section">
+    <h3>Advertisement</h3>
+    <!-- AdSense से स्वीकृत होने के बाद, इस div को अपने AdSense विज्ञापन कोड से बदलें। -->
+    <div class="ad-placeholder">Your Ad Here</div>
+</section>
+<!-- Contact Section -->
+<section id="contact-me" class="section section-light">
+    <h2 class="section-title">Start Your Project</h2>
+    <p style="text-align: center; margin-bottom: 30px; color: #666;">क्या आप अपना खुद का ऐप या वेबसाइट बनवाना चाहते हैं? नीचे दिए गए फॉर्म को भरें।</p>
+    
+    <div class="contact-container">
+        <form name="submit-to-google-sheet" id="contact-form">
+            <div class="form-group">
+                <label for="name">आपका नाम (Name)</label>
+                <input type="text" id="name" name="Name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">ईमेल (Email)</label>
+                <input type="email" id="email" name="Email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">मोबाइल नंबर (Phone)</label>
+                <input type="tel" id="phone" name="Phone" placeholder="Enter your mobile number" required>
+            </div>
+            <div class="form-group">
+                <label for="service">आप क्या बनवाना चाहते हैं? (Service)</label>
+                <select id="service" name="Service" required>
+                    <option value="" disabled selected>Select Service</option>
+                    <option value="Android App Development">Android App Development</option>
+                    <option value="Website Development">Website Development</option>
+                    <option value="Other">Other Query</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message">संदेश (Message)</label>
+                <textarea id="message" name="Message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send Message <i class="fas fa-paper-plane"></i></button>
+        </form>
+
+        <div class="shop-services">
+            <h3>हमारी अन्य सेवाएं (Other Services)</h3>
+            <ul>
+                <li><i class="fas fa-print"></i> फोटोकॉपी (Photocopy)</li>
+                <li><i class="fas fa-id-card"></i> लेमिनेशन (Lamination)</li>
+                <li><i class="fas fa-file-invoice"></i> प्रिंटआउट (Printout)</li>
+                <li><i class="fas fa-camera-retro"></i> पासपोर्ट साइज फोटो (Passport Photo)</li>
+                <li><i class="fas fa-keyboard"></i> ऑनलाइन फॉर्म भराई (Online Form)</li>
+                <li><i class="fas fa-pen-to-square"></i> आवेदन टाइपिंग (Aavedan Typing)</li>
+                <li><i class="fas fa-address-card"></i> पैन कार्ड सेवा (PAN Card Service)</li>
+                <li><i class="fas fa-ellipsis-h"></i> और भी बहुत कुछ... (etc.)</li>
+            </ul>
+        </div>
+    </div>
+    <div id="msg-status" style="text-align: center; margin-top: 20px; font-weight: bold;"></div>
+</section>
+
+<script>
+    // Google Sheet Connection Script
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzpRk5ZDcBbsrF6I6JED03ZQSotOKVcSs9GzfMmPBdvd-Kjc3fvvy6UA51bzQriO-uAsA/exec'; // यहाँ अपना Google App Script URL पेस्ट करें
+    
+    // फॉर्म को ID के जरिए ढूँढना ज्यादा सुरक्षित है
+    const form = document.getElementById('contact-form');
+    const msgStatus = document.getElementById("msg-status");
+
+    if (form) {
+        form.addEventListener('submit', e => {
+          e.preventDefault(); // यह लाइन पेज को ऊपर जाने (Reload) से रोकती है
+          console.log("Form submission started...");
+          msgStatus.innerHTML = "Sending...";
+          msgStatus.style.color = "#2563eb";
+          const submitBtn = form.querySelector('button[type="submit"]');
+          if(submitBtn) submitBtn.disabled = true; // बटन को डिसेबल करें
+
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msgStatus.innerHTML = "Message Sent Successfully! I will contact you soon.";
+                msgStatus.style.color = "green";
+                if(submitBtn) submitBtn.disabled = false;
+                setTimeout(function(){
+                    msgStatus.innerHTML = "";
+                    form.reset();
+                }, 5000);
+            })
+            .catch(error => {
+                msgStatus.innerHTML = "Error! Please try again.";
+                msgStatus.style.color = "red";
+                if(submitBtn) submitBtn.disabled = false;
+                console.error('Error!', error.message);
+            });
+        });
+    } else {
+        console.error("Form element not found! Check HTML ID.");
+    }
+</script>
+
+<footer>
+    <div class="footer-content">
+        <h2>Our Service Your Future </h2>
+        <p></p>
+    </div>
+    
+    <!-- अपने सोशल मीडिया प्रोफाइल लिंक यहाँ जोड़ें -->
+    <div class="social-links">
+        <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <!-- आप और भी आइकन जोड़ सकते हैं, जैसे: <a href="#" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a> -->
+    </div>
+
+    <hr>
+    
+    <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+    </div>
+
+    <p class="copyright">&copy; 2026 Pavan Digital Service. All rights reserved.</p>
+</footer>
+
+<script src="animations.js"></script>
+<!-- <script src="contact.js"></script> -->
+<script src="main.js"></script>
+
+<!-- tsparticles library for background animation -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+<!-- custom particles config, now enabled to match other pages -->
+<script src="particles-config.js"></script>
+<!-- Schema.org JSON-LD for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Pavan Shilpi",
+  "url": "https://your-website-domain.com",
+  "image": "https://your-website-domain.com/my%20photo.jpeg",
+  "jobTitle": "Android Developer",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Pavan Digital Service"
+  },
+  "sameAs": [
+    "https://github.com/yourusername",
+    "https://linkedin.com/in/yourusername"
+  ]
+}
+</script>
+</body>
+</html>

@@ -8,6 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google AdSense Safe Manager & Script -->
+    <script src="ads-manager.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9947170873414654" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Loading Spinner -->
@@ -24,6 +28,7 @@
             <a href="index.htm#my-apps">Apps</a>
             <a href="index.htm#about-me">About</a>
             <a href="blog.html">Blog</a>
+            <a href="live-map.html"><i class="fas fa-globe-americas"></i> Live Map</a>
             <a href="game.html">Game</a>
             <a href="index.htm#contact-me">Contact</a>
         </div>
@@ -73,6 +78,29 @@
 
 यह इस आर्टिकल का पहला भाग (कर्ज और इम्पोर्ट की समस्या व समाधान) है।</p>
 
+                <!-- In-Article Google AdSense Ad Unit -->
+                <div class="ad-unit-article">
+                    <span class="ad-label">Advertisement</span>
+                    <ins class="adsbygoogle"
+                         style="display:block; text-align:center;"
+                         data-ad-layout="in-article"
+                         data-ad-format="fluid"
+                         data-ad-client="ca-pub-9947170873414654"
+                         data-ad-slot="1234567890"></ins>
+                    <script>
+                         if (window.safelyPushAd) {
+                             window.safelyPushAd(document.currentScript.previousElementSibling);
+                         } else {
+                             try {
+                                 var el = document.currentScript.previousElementSibling;
+                                 if (el && el.offsetWidth > 0) {
+                                     (adsbygoogle = window.adsbygoogle || []).push({});
+                                 }
+                             } catch(e) {}
+                         }
+                    </script>
+                </div>
+
                 <h3>विकेंद्रीकृत रिफाइनरी मॉडल—दलालों का अंत, रोज़गार की बाढ़ और ट्रांसपोर्ट के खर्चे की बचत</h3>
                 <p>कृषि व्यवस्था को पूरी तरह से आत्मनिर्भर बनाने के लिए हमें फसल बेचने और प्रोसेसिंग के पुराने और थकाऊ तरीके को बदलना होगा। अभी तक किसान मंडी और बिचौलियों (दलालों) के चक्कर में पिसा जाता है और फिर वही कच्चा माल सैकड़ों किलोमीटर दूर फैक्ट्रियों में भेजा जाता है, जिससे केवल ट्रांसपोर्ट का खर्च और महंगाई बढ़ती है।
 
@@ -120,25 +148,7 @@
             </div>
 
             <!-- Comments Section -->
-            <div id="disqus_thread" style="margin-top: 40px;"></div>
-            <script>
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-                */
-                var disqus_config = function () {
-                    this.page.url = 'https://your-website-domain.com/blog-3.html';  // अपनी वेबसाइट के डोमेन से बदलें
-                    this.page.identifier = 'blog-post-3'; // इस पेज के लिए यूनिक आईडी
-                };
-                
-                (function() { // इस लाइन के नीचे एडिट न करें
-                var d = document, s = d.createElement('script');
-                s.src = 'https://YOUR_SHORTNAME.disqus.com/embed.js'; // YOUR_SHORTNAME को अपने Disqus shortname से बदलें
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <div id="blog-comments-container" data-post-id="blog-post-3"></div>
         </div>
     </section>
 
@@ -159,6 +169,12 @@
     <!-- Scripts -->
     <script src="animations.js"></script>
     <script src="main.js"></script>
+    <script type="module" src="auth.js"></script>
+    <script type="module" src="visitor-tracker.js"></script>
+    <script type="module" src="comments.js"></script>
+    <script type="module" src="blog-enhancements.js"></script>
+    <script src="whatsapp-widget.js"></script>
+    <script type="module" src="quote-modal.js"></script>
     <!-- tsparticles library for background animation -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <!-- custom particles config -->

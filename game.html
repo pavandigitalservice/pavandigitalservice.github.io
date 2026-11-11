@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Maze Puzzle Game - Pavan Digital Service</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Arrow Maze Puzzle Game by Pavan Shilpi. Play neon arrow mazes, solve brain-teasing puzzles, and download for free from Google Play Store.">
+    <meta name="keywords" content="Arrow Maze Puzzle Game, Pavan Shilpi, Pavan Digital Service, Android Game, Maze Puzzle, Brain Puzzle, Google Play Store">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Arrow Maze Puzzle Game - Android & Web Demo">
+    <meta property="og:description" content="Play the exciting Arrow Maze Puzzle Game. Test your intellect with glowing neon mazes!">
+    <meta property="og:image" content="/public/assets/aistudio/app_icon_c642a752.jpeg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google AdSense Safe Manager & Script -->
+    <script src="ads-manager.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9947170873414654" crossorigin="anonymous"></script>
+
+    <style>
+        .game-hero {
+            padding: 50px 20px 40px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(37, 99, 235, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .game-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 185, 129, 0.15);
+            color: #10b981;
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            padding: 6px 14px;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        .game-header-card {
+            max-width: 850px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 35px 25px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-color);
+        }
+        .game-icon-large {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            object-fit: cover;
+            box-shadow: 0 8px 30px rgba(34, 197, 94, 0.4);
+            border: 3px solid rgba(34, 197, 94, 0.6);
+            margin: 0 auto 20px;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .game-icon-large:hover {
+            transform: scale(1.05);
+        }
+        .game-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-color);
+        }
+        .game-author-tag {
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+        .game-tagline {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 0 auto 25px;
+            line-height: 1.6;
+        }
+        .game-cta-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-playstore {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: white !important;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.35);
+            transition: all 0.3s;
+        }
+        .btn-playstore:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(5, 150, 105, 0.5);
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        }
+        .btn-scroll-demo {
+            background: var(--bg-section-light);
+            color: var(--text-color) !important;
+            border: 1px solid var(--border-color);
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-scroll-demo:hover {
+            border-color: #2563eb;
+            color: #2563eb !important;
+        }
+
+        /* Interactive Canvas Demo Section */
+        .demo-section {
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .demo-card {
+            background: #0b1329;
+            color: #e2e8f0;
+            padding: 30px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .demo-status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .demo-stat {
+            font-size: 0.95rem;
+            color: #94a3b8;
+        }
+        .demo-stat strong {
+            color: #38bdf8;
+            font-size: 1.15rem;
+        }
+        #mazeCanvas {
+            background: #030712;
+            border-radius: 16px;
+            border: 2px solid rgba(34, 197, 94, 0.4);
+            box-shadow: inset 0 0 30px rgba(16, 185, 129, 0.15), 0 0 25px rgba(34, 197, 94, 0.2);
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            touch-action: none;
+        }
+        .controls-panel {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .dpad-row {
+            display: flex;
+            gap: 12px;
+        }
+        .dpad-btn {
+            width: 58px;
+            height: 52px;
+            background: rgba(30, 41, 59, 0.85);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 12px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+        .dpad-btn:active, .dpad-btn:hover {
+            background: #2563eb;
+            color: white;
+            border-color: #60a5fa;
+            transform: scale(0.96);
+            box-shadow: 0 0 15px rgba(37, 99, 235, 0.6);
+        }
+        .win-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(11, 19, 41, 0.94);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            border-radius: 24px;
+            z-index: 10;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        .win-icon {
+            font-size: 3.5rem;
+            color: #10b981;
+            margin-bottom: 15px;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-8px); }
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin: 40px auto 20px;
+            max-width: 1050px;
+            padding: 0 20px;
+        }
+        .feature-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 30px 22px;
+            border-radius: 18px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .feature-box:hover {
+            transform: translateY(-6px);
+            border-color: #10b981;
+            box-shadow: 0 12px 25px rgba(16, 185, 129, 0.1);
+        }
+        .feature-icon-wrap {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 16px;
+        }
+        .feature-box h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .feature-box p {
+            color: var(--text-light);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Spinner -->
+    <div id="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Particles.js background -->
+    <div id="tsparticles"></div>
+
+    <nav>
+        <div class="logo"><a href="index.html">pavan digital service</a></div>
+        <div class="nav-links">
+            <a href="index.html#my-apps">Apps</a>
+            <a href="index.html#about-me">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="live-map.html"><i class="fas fa-globe-americas"></i> Live Map</a>
+            <a href="game.html" style="color: #10b981; font-weight: 700;"><i class="fas fa-gamepad"></i> Game</a>
+            <a href="index.html#contact-me">Contact</a>
+        </div>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+    </nav>
+
+    <!-- Game Showcase Hero -->
+    <header class="game-hero">
+        <div class="game-badge">
+            <i class="fas fa-certificate"></i> Official Android Release &bull; Free on Google Play
+        </div>
+        <div class="game-header-card animate-on-scroll">
+            <img src="/public/assets/aistudio/app_icon_c642a752.jpeg" alt="Arrow Maze Puzzle Game" class="game-icon-large">
+            <h1 class="game-title">Arrow Maze Puzzle Game</h1>
+            <p class="game-author-tag"><i class="fas fa-code"></i> Developed by Pavan Shilpi (Pavan Digital Service)</p>
+            <p class="game-tagline">
+                रोमांचक नियॉन भूलभुलैया (Maze) और एरो पज़ल का अनोखा संगम! सही दिशा में मुड़ें, तीरों के संकेत पहचानें और चुनौतीपूर्ण भूलभुलैया को पार करके अपने दिमाग को सुपरचार्ज करें।
+            </p>
+            <div class="game-cta-group">
+                <a href="https://play.google.com/store/apps/details?id=com.pavandigitalservice.game.arrow_puzzle&pcampaignid=web_share" class="btn-playstore" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-google-play fa-lg"></i> Google Play से डाउनलोड करें
+                </a>
+                <a href="#demo-area" class="btn-scroll-demo">
+                    <i class="fas fa-play-circle"></i> ऑनलाइन डेमो खेलें
+                </a>
+                <a href="index.html#my-apps" class="btn-scroll-demo">
+                    <i class="fas fa-th-large"></i> सभी ऐप्स देखें
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Ad Unit -->
+    <div class="ad-section">
+        <span class="ad-label">Advertisement</span>
+        <div class="ad-unit-responsive">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9947170873414654"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 if (window.safelyPushAd) {
+                     window.safelyPushAd(document.currentScript.previousElementSibling);
+                 } else {
+                     try {
+                         var el = document.currentScript.previousElementSibling;
+                         if (el && el.offsetWidth > 0) {
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                         }
+                     } catch(e) {}
+                 }
+            </script>
+        </div>
+    </div>
+
+    <!-- Playable Browser Demo -->
+    <section id="demo-area" class="demo-section">
+        <div class="demo-card">
+            <div class="demo-status-bar">
+                <div class="demo-stat">Level: <strong id="level-display">1 / 3</strong></div>
+                <div class="demo-stat">Moves: <strong id="moves-display">0</strong></div>
+                <button id="btn-restart-maze" class="btn-scroll-demo" style="padding: 6px 14px; font-size: 0.85rem; border-color: rgba(255,255,255,0.2); color: #e2e8f0 !important;">
+                    <i class="fas fa-redo"></i> रीसेट लेवल
+                </button>
+            </div>
+
+            <canvas id="mazeCanvas" width="420" height="420"></canvas>
+
+            <div class="controls-panel">
+                <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 5px;">
+                    <i class="fas fa-keyboard"></i> कीबोर्ड एरो कीज (Arrow Keys) या नीचे दिए गए बटन्स का उपयोग करें:
+                </p>
+                <div class="dpad-row">
+                    <button class="dpad-btn" id="btn-up" aria-label="Up"><i class="fas fa-arrow-up"></i></button>
+                </div>
+                <div class="dpad-row">
+                    <button class="dpad-btn" id="btn-left" aria-label="Left"><i class="fas fa-arrow-left"></i></button>
+                    <button class="dpad-btn" id="btn-down" aria-label="Down"><i class="fas fa-arrow-down"></i></button>
+                    <button class="dpad-btn" id="btn-right" aria-label="Right"><i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Victory Overlay (hidden by default) -->
+            <div id="win-overlay" class="win-overlay" style="display: none;">
+                <div class="win-icon"><i class="fas fa-trophy"></i></div>
+                <h2 style="color: #38bdf8; font-size: 1.8rem; margin-bottom: 8px;">शानदार जीत! (Victory!)</h2>
+                <p style="color: #cbd5e1; max-width: 420px; margin-bottom: 25px; line-height: 1.5;">
+                    आपने यह स्तर पूरा कर लिया! Google Play Store पर पूरा गेम डाउनलोड करें और 100+ नए पहेली स्तरों का आनंद लें।
+                </p>
+                <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+                    <a href="https://play.google.com/store/apps/details?id=com.pavandigitalservice.game.arrow_puzzle&pcampaignid=web_share" class="btn-playstore" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-google-play"></i> पूरा गेम इंस्टॉल करें
+                    </a>
+                    <button id="btn-next-level" class="btn-scroll-demo" style="background: #2563eb; color: white !important; border: none; cursor: pointer;">
+                        अगला स्तर खेलें →
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Game Features -->
+    <section class="section section-light">
+        <h2 class="section-title">गेम की मुख्य विशेषताएं (Key Features)</h2>
+        <div class="features-grid">
+            <div class="feature-box animate-on-scroll">
+                <div class="feature-icon-wrap"><i class="fas fa-compass"></i></div>
+                <h3>अनोखी एरो पज़ल प्रणाली</h3>
+                <p>भूलभुलैया में आगे बढ़ने के लिए तीरों की दिशा का चतुराई से उपयोग करें। हर दिशा नया रास्ता खोलती है।</p>
+            </div>
+            <div class="feature-box animate-on-scroll" style="animation-delay: 0.1s;">
+                <div class="feature-icon-wrap"><i class="fas fa-brain"></i></div>
+                <h3>मस्तिष्क और लॉजिक ट्रेनिंग</h3>
+                <p>बच्चों से लेकर बड़ों तक सभी के लिए आईक्यू, फोकस और लॉजिकल थिंकिंग को मजबूत करने वाले लेवल्स।</p>
+            </div>
+            <div class="feature-box animate-on-scroll" style="animation-delay: 0.2s;">
+                <div class="feature-icon-wrap"><i class="fas fa-bolt"></i></div>
+                <h3>नियॉन साइबर विज़ुअल्स</h3>
+                <p>आकर्षक ग्लोइंग ग्रीन और ब्लू साइबरपंक ग्राफिक्स और सहज टच कंट्रोल्स जो गेमप्ले को मनोरंजक बनाते हैं।</p>
+            </div>
+            <div class="feature-box animate-on-scroll" style="animation-delay: 0.3s;">
+                <div class="feature-icon-wrap"><i class="fas fa-wifi-slash"></i></div>
+                <h3>100% ऑफलाइन प्ले</h3>
+                <p>इंटरनेट डेटा की कोई चिंता नहीं! यात्रा, खाली समय या कहीं भी आराम से बिना इंटरनेट खेलें।</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="text-align: center; padding: 60px 20px; background: linear-gradient(180deg, var(--bg-section-light) 0%, var(--bg-color) 100%);">
+        <h2 style="font-size: 2rem; margin-bottom: 15px;">आज ही अपने मोबाइल में खेलें!</h2>
+        <p style="color: var(--text-light); max-width: 600px; margin: 0 auto 30px;">
+            Arrow Maze Puzzle Game को Google Play Store से बिल्कुल मुफ्त डाउनलोड करें और अपने परिवार व दोस्तों के साथ शेयर करें।
+        </p>
+        <a href="https://play.google.com/store/apps/details?id=com.pavandigitalservice.game.arrow_puzzle&pcampaignid=web_share" class="btn-playstore" style="font-size: 1.15rem; padding: 16px 36px;" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-google-play fa-lg"></i> Google Play से फ्री डाउनलोड करें
+        </a>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <h2>Our Service Your Future</h2>
+            <p>Pavan Digital Service - Android App Development & Web Solutions</p>
+        </div>
+        
+        <div class="social-links">
+            <a href="https://play.google.com/store/apps/details?id=com.pavandigitalservice.game.arrow_puzzle&pcampaignid=web_share" target="_blank" title="Arrow Maze on Google Play"><i class="fab fa-google-play"></i></a>
+            <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <hr>
+        
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="index.html#my-apps">Apps</a>
+            <a href="index.html#contact-me">Contact</a>
+        </div>
+
+        <p class="copyright">&copy; 2026 Pavan Digital Service. All rights reserved.</p>
+    </footer>
+
+    <!-- Interactive Maze Canvas Game Script -->
+    <script>
+    (function () {
+        const canvas = document.getElementById('mazeCanvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const levelDisplay = document.getElementById('level-display');
+        const movesDisplay = document.getElementById('moves-display');
+        const winOverlay = document.getElementById('win-overlay');
+        const nextLevelBtn = document.getElementById('btn-next-level');
+        const restartBtn = document.getElementById('btn-restart-maze');
+
+        let currentLevel = 0;
+        let moves = 0;
+        let player = { x: 0, y: 0 };
+        let goal = { x: 0, y: 0 };
+
+        // Mini level designs: 0: Path, 1: Wall, 2: Start, 3: Goal
+        const levels = [
+            // Level 1: 7x7 Neon Maze
+            {
+                grid: [
+                    [2, 0, 1, 0, 0, 0, 1],
+                    [1, 0, 1, 0, 1, 0, 0],
+                    [0, 0, 0, 0, 1, 1, 0],
+                    [0, 1, 1, 0, 0, 0, 0],
+                    [0, 0, 1, 1, 1, 1, 0],
+                    [1, 0, 0, 0, 0, 1, 0],
+                    [1, 1, 1, 1, 0, 0, 3]
+                ],
+                cols: 7, rows: 7
+            },
+            // Level 2: 8x8 Circuit Maze
+            {
+                grid: [
+                    [2, 0, 0, 1, 0, 0, 0, 0],
+                    [1, 1, 0, 1, 0, 1, 1, 0],
+                    [0, 0, 0, 0, 0, 1, 0, 0],
+                    [0, 1, 1, 1, 0, 1, 0, 1],
+                    [0, 1, 0, 0, 0, 0, 0, 1],
+                    [0, 1, 0, 1, 1, 1, 0, 0],
+                    [0, 0, 0, 1, 0, 0, 1, 0],
+                    [1, 1, 0, 0, 0, 1, 0, 3]
+                ],
+                cols: 8, rows: 8
+            },
+            // Level 3: 9x9 Arrow Puzzle Maze
+            {
+                grid: [
+                    [2, 0, 1, 0, 0, 0, 1, 0, 0],
+                    [1, 0, 1, 0, 1, 0, 1, 1, 0],
+                    [0, 0, 0, 0, 1, 0, 0, 0, 0],
+                    [0, 1, 1, 0, 1, 1, 1, 1, 0],
+                    [0, 0, 1, 0, 0, 0, 0, 1, 0],
+                    [1, 0, 1, 1, 1, 1, 0, 1, 0],
+                    [0, 0, 0, 0, 0, 1, 0, 0, 0],
+                    [0, 1, 1, 1, 0, 1, 1, 1, 0],
+                    [0, 0, 0, 1, 0, 0, 0, 0, 3]
+                ],
+                cols: 9, rows: 9
+            }
+        ];
+
+        let activeMaze = null;
+
+        function loadLevel(idx) {
+            currentLevel = idx % levels.length;
+            const lvl = levels[currentLevel];
+            activeMaze = JSON.parse(JSON.stringify(lvl.grid));
+            moves = 0;
+            movesDisplay.innerText = moves;
+            levelDisplay.innerText = `${currentLevel + 1} / ${levels.length}`;
+            winOverlay.style.display = 'none';
+
+            // Find start and goal
+            for (let r = 0; r < lvl.rows; r++) {
+                for (let c = 0; c < lvl.cols; c++) {
+                    if (activeMaze[r][c] === 2) {
+                        player = { x: c, y: r };
+                    } else if (activeMaze[r][c] === 3) {
+                        goal = { x: c, y: r };
+                    }
+                }
+            }
+            drawMaze();
+        }
+
+        function drawMaze() {
+            const lvl = levels[currentLevel];
+            const cellW = canvas.width / lvl.cols;
+            const cellH = canvas.height / lvl.rows;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw Grid & Walls
+            for (let r = 0; r < lvl.rows; r++) {
+                for (let c = 0; c < lvl.cols; c++) {
+                    const x = c * cellW;
+                    const y = r * cellH;
+
+                    if (activeMaze[r][c] === 1) {
+                        // Wall (Neon Cyber Wall)
+                        ctx.fillStyle = '#1e293b';
+                        ctx.fillRect(x + 2, y + 2, cellW - 4, cellH - 4);
+                        ctx.strokeStyle = '#0284c7';
+                        ctx.lineWidth = 1.5;
+                        ctx.strokeRect(x + 2, y + 2, cellW - 4, cellH - 4);
+                    } else {
+                        // Path Grid Line
+                        ctx.strokeStyle = 'rgba(30, 41, 59, 0.4)';
+                        ctx.lineWidth = 1;
+                        ctx.strokeRect(x, y, cellW, cellH);
+                    }
+                }
+            }
+
+            // Draw Goal Arrow Target
+            const gx = goal.x * cellW + cellW / 2;
+            const gy = goal.y * cellH + cellH / 2;
+            ctx.save();
+            ctx.shadowColor = '#10b981';
+            ctx.shadowBlur = 18;
+            ctx.fillStyle = '#10b981';
+            ctx.beginPath();
+            ctx.arc(gx, gy, cellW * 0.35, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Arrow symbol inside goal
+            ctx.fillStyle = '#0f172a';
+            ctx.beginPath();
+            ctx.moveTo(gx - cellW * 0.15, gy + cellW * 0.15);
+            ctx.lineTo(gx, gy - cellW * 0.2);
+            ctx.lineTo(gx + cellW * 0.15, gy + cellW * 0.15);
+            ctx.lineTo(gx, gy + cellW * 0.05);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+
+            // Draw Player Arrow
+            const px = player.x * cellW + cellW / 2;
+            const py = player.y * cellH + cellH / 2;
+            ctx.save();
+            ctx.shadowColor = '#38bdf8';
+            ctx.shadowBlur = 16;
+            ctx.fillStyle = '#38bdf8';
+            ctx.beginPath();
+            ctx.arc(px, py, cellW * 0.32, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Arrow shape for player
+            ctx.fillStyle = '#0f172a';
+            ctx.beginPath();
+            ctx.moveTo(px, py - cellW * 0.18);
+            ctx.lineTo(px + cellW * 0.15, py + cellW * 0.12);
+            ctx.lineTo(px, py + cellW * 0.02);
+            ctx.lineTo(px - cellW * 0.15, py + cellW * 0.12);
+            ctx.closePath();
+            ctx.fill();
+            ctx.restore();
+        }
+
+        function move(dx, dy) {
+            const lvl = levels[currentLevel];
+            const nx = player.x + dx;
+            const ny = player.y + dy;
+
+            if (nx < 0 || nx >= lvl.cols || ny < 0 || ny >= lvl.rows) return;
+            if (activeMaze[ny][nx] === 1) return; // Wall
+
+            player.x = nx;
+            player.y = ny;
+            moves++;
+            movesDisplay.innerText = moves;
+            drawMaze();
+
+            // Check Win condition
+            if (player.x === goal.x && player.y === goal.y) {
+                setTimeout(() => {
+                    winOverlay.style.display = 'flex';
+                }, 150);
+            }
+        }
+
+        // Keyboard Controls
+        window.addEventListener('keydown', (e) => {
+            if (['ArrowUp', 'KeyW'].includes(e.code)) { e.preventDefault(); move(0, -1); }
+            else if (['ArrowDown', 'KeyS'].includes(e.code)) { e.preventDefault(); move(0, 1); }
+            else if (['ArrowLeft', 'KeyA'].includes(e.code)) { e.preventDefault(); move(-1, 0); }
+            else if (['ArrowRight', 'KeyD'].includes(e.code)) { e.preventDefault(); move(1, 0); }
+        });
+
+        // Touch / Click D-Pad buttons
+        document.getElementById('btn-up')?.addEventListener('click', () => move(0, -1));
+        document.getElementById('btn-down')?.addEventListener('click', () => move(0, 1));
+        document.getElementById('btn-left')?.addEventListener('click', () => move(-1, 0));
+        document.getElementById('btn-right')?.addEventListener('click', () => move(1, 0));
+
+        restartBtn?.addEventListener('click', () => loadLevel(currentLevel));
+        nextLevelBtn?.addEventListener('click', () => loadLevel(currentLevel + 1));
+
+        // Initial Load
+        loadLevel(0);
+    })();
+    </script>
+
+    <script src="animations.js"></script>
+    <script src="main.js"></script>
+    <script src="whatsapp-widget.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script src="particles-config.js"></script>
+</body>
+</html>

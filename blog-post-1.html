@@ -8,6 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google AdSense Safe Manager & Script -->
+    <script src="ads-manager.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9947170873414654" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Loading Spinner -->
@@ -24,6 +28,7 @@
             <a href="index.htm#my-apps">Apps</a>
             <a href="index.htm#about-me">About</a>
             <a href="blog.html">Blog</a>
+            <a href="live-map.html"><i class="fas fa-globe-americas"></i> Live Map</a>
             <a href="game.html">Game</a>
             <a href="index.htm#contact-me">Contact</a>
         </div>
@@ -77,6 +82,29 @@
                     
                     यही वह अंतिम चोट है जो पार्टियों के वर्चस्व को जमीन पर लाएगी। जब एक करोड़ आम लोग किसी पार्टी के बैनर के बिना, सिर्फ राष्ट्र निर्माण के संकल्प के साथ चुनावी मैदान में उतरेंगे, तभी हमारा लोकतंत्र सुरक्षित होगा और भारत सही मायनों में एक विकसित और आत्मनिर्भर राष्ट्र बनेगा।"</p>
 
+                <!-- In-Article Google AdSense Ad Unit -->
+                <div class="ad-unit-article">
+                    <span class="ad-label">Advertisement</span>
+                    <ins class="adsbygoogle"
+                         style="display:block; text-align:center;"
+                         data-ad-layout="in-article"
+                         data-ad-format="fluid"
+                         data-ad-client="ca-pub-9947170873414654"
+                         data-ad-slot="1234567890"></ins>
+                    <script>
+                         if (window.safelyPushAd) {
+                             window.safelyPushAd(document.currentScript.previousElementSibling);
+                         } else {
+                             try {
+                                 var el = document.currentScript.previousElementSibling;
+                                 if (el && el.offsetWidth > 0) {
+                                     (adsbygoogle = window.adsbygoogle || []).push({});
+                                 }
+                             } catch(e) {}
+                         }
+                    </script>
+                </div>
+
                 <h3>निष्कर्ष: अब बदलाव का समय है</h3>
                 <p>"यह सोचना कि राजनीति हमेशा ऐसी ही गंदी रहेगी, हमारी सबसे बड़ी भूल है। व्यवस्था तब तक नहीं सुधरेगी जब तक हम जैसे आम नागरिक, शिक्षित युवा और देश का पेट भरने वाले किसान खुद जिम्मेदारी नहीं उठाएंगे। यह 1 करोड़ निर्दलीय उम्मीदवारों का विजन सिर्फ एक राजनीतिक विचार नहीं, बल्कि भारत को भ्रष्टाचार, प्रदूषण, परिवारवाद और शोषण से मुक्त कराने का एक महा-आंदोलन है।
 
@@ -94,25 +122,7 @@
             </div>
 
             <!-- Comments Section -->
-            <div id="disqus_thread" style="margin-top: 40px;"></div>
-            <script>
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-                */
-                var disqus_config = function () {
-                    this.page.url = 'https://your-website-domain.com/blog-post-1.html';  // अपनी वेबसाइट के डोमेन से बदलें
-                    this.page.identifier = 'blog-post-1'; // इस पेज के लिए यूनिक आईडी
-                };
-                
-                (function() { // इस लाइन के नीचे एडिट न करें
-                var d = document, s = d.createElement('script');
-                s.src = 'https://YOUR_SHORTNAME.disqus.com/embed.js'; // YOUR_SHORTNAME को अपने Disqus shortname से बदलें
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <div id="blog-comments-container" data-post-id="blog-post-1"></div>
         </div>
     </section>
 
@@ -133,6 +143,12 @@
     <!-- Scripts -->
     <script src="animations.js"></script>
     <script src="main.js"></script>
+    <script type="module" src="auth.js"></script>
+    <script type="module" src="visitor-tracker.js"></script>
+    <script type="module" src="comments.js"></script>
+    <script type="module" src="blog-enhancements.js"></script>
+    <script src="whatsapp-widget.js"></script>
+    <script type="module" src="quote-modal.js"></script>
     <!-- tsparticles library for background animation -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <!-- custom particles config -->

@@ -8,6 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google AdSense Safe Manager & Script -->
+    <script src="ads-manager.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9947170873414654" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Loading Spinner -->
@@ -23,6 +27,7 @@
             <a href="index.htm#my-apps">Apps</a>
             <a href="index.htm#about-me">About</a>
             <a href="blog.html">Blog</a>
+            <a href="live-map.html"><i class="fas fa-globe-americas"></i> Live Map</a>
             <a href="game.html">Game</a>
             <a href="index.htm#contact-me">Contact</a>
         </div>
@@ -33,9 +38,31 @@
 
     <section class="section section-light">
         <h1 class="section-title" style="font-size: 3rem;">My Blog</h1>
-        <div class="blog-grid">
+
+        <!-- Blog Search Bar -->
+        <div class="blog-search-wrapper">
+            <div class="blog-search-container">
+                <i class="fas fa-search blog-search-icon" aria-hidden="true"></i>
+                <input 
+                    type="text" 
+                    id="blog-search-input" 
+                    class="blog-search-input" 
+                    placeholder="ब्लॉग खोजें (शीर्षक या कीवर्ड)... / Search by title or keyword..." 
+                    aria-label="Search blog posts"
+                    autocomplete="off"
+                >
+                <button type="button" id="blog-search-clear" class="blog-search-clear" aria-label="Clear search" style="display: none;">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="blog-search-meta">
+                <span id="blog-search-stats" class="blog-search-stats">3 ब्लॉग उपलब्ध हैं (3 blogs available)</span>
+            </div>
+        </div>
+
+        <div class="blog-grid" id="blog-grid">
             <!-- Blog Post 1 -->
-            <div class="blog-card">
+            <div class="blog-card" data-title="भारतीय राजनीती में सुधार" data-keywords="राजनीति चुनाव पार्टियां सुधार democracy election politics reform bharat">
                 <img src="politics.png" alt="Android Development Tips" class="blog-card-img">
                 <div class="blog-card-content">
                     <span class="blog-card-date">March 03, 2026</span>
@@ -45,8 +72,8 @@
                 </div>
             </div>
             <!-- Blog Post 2 -->
-            <div class="blog-card">
-                 <img src="education.png" alt="App Monetization Guide" class="blog-card-img">
+            <div class="blog-card" data-title="भारत की शिक्षा व्यावस्था और उसमे सुधार" data-keywords="शिक्षा स्कूल कॉलेज डिग्री हुनर skill education jobs रोजगार solution">
+                <img src="education.png" alt="App Monetization Guide" class="blog-card-img">
                 <div class="blog-card-content">
                     <span class="blog-card-date">February 25, 2026</span>
                     <h3 class="blog-card-title">भारत की शिक्षा व्यावस्था और उसमे सुधार</h3>
@@ -55,8 +82,8 @@
                 </div>
             </div>
             <!-- Blog Post 3 -->
-            <div class="blog-card">
-                 <img src="growindia.png" alt="UI/UX Importance in Apps" class="blog-card-img">
+            <div class="blog-card" data-title="विकसित भारत" data-keywords="विकसित भारत कर्ज अर्थव्यवस्था आर्थिक विकास viksit bharat economic growth loan debt">
+                <img src="growindia.png" alt="UI/UX Importance in Apps" class="blog-card-img">
                 <div class="blog-card-content">
                     <span class="blog-card-date">February 18, 2026</span>
                     <h3 class="blog-card-title">विकसित भारत</h3>
@@ -65,6 +92,41 @@
                 </div>
             </div>
             <!-- Add more blog cards as needed -->
+        </div>
+
+        <!-- Google AdSense Ad Unit -->
+        <div class="ad-section">
+            <span class="ad-label">Advertisement</span>
+            <div class="ad-unit-responsive">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-9947170873414654"
+                     data-ad-slot="1234567890"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     if (window.safelyPushAd) {
+                         window.safelyPushAd(document.currentScript.previousElementSibling);
+                     } else {
+                         try {
+                             var el = document.currentScript.previousElementSibling;
+                             if (el && el.offsetWidth > 0) {
+                                 (adsbygoogle = window.adsbygoogle || []).push({});
+                             }
+                         } catch(e) {}
+                     }
+                </script>
+            </div>
+        </div>
+
+        <!-- No Results Fallback Message -->
+        <div id="blog-no-results" class="blog-no-results" style="display: none;">
+            <div class="no-results-icon"><i class="fas fa-search"></i></div>
+            <h3>कोई ब्लॉग नहीं मिला (No Blogs Found)</h3>
+            <p>आपकी खोज से मेल खाता कोई ब्लॉग पोस्ट नहीं मिला। कृपया कोई अन्य कीवर्ड आज़माएं।</p>
+            <button id="btn-reset-blog-search" class="btn-reset-search">
+                <i class="fas fa-redo"></i> सभी ब्लॉग देखें (View All Blogs)
+            </button>
         </div>
     </section>
 
@@ -85,6 +147,11 @@
     <!-- Scripts -->
     <script src="animations.js"></script>
     <script src="main.js"></script>
+    <script src="blog-search.js"></script>
+    <script type="module" src="auth.js"></script>
+    <script type="module" src="visitor-tracker.js"></script>
+    <script src="whatsapp-widget.js"></script>
+    <script type="module" src="quote-modal.js"></script>
     <!-- tsparticles library for background animation -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <!-- custom particles config -->

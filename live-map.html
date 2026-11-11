@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Earth & Global Users Map - Pavan Digital Service</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Explore real-time active users and visitors connected to Pavan Digital Service on an interactive 3D Earth Globe and World Map.">
+    <meta name="keywords" content="Pavan Shilpi, Live User Map, 3D Earth Globe, Connected Users, World Map, Real-time Web Visitors, Android Developer Portfolio">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://your-website-domain.com/live-map.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-website-domain.com/live-map.html">
+    <meta property="og:title" content="Live Earth & Connected Users Map - Pavan Digital Service">
+    <meta property="og:description" content="See live users connected to Pavan Digital Service across India and the globe in real-time.">
+    <meta property="og:image" content="https://your-website-domain.com/my%20photo.jpeg">
+
+    <!-- Security Meta Tags -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://www.gstatic.com https://apis.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https: data: blob: https://lh3.googleusercontent.com; connect-src 'self' https://api.web3forms.com https://get.geojs.io https://ipapi.co https://cdn.jsdelivr.net https://*.firebaseio.com https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firestore.googleapis.com https://*.googleapis.com; frame-src 'self' https://*.firebaseapp.com https://accounts.google.com;">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .map-hero {
+            text-align: center;
+            padding: 40px 5% 20px 5%;
+            background: linear-gradient(180deg, var(--bg-section-light) 0%, var(--bg-body) 100%);
+            position: relative;
+        }
+        .map-hero h1 {
+            font-size: 2.2rem;
+            color: var(--heading-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .map-hero p {
+            color: var(--text-light);
+            max-width: 750px;
+            margin: 0 auto 20px auto;
+            font-size: 1rem;
+        }
+
+        /* Live Metrics Banner */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            max-width: 1100px;
+            margin: 0 auto 30px auto;
+            padding: 0 15px;
+        }
+        .metric-box {
+            background: var(--bg-section);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .metric-box:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        .metric-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+        }
+        .metric-info h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            line-height: 1.2;
+            margin: 0;
+        }
+        .metric-info span {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* Main Globe Workspace */
+        .globe-workspace {
+            max-width: 1280px;
+            margin: 0 auto 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 340px;
+            gap: 24px;
+            align-items: start;
+        }
+
+        @media (max-width: 1024px) {
+            .globe-workspace {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Globe Canvas Container */
+        .globe-stage-card {
+            background: var(--bg-section);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            position: relative;
+        }
+
+        .globe-toolbar {
+            padding: 14px 20px;
+            background: var(--bg-section-light);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .map-view-tabs {
+            display: flex;
+            background: var(--bg-section);
+            padding: 4px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            gap: 4px;
+        }
+        .map-view-tab {
+            background: transparent;
+            border: none;
+            padding: 7px 14px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text-light);
+            border-radius: 6px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .map-view-tab:hover {
+            color: var(--text-main);
+        }
+        .map-view-tab.active {
+            background: #2563eb;
+            color: #ffffff;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+        }
+
+        .globe-action-btns {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-globe-action {
+            background: var(--bg-section);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 7px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .btn-globe-action:hover {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+        }
+        .btn-globe-action.active {
+            background: #10b981;
+            color: #ffffff;
+            border-color: #10b981;
+        }
+        .btn-globe-action.muted {
+            opacity: 0.6;
+        }
+
+        .btn-drop-pin-cta {
+            background: #ec4899;
+            color: #ffffff;
+            border: none;
+            padding: 7px 15px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s;
+            font-family: inherit;
+            box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
+        }
+        .btn-drop-pin-cta:hover {
+            background: #db2777;
+            transform: translateY(-1px);
+        }
+
+        /* Canvas Stage */
+        .canvas-container {
+            position: relative;
+            width: 100%;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+            overflow: hidden;
+        }
+        #globe-canvas {
+            display: block;
+            touch-action: none;
+        }
+
+        .globe-zoom-controls {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 10;
+        }
+        .btn-zoom {
+            width: 38px;
+            height: 38px;
+            border-radius: 8px;
+            background: var(--bg-section);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.2s;
+        }
+        .btn-zoom:hover {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+        }
+
+        .globe-hint-overlay {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(4px);
+            color: #e2e8f0;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Selected User Popup Card */
+        #selected-user-card {
+            display: none;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--bg-section);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            width: 280px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            z-index: 15;
+            animation: fadeIn 0.2s ease-out;
+        }
+        .selected-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        .selected-card-header h4 {
+            font-size: 0.95rem;
+            color: var(--heading-color);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .selected-name-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        .selected-name {
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: #2563eb;
+        }
+        .selected-detail-line {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .selected-detail-line strong {
+            color: var(--text-main);
+        }
+
+        /* Side Panels (Visitors Directory & Greetings) */
+        .sidebar-panels {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .side-card {
+            background: var(--bg-section);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+        }
+        .side-card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--heading-color);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .side-card-title span {
+            font-size: 0.8rem;
+            font-weight: normal;
+            background: #10b981;
+            color: #ffffff;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        .visitors-list {
+            max-height: 280px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-right: 4px;
+        }
+        .visitors-list::-webkit-scrollbar {
+            width: 4px;
+        }
+        .visitors-list::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        .visitor-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            background: var(--bg-section-light);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+        .visitor-item:hover {
+            border-color: #2563eb;
+            transform: translateX(3px);
+            background: var(--bg-body);
+        }
+        .visitor-item.is-hq {
+            border-color: #f59e0b;
+            background: rgba(245, 158, 11, 0.08);
+        }
+        .visitor-avatar {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #2563eb;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+        .visitor-avatar.hq-avatar {
+            background: #f59e0b;
+        }
+        .visitor-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .visitor-name {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--heading-color);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .visitor-location {
+            font-size: 0.78rem;
+            color: var(--text-light);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .visitor-page {
+            font-size: 0.72rem;
+            color: #2563eb;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .btn-locate-user {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 4px;
+            transition: color 0.2s;
+        }
+        .btn-locate-user:hover {
+            color: #2563eb;
+        }
+
+        .hq-badge {
+            background: #f59e0b;
+            color: #ffffff;
+            font-size: 0.65rem;
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+        .verified-badge {
+            color: #10b981;
+            font-size: 0.75rem;
+        }
+        .user-badge {
+            background: #10b981;
+            color: #ffffff;
+            font-size: 0.65rem;
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+        .guest-badge {
+            background: #3b82f6;
+            color: #ffffff;
+            font-size: 0.65rem;
+            padding: 1px 6px;
+            border-radius: 4px;
+        }
+
+        /* Greetings Feed */
+        .greetings-feed {
+            max-height: 220px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            padding-right: 4px;
+        }
+        .greeting-card {
+            background: var(--bg-section-light);
+            border-left: 3px solid #ec4899;
+            padding: 10px 12px;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .greeting-card:hover {
+            transform: translateX(3px);
+        }
+        .greeting-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            margin-bottom: 4px;
+        }
+        .greeting-user {
+            font-weight: 600;
+            color: var(--heading-color);
+        }
+        .greeting-city {
+            color: var(--text-light);
+            font-size: 0.75rem;
+        }
+        .greeting-msg {
+            font-size: 0.82rem;
+            color: var(--text-main);
+            margin: 0;
+            font-style: italic;
+        }
+
+        /* Drop Pin Modal */
+        #pin-modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><a href="index.html">pavan digital service</a></div>
+        <div class="nav-links">
+            <a href="index.html#my-apps">Apps</a>
+            <a href="index.html#about-me">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="live-map.html" style="color: #2563eb; font-weight: 600;"><i class="fas fa-globe-americas"></i> Live Map</a>
+            <a href="game.html">Game</a>
+            <a href="index.html#contact-me">Contact</a>
+        </div>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+    </nav>
+
+    <header class="map-hero">
+        <h1>
+            <span>🌍 Live Earth & Connected Users Map</span>
+        </h1>
+        <p>
+            पवन डिजिटल सर्विस से जुड़े दुनिया भर और भारत के लाइव यूज़र्स एवं विज़िटर्स को 3D इंटरैक्टिव पृथ्वी ग्लोब और विश्व मानचित्र पर देखें।
+        </p>
+
+        <!-- Live Metrics Grid -->
+        <div class="metrics-grid">
+            <div class="metric-box">
+                <div class="metric-icon" style="background: rgba(16, 185, 129, 0.12); color: #10b981;">
+                    <i class="fas fa-signal"></i>
+                </div>
+                <div class="metric-info">
+                    <h3 id="metric-live-users">16</h3>
+                    <span>लाइव कनेक्टेड यूज़र्स (Online Now)</span>
+                </div>
+            </div>
+
+            <div class="metric-box">
+                <div class="metric-icon" style="background: rgba(37, 99, 235, 0.12); color: #2563eb;">
+                    <i class="fas fa-globe-asia"></i>
+                </div>
+                <div class="metric-info">
+                    <h3 id="metric-countries">7</h3>
+                    <span>सक्रिय देश (Active Countries)</span>
+                </div>
+            </div>
+
+            <div class="metric-box">
+                <div class="metric-icon" style="background: rgba(245, 158, 11, 0.12); color: #f59e0b;">
+                    <i class="fas fa-city"></i>
+                </div>
+                <div class="metric-info">
+                    <h3 id="metric-hubs">12</h3>
+                    <span>सक्रिय शहर (Active Tech Hubs)</span>
+                </div>
+            </div>
+
+            <div class="metric-box">
+                <div class="metric-icon" style="background: rgba(236, 72, 153, 0.12); color: #ec4899;">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div class="metric-info">
+                    <h3>24 ms</h3>
+                    <span>सर्वर लेटेंसी (India HQ Node)</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <main class="globe-workspace">
+        <!-- 3D Globe & Map Area -->
+        <section class="globe-stage-card">
+            <!-- Toolbar -->
+            <div class="globe-toolbar">
+                <div class="map-view-tabs">
+                    <button id="btn-mode-3d" class="map-view-tab active">
+                        <i class="fas fa-globe"></i> 3D Earth Globe
+                    </button>
+                    <button id="btn-mode-2d" class="map-view-tab">
+                        <i class="fas fa-map"></i> 2D World Map
+                    </button>
+                    <button id="btn-mode-india" class="map-view-tab">
+                        <i class="fas fa-location-arrow"></i> India Zoom (भारत)
+                    </button>
+                </div>
+
+                <div class="globe-action-btns">
+                    <button id="btn-toggle-spin" class="btn-globe-action active" title="घूर्णन नियंत्रित करें">
+                        <i class="fas fa-pause"></i> <span>रोटेशन रोकें</span>
+                    </button>
+
+                    <button id="btn-toggle-sound" class="btn-globe-action" title="राडार ध्वनि टॉगल करें">
+                        <i class="fas fa-volume-up"></i>
+                    </button>
+
+                    <button id="btn-open-pin-modal" class="btn-drop-pin-cta">
+                        <i class="fas fa-map-pin"></i> <span>पिन ड्रॉप / नमस्ते भेजें</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Canvas Stage -->
+            <div class="canvas-container">
+                <canvas id="globe-canvas"></canvas>
+
+                <!-- Zoom Controls -->
+                <div class="globe-zoom-controls">
+                    <button id="btn-zoom-in" class="btn-zoom" title="ज़ूम इन (Zoom In)"><i class="fas fa-plus"></i></button>
+                    <button id="btn-zoom-out" class="btn-zoom" title="ज़ूम आउट (Zoom Out)"><i class="fas fa-minus"></i></button>
+                    <button id="btn-reset-view" class="btn-zoom" title="रीसेट करें (Reset View)"><i class="fas fa-sync-alt"></i></button>
+                </div>
+
+                <!-- Touch / Drag Hint -->
+                <div class="globe-hint-overlay">
+                    <i class="fas fa-hand-pointer"></i> ग्लोब को घुमाने के लिए ड्रैग करें • स्क्रॉल से ज़ूम करें • यूज़र पर क्लिक करें
+                </div>
+
+                <!-- Selected User Floating Info Card -->
+                <div id="selected-user-card"></div>
+            </div>
+        </section>
+
+        <!-- Sidebar Panels -->
+        <aside class="sidebar-panels">
+            <!-- Active Users Directory -->
+            <div class="side-card">
+                <div class="side-card-title">
+                    <div><i class="fas fa-users" style="color: #2563eb; margin-right: 6px;"></i> एक्टिव कनेक्टेड यूज़र्स</div>
+                    <span>Live</span>
+                </div>
+                <div class="visitors-list" id="visitors-list-content">
+                    <div style="text-align: center; padding: 20px; color: var(--text-light);">
+                        <i class="fas fa-spinner fa-spin"></i> यूज़र्स लोड हो रहे हैं...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Community Greetings Feed -->
+            <div class="side-card">
+                <div class="side-card-title">
+                    <div><i class="fas fa-comments" style="color: #ec4899; margin-right: 6px;"></i> लाइव ग्रीटिंग्स वॉल (Wall)</div>
+                    <button id="btn-quick-greet" class="btn-globe-action" style="padding: 2px 8px; font-size: 0.75rem;" onclick="document.getElementById('btn-open-pin-modal').click()">+ संदेश जोड़ें</button>
+                </div>
+                <div class="greetings-feed" id="greetings-feed-content">
+                    <div style="text-align: center; padding: 20px; color: var(--text-light); font-size: 0.85rem;">
+                        लोड हो रहा है...
+                    </div>
+                </div>
+            </div>
+
+            <!-- Developer HQ Card -->
+            <div class="side-card" style="border-top: 3px solid #f59e0b;">
+                <div class="side-card-title">
+                    <div><i class="fas fa-code" style="color: #f59e0b; margin-right: 6px;"></i> डेवलपर हब (Developer HQ)</div>
+                </div>
+                <div style="font-size: 0.88rem; color: var(--text-light); line-height: 1.5;">
+                    <strong style="color: var(--heading-color);">Pavan Shilpi</strong> (Android & Web Developer)<br>
+                    📍 Bhopal, Madhya Pradesh, India<br>
+                    ⚡ उच्च गुणवत्ता वाले Android ऐप्स व वेबसाइट विकास हेतु उपलब्ध।
+                </div>
+                <div style="margin-top: 14px; display: flex; gap: 8px;">
+                    <button type="button" class="btn-download btn-trigger-quote" style="background: #10b981; border: none; font-size: 0.82rem; padding: 8px 12px; flex: 1;">
+                        <i class="fas fa-calculator"></i> मुफ़्त कोटेशन
+                    </button>
+                    <a href="index.html#contact-me" class="btn-download" style="background: #2563eb; font-size: 0.82rem; padding: 8px 12px; flex: 1; text-align: center; text-decoration: none;">
+                        <i class="fas fa-envelope"></i> संपर्क करें
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <h2>Our Service Your Future</h2>
+            <p>Connecting clients & users worldwide with modern Android apps & digital solutions</p>
+        </div>
+        
+        <div class="social-links">
+            <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+        <hr>
+        
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="index.html#my-apps">Apps</a>
+            <a href="blog.html">Blog</a>
+            <a href="live-map.html">Live Map</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="index.html#contact-me">Contact Us</a>
+        </div>
+
+        <p class="copyright">&copy; 2026 Pavan Digital Service. All rights reserved.</p>
+    </footer>
+
+    <!-- Drop Pin / Send Live Greeting Modal -->
+    <div id="pin-modal-overlay">
+        <div class="auth-modal-card">
+            <button id="pin-modal-close" class="modal-close-btn">&times;</button>
+            <div class="auth-header">
+                <h3><i class="fas fa-map-pin" style="color: #ec4899;"></i> ग्लोब पर अपना पिन और ग्रीटिंग जोड़ें</h3>
+                <p>दुनिया भर के विज़िटर्स को अपनी उपस्थिति और संदेश दिखाएं</p>
+            </div>
+
+            <div id="pin-alert" class="auth-alert" style="display: none;"></div>
+
+            <form id="drop-pin-form">
+                <div class="auth-form-group">
+                    <label for="pin-user-name">आपका नाम (Your Name)</label>
+                    <div class="auth-input-wrapper">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="pin-user-name" placeholder="उदा. Pavan Shilpi" required maxlength="40">
+                    </div>
+                </div>
+
+                <div class="auth-form-group">
+                    <label for="pin-user-city">आपका शहर (Your City)</label>
+                    <div class="auth-input-wrapper">
+                        <i class="fas fa-city"></i>
+                        <input type="text" id="pin-user-city" placeholder="उदा. Indore / Bhopal / Delhi" maxlength="40">
+                    </div>
+                </div>
+
+                <div class="auth-form-group">
+                    <label for="pin-user-msg">ग्रीटिंग संदेश (Live Greeting Message)</label>
+                    <div class="auth-input-wrapper">
+                        <i class="fas fa-comment-dots"></i>
+                        <input type="text" id="pin-user-msg" placeholder="उदा. नमस्ते! Great portfolio apps." required maxlength="80">
+                    </div>
+                </div>
+
+                <button type="submit" id="btn-submit-pin" class="auth-btn-submit" style="background: #ec4899;">
+                    <i class="fas fa-map-pin"></i> ग्लोब पर पिन जोड़ें (Drop Live Pin)
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Core Scripts -->
+    <script src="animations.js"></script>
+    <script src="main.js"></script>
+    <script type="module" src="auth.js"></script>
+    <script type="module" src="visitor-tracker.js"></script>
+    <script src="whatsapp-widget.js"></script>
+    <script type="module" src="quote-modal.js"></script>
+
+    <!-- D3.js and TopoJSON libraries for 3D Globe & Maps -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/topojson-client@3"></script>
+
+    <!-- Live Map Logic -->
+    <script type="module" src="live-map.js"></script>
+</body>
+</html>

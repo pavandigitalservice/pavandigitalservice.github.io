@@ -7,7 +7,7 @@
     
     <!-- SEO Meta Tags -->
     <meta name="description" content="Pavan Shilpi, a passionate Android developer creating innovative and high-quality apps. View my portfolio and get in touch for your next project.">
-    <meta name="keywords" content="Pavan Shilpi, Android Developer, Mobile App Developer, Portfolio, Quiz Master App, Pavan Digital Service, Android Apps, Freelance Developer">
+    <meta name="keywords" content="Pavan Shilpi, Android Developer, Mobile App Developer, Portfolio, Quiz Master App, Arrow Maze Puzzle Game, Pavan Digital Service, Android Apps, Freelance Developer">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://your-website-domain.com/index.htm">
@@ -30,8 +30,9 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://unpkg.com https://pagead2.googlesyndication.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' https: data:; connect-src 'self' https://api.web3forms.com https://script.google.com https://script.googleusercontent.com; frame-src https://pagead2.googlesyndication.com;">
     <meta name="referrer" content="no-referrer-when-downgrade">
 
-    <!-- Google AdSense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+    <!-- Google AdSense Safe Manager & Script -->
+    <script src="ads-manager.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9947170873414654" crossorigin="anonymous"></script>
 
     <!-- Typed.js for typing animation -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" integrity="sha384-eVE2uDDdfpB4R0x6U27G2I2p5G32P5vP+4a1eETR73d/4wFf/2/S0G22N/A573a" crossorigin="anonymous"></script>
@@ -132,6 +133,7 @@
             <a href="#my-apps">Apps</a>
             <a href="#about-me">About</a>
             <a href="blog.html">Blog</a>
+            <a href="live-map.html"><i class="fas fa-globe-americas"></i> Live Map</a>
             <a href="game.html">Game</a>
             <a href="#contact-me">Contact</a>
         </div>
@@ -148,7 +150,15 @@
     <header class="hero">
         <h1>Hi, I'm <span class="highlight">PAVAN SHILPI</span> - Android & Web Developer</h1>
         <p>This is my official website where I showcase my expertise as a professional App and Web Developer</p> <br>
-        <a href="#my-apps" class="btn-download btn-hero">मेरे ऐप्स देखें</a>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <a href="#my-apps" class="btn-download btn-hero">मेरे ऐप्स देखें</a>
+            <a href="live-map.html" class="btn-download btn-hero" style="background: #3b82f6; text-decoration: none;">
+                <i class="fas fa-globe-asia"></i> 🌍 लाइव यूज़र्स मैप
+            </a>
+            <button type="button" class="btn-download btn-hero btn-trigger-quote" style="background: #10b981; border: none; cursor: pointer;">
+                <i class="fas fa-calculator"></i> मुफ़्त कोटेशन प्राप्त करें
+            </button>
+        </div>
     </header>
 <section id="my-apps" class="section section-light">
     <h2 class="section-title">Featured Applications</h2>
@@ -166,13 +176,22 @@
             </div>
         </div>
 
+        <!-- Arrow Maze Puzzle Game (New App) -->
         <div class="app-card animate-on-scroll" style="animation-delay: 0.2s;">
-            <div class="app-card-logo" style="font-size: 48px; color: #2563eb; line-height: 80px;">
-                <i class="fas fa-running"></i>
+            <div style="position: relative; display: inline-block; margin: 0 auto 15px;">
+                <img src="/public/assets/aistudio/app_icon_c642a752.jpeg" alt="Arrow Maze Puzzle Game" class="app-card-logo" style="display: block; margin: 0 auto; object-fit: cover; box-shadow: 0 4px 15px rgba(34, 197, 94, 0.35); border: 2px solid rgba(34, 197, 94, 0.45);">
+                <span style="position: absolute; top: -8px; right: -8px; background: linear-gradient(135deg, #10b981, #059669); color: white; font-size: 0.65rem; font-weight: 700; padding: 2px 8px; border-radius: 9999px; text-transform: uppercase; letter-spacing: 0.5px; box-shadow: 0 2px 6px rgba(0,0,0,0.25);">New Game</span>
             </div>
-            <h3>Endless Runner</h3>
-            <p>दौड़ें, कूदें और बाधाओं से बचें। अपना हाई स्कोर बनाएं!</p>
-            <a href="game.html" class="app-card-link">Play Now →</a>
+            <h3>Arrow Maze Puzzle Game</h3>
+            <p>चुनौतीपूर्ण नियॉन भूलभुलैया (Maze) और एरो पज़ल गेम। सही दिशा और तीर चुनकर भूलभुलैया पार करें और अपने दिमाग को तेज करें!</p>
+            <div class="store-buttons">
+                <a href="https://play.google.com/store/apps/details?id=com.pavandigitalservice.game.arrow_puzzle&pcampaignid=web_share" class="store-btn" target="_blank" rel="noopener noreferrer" style="background: linear-gradient(135deg, #059669, #047857);">
+                    <i class="fab fa-google-play"></i> Play Store से डाउनलोड करें
+                </a>
+                <a href="game.html" class="store-btn" style="background: #1e293b;">
+                    <i class="fas fa-gamepad"></i> गेम विवरण और ऑनलाइन खेलें →
+                </a>
+            </div>
         </div>
 
         <div class="app-card app-card--placeholder animate-on-scroll" style="animation-delay: 0.4s;">
@@ -236,11 +255,29 @@
         <a href="blog.html" class="btn-download">सभी पोस्ट देखें</a>
     </div>
 </section>
-<!-- Google AdSense Ad Unit -->
+<!-- Google AdSense Ad Unit (Leaderboard / Responsive Display Ad) -->
 <section class="section section-light ad-section">
-    <h3>Advertisement</h3>
-    <!-- AdSense से स्वीकृत होने के बाद, इस div को अपने AdSense विज्ञापन कोड से बदलें। -->
-    <div class="ad-placeholder">Your Ad Here</div>
+    <span class="ad-label">Advertisement</span>
+    <div class="ad-unit-responsive">
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-9947170873414654"
+             data-ad-slot="1234567890"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             if (window.safelyPushAd) {
+                 window.safelyPushAd(document.currentScript.previousElementSibling);
+             } else {
+                 try {
+                     var el = document.currentScript.previousElementSibling;
+                     if (el && el.offsetWidth > 0) {
+                         (adsbygoogle = window.adsbygoogle || []).push({});
+                     }
+                 } catch(e) {}
+             }
+        </script>
+    </div>
 </section>
 <!-- Contact Section -->
 <section id="contact-me" class="section section-light">
@@ -359,6 +396,10 @@
 <script src="animations.js"></script>
 <!-- <script src="contact.js"></script> -->
 <script src="main.js"></script>
+<script type="module" src="auth.js"></script>
+<script type="module" src="visitor-tracker.js"></script>
+<script src="whatsapp-widget.js"></script>
+<script type="module" src="quote-modal.js"></script>
 
 <!-- tsparticles library for background animation -->
 <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>

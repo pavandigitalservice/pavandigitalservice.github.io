@@ -1,0 +1,95 @@
+{
+  "entities": {
+    "users": {
+      "title": "User Profiles",
+      "description": "User profile records created upon registration or login",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["uid"]
+    },
+    "comments": {
+      "title": "Blog Comments",
+      "description": "Comments posted by users on blog posts",
+      "type": "object",
+      "properties": {
+        "commentId": { "type": "string" },
+        "postId": { "type": "string" },
+        "userId": { "type": "string" },
+        "authorName": { "type": "string" },
+        "authorEmail": { "type": "string" },
+        "authorAvatar": { "type": "string" },
+        "text": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["postId", "text", "createdAt"]
+    },
+    "likes": {
+      "title": "Blog Likes",
+      "description": "Like reactions on blog articles",
+      "type": "object",
+      "properties": {
+        "postId": { "type": "string" },
+        "likesCount": { "type": "number" },
+        "likedBy": { "type": "array" }
+      },
+      "required": ["postId"]
+    },
+    "inquiries": {
+      "title": "Service Quote Inquiries",
+      "description": "Lead and project quote requests from website visitors",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "service": { "type": "string" },
+        "budget": { "type": "string" },
+        "details": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "phone", "service"]
+    },
+    "visitors": {
+      "title": "Live Connected Visitors",
+      "description": "Active visitors and connected users displayed on the live earth map",
+      "type": "object",
+      "properties": {
+        "sessionId": { "type": "string" },
+        "city": { "type": "string" },
+        "country": { "type": "string" },
+        "countryCode": { "type": "string" },
+        "lat": { "type": "number" },
+        "lng": { "type": "number" },
+        "isUser": { "type": "boolean" },
+        "userName": { "type": "string" },
+        "userAvatar": { "type": "string" },
+        "lastActive": { "type": "string" },
+        "page": { "type": "string" }
+      },
+      "required": ["sessionId", "lat", "lng", "lastActive"]
+    },
+    "map_pins": {
+      "title": "Map Pins & Greetings",
+      "description": "Greetings and pinned locations dropped by connected users on the Earth globe",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userName": { "type": "string" },
+        "message": { "type": "string" },
+        "city": { "type": "string" },
+        "country": { "type": "string" },
+        "lat": { "type": "number" },
+        "lng": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userName", "lat", "lng", "createdAt"]
+    }
+  }
+}

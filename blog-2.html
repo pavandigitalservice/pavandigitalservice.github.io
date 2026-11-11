@@ -8,6 +8,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google AdSense Safe Manager & Script -->
+    <script src="ads-manager.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9947170873414654" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Loading Spinner -->
@@ -24,6 +28,7 @@
             <a href="index.htm#my-apps">Apps</a>
             <a href="index.htm#about-me">About</a>
             <a href="blog.html">Blog</a>
+            <a href="live-map.html"><i class="fas fa-globe-americas"></i> Live Map</a>
             <a href="game.html">Game</a>
             <a href="index.htm#contact-me">Contact</a>
         </div>
@@ -102,6 +107,29 @@
                     
                     इस सुधार के लागू होने के बाद देश का कोई भी युवा बेरोजगार नहीं रहेगा। जब हर बच्चा हुनरमंद होकर स्कूल से निकलेगा, तो वह नौकरी के लिए कतारों में नहीं लगेगा, बल्कि खुद स्वरोजगार (Self-employment) और नए उद्योगों का निर्माण करेगा। </p>
 
+                <!-- In-Article Google AdSense Ad Unit -->
+                <div class="ad-unit-article">
+                    <span class="ad-label">Advertisement</span>
+                    <ins class="adsbygoogle"
+                         style="display:block; text-align:center;"
+                         data-ad-layout="in-article"
+                         data-ad-format="fluid"
+                         data-ad-client="ca-pub-9947170873414654"
+                         data-ad-slot="1234567890"></ins>
+                    <script>
+                         if (window.safelyPushAd) {
+                             window.safelyPushAd(document.currentScript.previousElementSibling);
+                         } else {
+                             try {
+                                 var el = document.currentScript.previousElementSibling;
+                                 if (el && el.offsetWidth > 0) {
+                                     (adsbygoogle = window.adsbygoogle || []).push({});
+                                 }
+                             } catch(e) {}
+                         }
+                    </script>
+                </div>
+
                 <h3>निष्कर्ष: जब बदलेगी शिक्षा, तभी बदलेगा देश</h3>
                 <p>"आज हमारे सामने यह कड़वी हकीकत साफ है कि सिर्फ डिग्रियों के कागज़ बांटने और युवाओं को रट्टू तोता बनाने से भारत कभी आत्मनिर्भर नहीं बन सकता।
                      यदि हम वाकई देश को एक महाशक्ति और अपने युवाओं को सशक्त बनाना चाहते हैं, तो हमें प्राथमिक स्तर से लेकर हायर एजुकेशन तक इस खोखली और सिर्फ फीस वसूलने वाली व्यवस्था को उखाड़ फेंकना होगा।
@@ -122,25 +150,7 @@
             </div>
 
             <!-- Comments Section -->
-            <div id="disqus_thread" style="margin-top: 40px;"></div>
-            <script>
-                /**
-                *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-                */
-                var disqus_config = function () {
-                    this.page.url = 'https://your-website-domain.com/blog-2.html';  // अपनी वेबसाइट के डोमेन से बदलें
-                    this.page.identifier = 'blog-post-2'; // इस पेज के लिए यूनिक आईडी
-                };
-                
-                (function() { // इस लाइन के नीचे एडिट न करें
-                var d = document, s = d.createElement('script');
-                s.src = 'https://YOUR_SHORTNAME.disqus.com/embed.js'; // YOUR_SHORTNAME को अपने Disqus shortname से बदलें
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <div id="blog-comments-container" data-post-id="blog-post-2"></div>
         </div>
     </section>
 
@@ -161,6 +171,12 @@
     <!-- Scripts -->
     <script src="animations.js"></script>
     <script src="main.js"></script>
+    <script type="module" src="auth.js"></script>
+    <script type="module" src="visitor-tracker.js"></script>
+    <script type="module" src="comments.js"></script>
+    <script type="module" src="blog-enhancements.js"></script>
+    <script src="whatsapp-widget.js"></script>
+    <script type="module" src="quote-modal.js"></script>
     <!-- tsparticles library for background animation -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <!-- custom particles config -->

@@ -1,0 +1,6 @@
+{
+  "name": "Pavan Digital Service",
+  "description": "Portfolio website for Pavan Shilpi - Android App Developer & Web Designer",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

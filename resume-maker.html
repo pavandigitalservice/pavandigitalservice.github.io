@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume / CV Maker - Free A4 PDF Resume Builder | Pavan Digital Service</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Create a clean, professional A4 Resume or CV online for free. Upload photo, add 10th/12th/Graduation qualifications, skills, work experience, choose color themes, and print or save as PDF instantly.">
+    <meta name="keywords" content="Resume Maker, CV Maker, Free Resume Builder India, Biodata Maker, A4 PDF Resume, Pavan Digital Service, Pavan Shilpi">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Free Online Resume & CV Maker - Pavan Digital Service">
+    <meta property="og:description" content="Build a recruiter-ready A4 Resume with live preview, photo upload, color themes, and instant Print / Save as PDF.">
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google AdSense Safe Manager & Script -->
+    <script src="ads-manager.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9947170873414654" crossorigin="anonymous"></script>
+
+    <style>
+        :root {
+            --rm-surface: #ffffff;
+            --rm-surface-muted: #f8fafc;
+            --rm-border: #e2e8f0;
+            --rm-text: #0f172a;
+            --rm-text-muted: #475569;
+            --rm-input-bg: #ffffff;
+            --rm-desk: #e2e8f0;
+            --rm-accent: #1e3a8a;
+            --rm-accent-light: #eff6ff;
+        }
+
+        body.dark-mode {
+            --rm-surface: #1e293b;
+            --rm-surface-muted: #0f172a;
+            --rm-border: #334155;
+            --rm-text: #f1f5f9;
+            --rm-text-muted: #94a3b8;
+            --rm-input-bg: #0f172a;
+            --rm-desk: #090e1a;
+            --rm-accent-light: rgba(37, 99, 235, 0.16);
+        }
+
+        .rm-body {
+            font-family: 'DM Sans', 'Poppins', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--rm-text);
+        }
+
+        /* Keep Nav Links clean and single-line */
+        nav .nav-links a {
+            white-space: nowrap;
+        }
+
+        /* Workspace Top Header Bar */
+        .rm-header {
+            background: var(--rm-surface);
+            border-bottom: 1px solid var(--rm-border);
+            padding: 24px 5%;
+        }
+
+        .rm-header-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .rm-title-group h1 {
+            font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
+            font-size: clamp(1.45rem, 2.2vw, 1.95rem);
+            font-weight: 700;
+            color: var(--rm-text);
+            line-height: 1.25;
+            margin-bottom: 4px;
+            text-wrap: balance;
+        }
+
+        .rm-title-group p {
+            color: var(--rm-text-muted);
+            font-size: 0.94rem;
+            margin: 0;
+        }
+
+        .rm-toolbar {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .rm-theme-picker {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--rm-surface-muted);
+            border: 1px solid var(--rm-border);
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        .rm-theme-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--rm-text-muted);
+            margin-right: 4px;
+            white-space: nowrap;
+        }
+
+        .rm-swatch-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid transparent;
+            background: transparent;
+            color: var(--rm-text-muted);
+            padding: 5px 10px;
+            border-radius: 7px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+            transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+        }
+
+        .rm-swatch-btn:hover {
+            color: var(--rm-text);
+            background: rgba(148, 163, 184, 0.12);
+        }
+
+        .rm-swatch-btn.active {
+            background: var(--rm-surface);
+            color: var(--rm-text);
+            border-color: var(--rm-border);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+
+        .rm-swatch-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            display: inline-block;
+            flex-shrink: 0;
+        }
+
+        .rm-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 9px 16px;
+            border-radius: 10px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid var(--rm-border);
+            background: var(--rm-surface);
+            color: var(--rm-text);
+            font-family: inherit;
+            white-space: nowrap;
+            transition: transform 0.15s ease, background-color 0.15s ease, border-color 0.15s ease;
+            min-height: 40px;
+        }
+
+        .rm-btn:hover {
+            border-color: #2563eb;
+            transform: translateY(-1px);
+        }
+
+        .rm-btn:focus-visible,
+        .rm-swatch-btn:focus-visible,
+        .rm-mobile-tab:focus-visible {
+            outline: 2px solid #2563eb;
+            outline-offset: 2px;
+        }
+
+        .rm-btn-primary {
+            background: #1e3a8a;
+            color: #ffffff;
+            border-color: #1e3a8a;
+        }
+
+        .rm-btn-primary:hover {
+            background: #1d4ed8;
+            border-color: #1d4ed8;
+            color: #ffffff;
+        }
+
+        .rm-btn-danger {
+            color: #dc2626;
+        }
+
+        .rm-btn-danger:hover {
+            background: rgba(220, 38, 38, 0.08);
+            border-color: #dc2626;
+        }
+
+        /* Mobile Switcher Bar (hidden on desktop) */
+        .rm-mobile-bar {
+            display: none;
+            position: sticky;
+            top: 62px;
+            z-index: 50;
+            background: var(--rm-surface);
+            border-bottom: 1px solid var(--rm-border);
+            padding: 8px 16px;
+            gap: 8px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .rm-mobile-tabs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+            background: var(--rm-surface-muted);
+            padding: 4px;
+            border-radius: 10px;
+            border: 1px solid var(--rm-border);
+            flex: 1;
+        }
+
+        .rm-mobile-tab {
+            border: none;
+            background: transparent;
+            color: var(--rm-text-muted);
+            padding: 8px 10px;
+            border-radius: 7px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+            min-height: 40px;
+        }
+
+        .rm-mobile-tab.active {
+            background: var(--rm-surface);
+            color: var(--rm-text);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Main Split Workspace */
+        .rm-workspace {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 24px 20px 48px;
+            display: grid;
+            grid-template-columns: minmax(380px, 540px) minmax(0, 1fr);
+            gap: 28px;
+            align-items: start;
+        }
+
+        /* Left Pane: Editor Form */
+        .rm-editor-pane {
+            background: var(--rm-surface);
+            border: 1px solid var(--rm-border);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .rm-form-section {
+            padding: 22px 24px;
+            border-bottom: 1px solid var(--rm-border);
+        }
+
+        .rm-form-section:last-child {
+            border-bottom: none;
+        }
+
+        .rm-section-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .rm-section-head h2 {
+            font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
+            font-size: 1.06rem;
+            font-weight: 700;
+            color: var(--rm-text);
+            margin: 0;
+        }
+
+        .rm-section-sub {
+            font-size: 0.78rem;
+            color: var(--rm-text-muted);
+        }
+
+        .rm-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+
+        .rm-field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+
+        .rm-field:last-child {
+            margin-bottom: 0;
+        }
+
+        .rm-field label {
+            font-size: 0.83rem;
+            font-weight: 600;
+            color: var(--rm-text);
+        }
+
+        .rm-field input[type="text"],
+        .rm-field input[type="email"],
+        .rm-field input[type="tel"],
+        .rm-field input[type="date"],
+        .rm-field select,
+        .rm-field textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--rm-border);
+            border-radius: 9px;
+            background: var(--rm-input-bg);
+            color: var(--rm-text);
+            font-family: inherit;
+            font-size: 0.9rem;
+            line-height: 1.45;
+            transition: border-color 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .rm-field input:focus,
+        .rm-field select:focus,
+        .rm-field textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+        }
+
+        /* Photo Upload Row */
+        .rm-photo-uploader {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 14px;
+            background: var(--rm-surface-muted);
+            border: 1px dashed var(--rm-border);
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .rm-photo-thumb {
+            width: 72px;
+            height: 86px;
+            border-radius: 8px;
+            border: 1px solid var(--rm-border);
+            background: var(--rm-surface);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            flex-shrink: 0;
+            color: var(--rm-text-muted);
+            font-size: 1.5rem;
+        }
+
+        .rm-photo-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .rm-photo-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        .rm-photo-btns {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .rm-file-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: 8px;
+            background: #2563eb;
+            color: #ffffff;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .rm-file-label:hover {
+            background: #1d4ed8;
+        }
+
+        .rm-photo-hint {
+            font-size: 0.76rem;
+            color: var(--rm-text-muted);
+            margin: 0;
+        }
+
+        /* Quick Preset Buttons */
+        .rm-preset-row {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+
+        .rm-chip-btn {
+            background: var(--rm-surface-muted);
+            border: 1px solid var(--rm-border);
+            color: var(--rm-text-muted);
+            padding: 5px 10px;
+            border-radius: 7px;
+            font-size: 0.77rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            white-space: nowrap;
+        }
+
+        .rm-chip-btn:hover {
+            border-color: #2563eb;
+            color: #2563eb;
+        }
+
+        /* Repeatable Item Rows (Education & Experience) */
+        .rm-repeat-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .rm-repeat-row {
+            padding: 14px;
+            background: var(--rm-surface-muted);
+            border: 1px solid var(--rm-border);
+            border-radius: 10px;
+        }
+
+        .rm-repeat-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .rm-repeat-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--rm-text-muted);
+        }
+
+        .rm-icon-remove {
+            background: transparent;
+            border: none;
+            color: #ef4444;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-family: inherit;
+        }
+
+        .rm-icon-remove:hover {
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .rm-add-row-btn {
+            margin-top: 12px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 9px;
+            border: 1px dashed #2563eb;
+            background: transparent;
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 0.86rem;
+            cursor: pointer;
+            font-family: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .rm-add-row-btn:hover {
+            background: rgba(37, 99, 235, 0.06);
+        }
+
+        /* Checkboxes for Languages / Fresher */
+        .rm-check-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .rm-check-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--rm-text);
+            cursor: pointer;
+        }
+
+        .rm-check-label input[type="checkbox"] {
+            width: 17px;
+            height: 17px;
+            accent-color: #2563eb;
+            cursor: pointer;
+        }
+
+        /* Inline Confirm Banner for Reset */
+        .rm-inline-confirm {
+            display: none;
+            background: #fef2f2;
+            border-bottom: 1px solid #fecaca;
+            color: #991b1b;
+            padding: 10px 5%;
+            font-size: 0.88rem;
+        }
+
+        .rm-inline-confirm.visible {
+            display: block;
+        }
+
+        .rm-inline-confirm-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        /* Right Pane: Sticky A4 Preview Stage */
+        .rm-preview-pane {
+            position: sticky;
+            top: 84px;
+            background: var(--rm-desk);
+            border: 1px solid var(--rm-border);
+            border-radius: 16px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .rm-preview-meta {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px;
+            font-size: 0.82rem;
+            color: var(--rm-text-muted);
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .rm-paper-viewport {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* A4 Paper Exact Proportions: 210mm x 297mm (~794px x 1123px at 96dpi) */
+        .rm-a4-scale-box {
+            width: 794px;
+            transform-origin: top center;
+            flex-shrink: 0;
+        }
+
+        #resume-paper {
+            width: 794px;
+            min-height: 1123px;
+            background: #ffffff;
+            color: #1e293b;
+            box-shadow: 0 12px 35px rgba(15, 23, 42, 0.14);
+            padding: 44px 48px;
+            box-sizing: border-box;
+            font-family: 'DM Sans', 'Poppins', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            --cv-primary: #1e3a8a;
+            --cv-primary-soft: #eff6ff;
+            --cv-border: #cbd5e1;
+        }
+
+        /* Resume Theme Variants */
+        #resume-paper[data-theme="navy"] {
+            --cv-primary: #1e3a8a;
+            --cv-primary-soft: #eff6ff;
+        }
+
+        #resume-paper[data-theme="emerald"] {
+            --cv-primary: #065f46;
+            --cv-primary-soft: #ecfdf5;
+        }
+
+        #resume-paper[data-theme="crimson"] {
+            --cv-primary: #991b1b;
+            --cv-primary-soft: #fef2f2;
+        }
+
+        /* Resume Internal Typography & Layout (always crisp ink on white paper) */
+        .cv-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 24px;
+            padding-bottom: 18px;
+            border-bottom: 3px solid var(--cv-primary);
+            margin-bottom: 20px;
+        }
+
+        .cv-header-main {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .cv-name {
+            font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--cv-primary);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+            margin: 0 0 4px 0;
+            text-transform: uppercase;
+            word-break: break-word;
+        }
+
+        .cv-role {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #475569;
+            margin: 0 0 12px 0;
+        }
+
+        .cv-contact-line {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 16px;
+            font-size: 12px;
+            color: #334155;
+            line-height: 1.5;
+        }
+
+        .cv-contact-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cv-contact-item i {
+            color: var(--cv-primary);
+            font-size: 11px;
+        }
+
+        .cv-photo-box {
+            width: 102px;
+            height: 122px;
+            border: 2px solid var(--cv-primary);
+            border-radius: 6px;
+            overflow: hidden;
+            flex-shrink: 0;
+            background: #f8fafc;
+        }
+
+        .cv-photo-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .cv-section {
+            margin-bottom: 18px;
+        }
+
+        .cv-section-title {
+            font-family: 'Plus Jakarta Sans', 'Poppins', sans-serif;
+            font-size: 13.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--cv-primary);
+            background: var(--cv-primary-soft);
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin: 0 0 10px 0;
+        }
+
+        .cv-objective-text {
+            font-size: 12.5px;
+            line-height: 1.62;
+            color: #334155;
+            margin: 0;
+            text-align: justify;
+        }
+
+        /* Education Table */
+        .cv-edu-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            font-variant-numeric: tabular-nums;
+        }
+
+        .cv-edu-table th {
+            text-align: left;
+            background: #f1f5f9;
+            color: #0f172a;
+            font-weight: 700;
+            padding: 7px 10px;
+            border: 1px solid #cbd5e1;
+        }
+
+        .cv-edu-table td {
+            padding: 7px 10px;
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            vertical-align: top;
+        }
+
+        /* Experience Items */
+        .cv-exp-item {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .cv-exp-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .cv-exp-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 3px;
+        }
+
+        .cv-exp-role {
+            font-size: 13px;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .cv-exp-duration {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--cv-primary);
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+        }
+
+        .cv-exp-company {
+            font-size: 12px;
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 4px;
+        }
+
+        .cv-exp-desc {
+            font-size: 12px;
+            color: #334155;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Skills List */
+        .cv-skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+
+        .cv-skill-tag {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: #1e293b;
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+
+        /* Personal Profile Grid */
+        .cv-personal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 24px;
+            font-size: 12px;
+        }
+
+        .cv-personal-row {
+            display: grid;
+            grid-template-columns: 125px 1fr;
+            gap: 8px;
+            padding: 3px 0;
+        }
+
+        .cv-personal-label {
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        .cv-personal-val {
+            color: #334155;
+            word-break: break-word;
+        }
+
+        .cv-personal-row.full-span {
+            grid-column: 1 / -1;
+        }
+
+        /* Footer Declaration */
+        .cv-declaration {
+            margin-top: 22px;
+            padding-top: 14px;
+            border-top: 1px solid #cbd5e1;
+        }
+
+        .cv-declaration p {
+            font-size: 11.5px;
+            color: #475569;
+            margin: 0 0 22px 0;
+            line-height: 1.5;
+        }
+
+        .cv-sign-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: 12px;
+            color: #0f172a;
+            font-weight: 600;
+        }
+
+        .cv-sign-line {
+            text-align: right;
+        }
+
+        /* Responsive Rules */
+        @media (max-width: 1024px) {
+            .rm-mobile-bar {
+                display: flex;
+            }
+
+            .rm-workspace {
+                grid-template-columns: 1fr;
+                padding: 16px;
+            }
+
+            .rm-preview-pane {
+                position: static;
+                display: none;
+            }
+
+            .rm-workspace[data-mobile-view="preview"] .rm-editor-pane {
+                display: none;
+            }
+
+            .rm-workspace[data-mobile-view="preview"] .rm-preview-pane {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .rm-grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .rm-form-section {
+                padding: 18px 16px;
+            }
+
+            .rm-header {
+                padding: 18px 16px;
+            }
+
+            .rm-toolbar {
+                width: 100%;
+            }
+
+            .rm-theme-picker {
+                width: 100%;
+                justify-content: space-between;
+                overflow-x: auto;
+            }
+        }
+
+        /* ========================================================= */
+        /* CLEAN A4 PRINT / PDF EXPORT STYLES                        */
+        /* ========================================================= */
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        @media print {
+            html, body {
+                background: #ffffff !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                width: 210mm !important;
+                height: auto !important;
+            }
+
+            nav,
+            .rm-header,
+            .rm-mobile-bar,
+            .rm-inline-confirm,
+            .rm-editor-pane,
+            .rm-preview-meta,
+            .ad-section,
+            footer,
+            #loader-wrapper,
+            #whatsapp-widget-container,
+            .whatsapp-float {
+                display: none !important;
+            }
+
+            .rm-workspace {
+                display: block !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                max-width: none !important;
+                width: 210mm !important;
+            }
+
+            .rm-preview-pane {
+                display: block !important;
+                position: static !important;
+                background: transparent !important;
+                border: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                border-radius: 0 !important;
+            }
+
+            .rm-paper-viewport {
+                overflow: visible !important;
+                height: auto !important;
+                display: block !important;
+            }
+
+            .rm-a4-scale-box {
+                width: 210mm !important;
+                height: auto !important;
+                transform: none !important;
+            }
+
+            #resume-paper {
+                width: 210mm !important;
+                min-height: 297mm !important;
+                margin: 0 !important;
+                padding: 14mm 15mm !important;
+                box-shadow: none !important;
+                border: none !important;
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body class="rm-body">
+    <!-- Loading Spinner -->
+    <div id="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Top Navigation -->
+    <nav>
+        <div class="logo"><a href="index.html">pavan digital service</a></div>
+        <div class="nav-links">
+            <a href="index.html#my-apps">Apps</a>
+            <a href="index.html#about-me">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="live-map.html">Live Map</a>
+            <a href="game.html">Games</a>
+            <a href="resume-maker.html" style="color: #2563eb; font-weight: 700;">Resume Maker</a>
+            <a href="index.html#contact-me">Contact</a>
+        </div>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle menu">
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+            <span class="hamburger-bar"></span>
+        </button>
+    </nav>
+
+    <!-- Resume Maker Header Toolbar -->
+    <header class="rm-header">
+        <div class="rm-header-inner">
+            <div class="rm-title-group">
+                <h1>Resume / CV Maker</h1>
+                <p>अपनी जानकारी भरें, लाइव A4 प्रीव्यू देखें और सीधे PDF डाउनलोड या प्रिंट करें।</p>
+            </div>
+
+            <div class="rm-toolbar">
+                <div class="rm-theme-picker" role="group" aria-label="Resume Color Theme">
+                    <span class="rm-theme-label">Theme:</span>
+                    <button type="button" class="rm-swatch-btn active" data-cv-theme="navy">
+                        <span class="rm-swatch-color" style="background: #1e3a8a;"></span> Navy
+                    </button>
+                    <button type="button" class="rm-swatch-btn" data-cv-theme="emerald">
+                        <span class="rm-swatch-color" style="background: #065f46;"></span> Emerald
+                    </button>
+                    <button type="button" class="rm-swatch-btn" data-cv-theme="crimson">
+                        <span class="rm-swatch-color" style="background: #991b1b;"></span> Crimson
+                    </button>
+                </div>
+
+                <button type="button" id="btn-rm-sample" class="rm-btn" title="Fill Sample Resume">
+                    <i class="fas fa-wand-magic-sparkles"></i> Sample Data
+                </button>
+                <button type="button" id="btn-rm-reset" class="rm-btn rm-btn-danger" title="Clear All Fields">
+                    <i class="fas fa-rotate-left"></i> Reset
+                </button>
+                <button type="button" id="btn-rm-print" class="rm-btn rm-btn-primary">
+                    <i class="fas fa-file-pdf"></i> Print / Save as PDF
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Inline Reset Confirmation -->
+    <div id="rm-reset-confirm" class="rm-inline-confirm" role="alert">
+        <div class="rm-inline-confirm-inner">
+            <span>क्या आप वाकई सभी फॉर्म डिटेल्स और अपलोड की गई फोटो हटाना चाहते हैं?</span>
+            <div style="display: flex; gap: 8px;">
+                <button type="button" id="btn-rm-confirm-reset" class="rm-btn rm-btn-danger" style="padding: 6px 14px; min-height: 34px;">Yes, Clear All</button>
+                <button type="button" id="btn-rm-cancel-reset" class="rm-btn" style="padding: 6px 14px; min-height: 34px;">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Tab Switcher -->
+    <div class="rm-mobile-bar">
+        <div class="rm-mobile-tabs" role="tablist">
+            <button type="button" class="rm-mobile-tab active" id="mobile-tab-edit" data-view="edit">
+                <i class="fas fa-pen-to-square"></i> Edit Details
+            </button>
+            <button type="button" class="rm-mobile-tab" id="mobile-tab-preview" data-view="preview">
+                <i class="fas fa-file-lines"></i> Live A4 Preview
+            </button>
+        </div>
+        <button type="button" id="btn-rm-print-mobile" class="rm-btn rm-btn-primary" style="padding: 8px 12px;">
+            <i class="fas fa-download"></i> PDF
+        </button>
+    </div>
+
+    <!-- Split Workspace -->
+    <main class="rm-workspace" id="rm-workspace" data-mobile-view="edit">
+
+        <!-- LEFT: USER INPUT FORM -->
+        <section class="rm-editor-pane" aria-label="Resume Details Form">
+            <form id="resume-form" onsubmit="return false;">
+
+                <!-- 1. Personal & Contact Details -->
+                <div class="rm-form-section">
+                    <div class="rm-section-head">
+                        <h2>1. Personal Details & Photo</h2>
+                        <span class="rm-section-sub">व्यक्तिगत जानकारी</span>
+                    </div>
+
+                    <!-- Photo Upload with Preview -->
+                    <div class="rm-photo-uploader">
+                        <div class="rm-photo-thumb" id="rm-photo-thumb">
+                            <i class="fas fa-user" aria-hidden="true"></i>
+                        </div>
+                        <div class="rm-photo-actions">
+                            <div class="rm-photo-btns">
+                                <label for="rm-photo-input" class="rm-file-label">
+                                    <i class="fas fa-camera"></i> Upload Photo
+                                </label>
+                                <input type="file" id="rm-photo-input" accept="image/*" style="display: none;">
+                                <button type="button" id="btn-rm-remove-photo" class="rm-btn" style="padding: 6px 12px; min-height: 34px; font-size: 0.8rem; display: none;">
+                                    Remove
+                                </button>
+                            </div>
+                            <p class="rm-photo-hint">Passport-size photo (JPG / PNG). Stays private in your browser.</p>
+                        </div>
+                    </div>
+
+                    <div class="rm-grid-2">
+                        <div class="rm-field">
+                            <label for="rm-fullName">Full Name *</label>
+                            <input type="text" id="rm-fullName" placeholder="e.g. Rahul Kumar Sharma">
+                        </div>
+                        <div class="rm-field">
+                            <label for="rm-jobTitle">Role / Headline (Optional)</label>
+                            <input type="text" id="rm-jobTitle" placeholder="e.g. Office Executive / Developer">
+                        </div>
+                    </div>
+
+                    <div class="rm-grid-2">
+                        <div class="rm-field">
+                            <label for="rm-fatherName">Father's Name</label>
+                            <input type="text" id="rm-fatherName" placeholder="e.g. Shri Ramesh Sharma">
+                        </div>
+                        <div class="rm-field">
+                            <label for="rm-dob">Date of Birth</label>
+                            <input type="date" id="rm-dob">
+                        </div>
+                    </div>
+
+                    <div class="rm-grid-2">
+                        <div class="rm-field">
+                            <label for="rm-gender">Gender</label>
+                            <select id="rm-gender">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="rm-field">
+                            <label for="rm-maritalStatus">Marital Status</label>
+                            <select id="rm-maritalStatus">
+                                <option value="Unmarried">Unmarried</option>
+                                <option value="Married">Married</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="rm-grid-2">
+                        <div class="rm-field">
+                            <label for="rm-mobile">Mobile Number</label>
+                            <input type="tel" id="rm-mobile" placeholder="e.g. +91 98765 43210">
+                        </div>
+                        <div class="rm-field">
+                            <label for="rm-email">Email Address</label>
+                            <input type="email" id="rm-email" placeholder="e.g. rahul@example.com">
+                        </div>
+                    </div>
+
+                    <div class="rm-field">
+                        <label for="rm-address">Full Address</label>
+                        <textarea id="rm-address" rows="2" placeholder="House No, Street / Village, City, District, State - PIN Code"></textarea>
+                    </div>
+                </div>
+
+                <!-- 2. Career Objective -->
+                <div class="rm-form-section">
+                    <div class="rm-section-head">
+                        <h2>2. Career Objective</h2>
+                        <span class="rm-section-sub">करियर का उद्देश्य</span>
+                    </div>
+                    <div class="rm-field">
+                        <label for="rm-objective">Objective Statement</label>
+                        <textarea id="rm-objective" rows="3" placeholder="Write your career goal or select a quick template below..."></textarea>
+                        <div class="rm-preset-row">
+                            <button type="button" class="rm-chip-btn" data-obj-preset="fresher">+ Fresher Template</button>
+                            <button type="button" class="rm-chip-btn" data-obj-preset="office">+ Office / Admin</button>
+                            <button type="button" class="rm-chip-btn" data-obj-preset="tech">+ IT / Developer</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Educational Qualification -->
+                <div class="rm-form-section">
+                    <div class="rm-section-head">
+                        <h2>3. Educational Qualification</h2>
+                        <span class="rm-section-sub">10th, 12th, Graduation &amp; More</span>
+                    </div>
+                    <div id="rm-edu-list" class="rm-repeat-list"></div>
+                    <button type="button" id="btn-rm-add-edu" class="rm-add-row-btn">
+                        <i class="fas fa-plus"></i> Add More Qualification
+                    </button>
+                </div>
+
+                <!-- 4. Computer / Technical Skills -->
+                <div class="rm-form-section">
+                    <div class="rm-section-head">
+                        <h2>4. Computer &amp; Technical Skills</h2>
+                        <span class="rm-section-sub">कौशल (कॉमा से अलग करें)</span>
+                    </div>
+                    <div class="rm-field">
+                        <label for="rm-skills">Skills (Comma separated)</label>
+                        <textarea id="rm-skills" rows="2" placeholder="e.g. MS Word, Excel, PowerPoint, Tally Prime, CCC, Internet & Email"></textarea>
+                        <div class="rm-preset-row">
+                            <button type="button" class="rm-chip-btn" data-skill-add="MS Office (Word, Excel, PPT)">+ MS Office</button>
+                            <button type="button" class="rm-chip-btn" data-skill-add="Tally Prime with GST">+ Tally Prime</button>
+                            <button type="button" class="rm-chip-btn" data-skill-add="Hindi & English Typing">+ Typing</button>
+                            <button type="button" class="rm-chip-btn" data-skill-add="HTML, CSS & JavaScript">+ Web Dev</button>
+                            <button type="button" class="rm-chip-btn" data-skill-add="Android Studio & Kotlin">+ Android</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Work Experience -->
+                <div class="rm-form-section">
+                    <div class="rm-section-head">
+                        <h2>5. Work Experience</h2>
+                        <span class="rm-section-sub">कार्य अनुभव</span>
+                    </div>
+                    <div class="rm-check-group">
+                        <label class="rm-check-label">
+                            <input type="checkbox" id="rm-is-fresher">
+                            I am a Fresher (No prior work experience)
+                        </label>
+                    </div>
+                    <div id="rm-exp-wrapper">
+                        <div id="rm-exp-list" class="rm-repeat-list"></div>
+                        <button type="button" id="btn-rm-add-exp" class="rm-add-row-btn">
+                            <i class="fas fa-plus"></i> Add Work Experience
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 6. Languages Known -->
+                <div class="rm-form-section">
+                    <div class="rm-section-head">
+                        <h2>6. Languages Known</h2>
+                        <span class="rm-section-sub">भाषा ज्ञान</span>
+                    </div>
+                    <div class="rm-check-group">
+                        <label class="rm-check-label">
+                            <input type="checkbox" class="rm-lang-check" value="Hindi" checked> Hindi
+                        </label>
+                        <label class="rm-check-label">
+                            <input type="checkbox" class="rm-lang-check" value="English" checked> English
+                        </label>
+                    </div>
+                    <div class="rm-field">
+                        <label for="rm-extra-langs">Other Languages (Optional, comma separated)</label>
+                        <input type="text" id="rm-extra-langs" placeholder="e.g. Marathi, Gujarati, Sanskrit">
+                    </div>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- RIGHT: LIVE A4 PREVIEW -->
+        <section class="rm-preview-pane" aria-label="Live A4 Resume Preview">
+            <div class="rm-preview-meta">
+                <span><strong>Live A4 Preview</strong> &middot; 210mm &times; 297mm</span>
+                <span>Print dialog में <strong>Save as PDF</strong> और <strong>Background graphics</strong> चुनें</span>
+            </div>
+
+            <div class="rm-paper-viewport" id="rm-paper-viewport">
+                <div class="rm-a4-scale-box" id="rm-a4-scale-box">
+                    <article id="resume-paper" data-theme="navy">
+                        <div class="cv-top-content">
+                            <!-- Header -->
+                            <div class="cv-header">
+                                <div class="cv-header-main">
+                                    <h2 class="cv-name" id="cv-out-name">YOUR FULL NAME</h2>
+                                    <p class="cv-role" id="cv-out-role" style="display: none;"></p>
+                                    <div class="cv-contact-line" id="cv-out-contact"></div>
+                                </div>
+                                <div class="cv-photo-box" id="cv-out-photo-box" style="display: none;">
+                                    <img id="cv-out-photo" src="" alt="Applicant Photo">
+                                </div>
+                            </div>
+
+                            <!-- Career Objective -->
+                            <div class="cv-section" id="cv-sec-objective">
+                                <h3 class="cv-section-title">Career Objective</h3>
+                                <p class="cv-objective-text" id="cv-out-objective"></p>
+                            </div>
+
+                            <!-- Educational Qualification -->
+                            <div class="cv-section" id="cv-sec-edu">
+                                <h3 class="cv-section-title">Educational Qualification</h3>
+                                <table class="cv-edu-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Examination / Degree</th>
+                                            <th>Board / University</th>
+                                            <th>Passing Year</th>
+                                            <th>Percentage / Grade</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cv-out-edu-body"></tbody>
+                                </table>
+                            </div>
+
+                            <!-- Computer & Technical Skills -->
+                            <div class="cv-section" id="cv-sec-skills">
+                                <h3 class="cv-section-title">Computer &amp; Technical Skills</h3>
+                                <div class="cv-skills-grid" id="cv-out-skills"></div>
+                            </div>
+
+                            <!-- Work Experience -->
+                            <div class="cv-section" id="cv-sec-exp">
+                                <h3 class="cv-section-title">Work Experience</h3>
+                                <div id="cv-out-exp"></div>
+                            </div>
+
+                            <!-- Personal Profile & Languages -->
+                            <div class="cv-section" id="cv-sec-personal">
+                                <h3 class="cv-section-title">Personal Profile</h3>
+                                <div class="cv-personal-grid" id="cv-out-personal"></div>
+                            </div>
+                        </div>
+
+                        <!-- Declaration -->
+                        <div class="cv-declaration">
+                            <p>I hereby declare that all the information furnished above is true and correct to the best of my knowledge and belief.</p>
+                            <div class="cv-sign-row">
+                                <div>
+                                    <div>Date: <span id="cv-out-date"></span></div>
+                                    <div>Place: <span id="cv-out-place">____________</span></div>
+                                </div>
+                                <div class="cv-sign-line">
+                                    <div style="margin-bottom: 4px; color: #64748b; font-size: 11px;">Signature</div>
+                                    <div id="cv-out-sign-name">(Your Name)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Ad Unit -->
+    <div class="ad-section">
+        <span class="ad-label">Advertisement</span>
+        <div class="ad-unit-responsive">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9947170873414654"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 if (window.safelyPushAd) {
+                     window.safelyPushAd(document.currentScript.previousElementSibling);
+                 } else {
+                     try {
+                         var el = document.currentScript.previousElementSibling;
+                         if (el && el.offsetWidth > 0) {
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                         }
+                     } catch(e) {}
+                 }
+            </script>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h2>Our Service Your Future</h2>
+            <p>Pavan Digital Service - Free Resume Maker, Web Tools &amp; Android Apps</p>
+        </div>
+        <div class="social-links">
+            <a href="https://play.google.com/store/apps/details?id=com.pavandigitalservice.game.arrow_puzzle&pcampaignid=web_share" target="_blank" title="Arrow Maze on Google Play"><i class="fab fa-google-play"></i></a>
+            <a href="https://play.google.com/store/apps/details?id=com.pavan.quizmaster" target="_blank" title="Quiz Master App"><i class="fas fa-graduation-cap"></i></a>
+        </div>
+        <hr>
+        <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="game.html">Games Arcade</a>
+            <a href="index.html#my-apps">Apps</a>
+            <a href="index.html#contact-me">Contact</a>
+        </div>
+        <p class="copyright">&copy; 2026 Pavan Digital Service. All rights reserved.</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="whatsapp-widget.js"></script>
+    <script src="resume-maker.js"></script>
+</body>
+</html>

@@ -75,14 +75,16 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 24px;
     margin-left: auto;
+    align-items: center;
 }
 
 .nav-links a {
     color: var(--text-main);
     text-decoration: none;
     font-weight: 500;
+    white-space: nowrap;
     transition: color 0.3s;
 }
 
@@ -1215,7 +1217,7 @@ ins.adsbygoogle {
     height: 100%;
     background: rgba(15, 23, 42, 0.65);
     backdrop-filter: blur(4px);
-    display: flex;
+    display: none !important;
     align-items: center;
     justify-content: center;
     z-index: 2000;
@@ -1226,6 +1228,7 @@ ins.adsbygoogle {
 }
 
 .auth-modal-overlay.active {
+    display: flex !important;
     opacity: 1;
     visibility: visible;
 }

@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
 
 // Health check endpoints for container and readiness probes
 app.get('/health', (req, res) => {
@@ -35,29 +35,31 @@ app.use((err, req, res, next) => {
   res.status(500).send('Internal Server Error');
 });
 
-const server = app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Server running at http://0.0.0.0:${PORT}`);
+const server = app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
   console.log(`Ready on http://localhost:${PORT}`);
   console.log(`Local: http://localhost:${PORT}/`);
 });
 
 server.on('error', (err) => {
   console.error('[Server Listen Error]:', err);
+  process.exit(1);
 });
 
-// Graceful termination handling
-process.on('SIGTERM', () => {
-  console.log('SIGTERM signal received: closing HTTP server');
+// Graceful termination handling with fast connection cleanup to prevent EADDRINUSE on restart
+function shutdown(signal) {
+  console.log(`${signal} signal received: closing HTTP server`);
+  if (typeof server.closeAllConnections === 'function') {
+    server.closeAllConnections();
+  }
   server.close(() => {
     console.log('HTTP server closed');
     process.exit(0);
   });
-});
-
-process.on('SIGINT', () => {
-  console.log('SIGINT signal received: closing HTTP server');
-  server.close(() => {
-    console.log('HTTP server closed');
+  setTimeout(() => {
     process.exit(0);
-  });
-});
+  }, 500).unref();
+}
+
+process.on('SIGTERM', () => shutdown('SIGTERM'));
+process.on('SIGINT', () => shutdown('SIGINT'));

@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrow Maze Puzzle Game - Pavan Digital Service</title>
+    <title>Games Arcade - Play Ludo Online, Trivia & Runner | Pavan Digital Service</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Arrow Maze Puzzle Game by Pavan Shilpi. Play neon arrow mazes, solve brain-teasing puzzles, and download for free from Google Play Store.">
-    <meta name="keywords" content="Arrow Maze Puzzle Game, Pavan Shilpi, Pavan Digital Service, Android Game, Maze Puzzle, Brain Puzzle, Google Play Store">
+    <meta name="description" content="Play exciting online HTML5 mini-games: Ludo Online (लूडो), Quiz Rush Trivia, and Neon Cyber Runner. Developed by Pavan Shilpi - Pavan Digital Service.">
+    <meta name="keywords" content="Ludo Online, Play Ludo, Ludo Game, Quiz Master, Cyber Runner, Arrow Maze Puzzle Game, HTML5 Games, Play Online Games, Android Games, Pavan Shilpi, Pavan Digital Service">
 
     <!-- Open Graph / Social Sharing -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Arrow Maze Puzzle Game - Android & Web Demo">
-    <meta property="og:description" content="Play the exciting Arrow Maze Puzzle Game. Test your intellect with glowing neon mazes!">
+    <meta property="og:title" content="Games Arcade - Ludo Online & Mini Games">
+    <meta property="og:description" content="Play free online browser games: Ludo Online, Quiz Rush, and Cyber Runner!">
     <meta property="og:image" content="/public/assets/aistudio/app_icon_c642a752.jpeg">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
@@ -24,195 +24,452 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9947170873414654" crossorigin="anonymous"></script>
 
     <style>
-        .game-hero {
-            padding: 50px 20px 40px;
+        .arcade-hero {
+            padding: 50px 20px 30px;
             text-align: center;
-            background: linear-gradient(180deg, rgba(37, 99, 235, 0.08) 0%, rgba(16, 185, 129, 0.05) 100%);
+            background: linear-gradient(180deg, rgba(37, 99, 235, 0.08) 0%, rgba(16, 185, 129, 0.06) 100%);
             border-bottom: 1px solid var(--border-color);
         }
-        .game-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(16, 185, 129, 0.15);
-            color: #10b981;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            padding: 6px 14px;
-            border-radius: 9999px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-        }
-        .game-header-card {
-            max-width: 850px;
-            margin: 0 auto;
-            background: var(--bg-card);
-            padding: 35px 25px;
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.06);
-            border: 1px solid var(--border-color);
-        }
-        .game-icon-large {
-            width: 120px;
-            height: 120px;
-            border-radius: 24px;
-            object-fit: cover;
-            box-shadow: 0 8px 30px rgba(34, 197, 94, 0.4);
-            border: 3px solid rgba(34, 197, 94, 0.6);
-            margin: 0 auto 20px;
-            display: block;
-            transition: transform 0.3s;
-        }
-        .game-icon-large:hover {
-            transform: scale(1.05);
-        }
-        .game-title {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--text-color);
-        }
-        .game-author-tag {
-            color: #2563eb;
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-        .game-tagline {
-            color: var(--text-light);
-            font-size: 1.05rem;
-            max-width: 650px;
-            margin: 0 auto 25px;
-            line-height: 1.6;
-        }
-        .game-cta-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .btn-playstore {
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
-            color: white !important;
-            padding: 14px 28px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 1.05rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            box-shadow: 0 6px 20px rgba(5, 150, 105, 0.35);
-            transition: all 0.3s;
-        }
-        .btn-playstore:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(5, 150, 105, 0.5);
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-        }
-        .btn-scroll-demo {
-            background: var(--bg-section-light);
-            color: var(--text-color) !important;
-            border: 1px solid var(--border-color);
-            padding: 14px 24px;
-            border-radius: 12px;
-            font-weight: 600;
+        .arcade-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            text-decoration: none;
-            transition: all 0.3s;
+            background: rgba(37, 99, 235, 0.12);
+            color: #2563eb;
+            border: 1px solid rgba(37, 99, 235, 0.25);
+            padding: 6px 16px;
+            border-radius: 9999px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
-        .btn-scroll-demo:hover {
-            border-color: #2563eb;
-            color: #2563eb !important;
+        .arcade-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+        .arcade-subtitle {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            max-width: 680px;
+            margin: 0 auto 25px;
+            line-height: 1.6;
         }
 
-        /* Interactive Canvas Demo Section */
-        .demo-section {
-            padding: 50px 20px;
-            max-width: 900px;
-            margin: 0 auto;
+        /* Game Switcher Tabs */
+        .game-tabs-wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            padding: 0 15px;
         }
-        .demo-card {
-            background: #0b1329;
-            color: #e2e8f0;
-            padding: 30px;
+        .tab-btn {
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            color: var(--text-main);
+            padding: 12px 24px;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            font-family: inherit;
+        }
+        .tab-btn:hover {
+            border-color: #2563eb;
+            transform: translateY(-2px);
+        }
+        .tab-btn.active {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            border-color: #2563eb;
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+        .tab-btn.active.tab-ludo {
+            background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%);
+            border-color: #ef4444;
+            box-shadow: 0 8px 20px rgba(239, 68, 68, 0.35);
+        }
+        .tab-btn.active.tab-runner {
+            background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+            border-color: #7c3aed;
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3);
+        }
+
+        /* Particle suppression on Game Page */
+        #tsparticles {
+            display: none !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }
+
+        /* Game Container Section */
+        .arcade-container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+        .game-panel {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        .game-panel.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Generic Game Card */
+        .arcade-card {
+            background: #090e1a;
+            color: #f1f5f9;
             border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+            padding: 30px 24px;
             border: 1px solid rgba(59, 130, 246, 0.3);
-            text-align: center;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
             position: relative;
             overflow: hidden;
+            text-align: center;
         }
-        .demo-status-bar {
+        .arcade-status-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
-            padding-bottom: 15px;
+            padding-bottom: 14px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
         }
-        .demo-stat {
+        .status-pill {
             font-size: 0.95rem;
             color: #94a3b8;
         }
-        .demo-stat strong {
+        .status-pill strong {
             color: #38bdf8;
             font-size: 1.15rem;
         }
-        #mazeCanvas {
-            background: #030712;
+
+        /* GAME 1: Ludo Online */
+        .ludo-card {
+            background: #090e1a;
+            border-color: rgba(239, 68, 68, 0.35);
+        }
+        .ludo-mode-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+        }
+        .mode-pill-btn {
+            background: rgba(30, 41, 59, 0.8);
+            color: #94a3b8;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 9999px;
+            padding: 7px 16px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .mode-pill-btn.active {
+            background: #2563eb;
+            color: white;
+            border-color: #3b82f6;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        .ludo-board-wrap {
+            position: relative;
+            margin: 0 auto;
+            max-width: 480px;
+            width: 100%;
+        }
+        #ludoCanvas {
+            background: #0f172a;
+            border-radius: 18px;
+            border: 3px solid #334155;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55), 0 0 20px rgba(239, 68, 68, 0.15);
+            display: block;
+            margin: 0 auto;
+            max-width: 100%;
+            height: auto;
+            touch-action: manipulation;
+            cursor: pointer;
+        }
+        .ludo-controls-panel {
+            margin-top: 18px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
-            border: 2px solid rgba(34, 197, 94, 0.4);
-            box-shadow: inset 0 0 30px rgba(16, 185, 129, 0.15), 0 0 25px rgba(34, 197, 94, 0.2);
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .turn-status-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .turn-indicator-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+        .turn-indicator-pill.turn-red {
+            color: #ef4444;
+        }
+        .turn-indicator-pill.turn-green {
+            color: #10b981;
+        }
+        .dice-action-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .ludo-dice-box {
+            width: 68px;
+            height: 68px;
+            background: #ffffff;
+            border-radius: 14px;
+            box-shadow: 0 6px 0 #cbd5e1, 0 10px 20px rgba(0,0,0,0.4);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            padding: 6px;
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+            border: 2px solid #e2e8f0;
+            user-select: none;
+        }
+        .ludo-dice-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 0 #cbd5e1, 0 14px 24px rgba(0,0,0,0.5);
+        }
+        .ludo-dice-box.rolling {
+            animation: diceRollAnim 0.35s cubic-bezier(.36,.07,.19,.97) infinite;
+        }
+        @keyframes diceRollAnim {
+            0% { transform: rotate(0deg) scale(0.95); }
+            25% { transform: rotate(-15deg) scale(1.05); }
+            50% { transform: rotate(15deg) scale(0.95); }
+            75% { transform: rotate(-8deg) scale(1.02); }
+            100% { transform: rotate(0deg) scale(1); }
+        }
+        .dice-dot {
+            width: 12px;
+            height: 12px;
+            background: #0f172a;
+            border-radius: 50%;
+            margin: auto;
+            box-shadow: inset 0 2px 2px rgba(0,0,0,0.4);
+        }
+        .btn-roll-dice {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 14px;
+            font-size: 1.02rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 6px 18px rgba(239, 68, 68, 0.4);
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+        .btn-roll-dice:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(239, 68, 68, 0.55);
+        }
+        .btn-roll-dice:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        .ludo-instruction-tip {
+            font-size: 0.88rem;
+            color: #94a3b8;
+            margin: 0;
+            text-align: center;
+        }
+        .ludo-instruction-tip strong {
+            color: #38bdf8;
+        }
+
+        /* GAME 2: Quiz Rush */
+        .quiz-card {
+            background: #0d1527;
+            border-color: rgba(37, 99, 235, 0.35);
+        }
+        .quiz-timer-bar-wrap {
+            width: 100%;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+        .quiz-timer-bar {
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, #10b981 0%, #f59e0b 70%, #ef4444 100%);
+            transition: width 1s linear;
+        }
+        .quiz-category-badge {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.2);
+            color: #60a5fa;
+            border: 1px solid rgba(37, 99, 235, 0.4);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .quiz-question-text {
+            font-size: 1.35rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: #f8fafc;
+            min-height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        .quiz-options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        @media (max-width: 600px) {
+            .quiz-options-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .quiz-option-btn {
+            background: rgba(30, 41, 59, 0.7);
+            color: #e2e8f0;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            padding: 16px 20px;
+            border-radius: 14px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: inherit;
+        }
+        .quiz-option-btn:hover:not(:disabled) {
+            background: rgba(37, 99, 235, 0.3);
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+        }
+        .quiz-option-btn.correct {
+            background: #059669 !important;
+            border-color: #10b981 !important;
+            color: white !important;
+        }
+        .quiz-option-btn.wrong {
+            background: #b91c1c !important;
+            border-color: #ef4444 !important;
+            color: white !important;
+        }
+        .quiz-opt-letter {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        /* GAME 3: Neon Runner */
+        #runnerCanvas {
+            background: linear-gradient(180deg, #020617 0%, #0b1329 100%);
+            border-radius: 16px;
+            border: 2px solid rgba(124, 58, 237, 0.5);
+            box-shadow: 0 0 25px rgba(124, 58, 237, 0.3);
             display: block;
             margin: 0 auto;
             max-width: 100%;
             touch-action: none;
         }
-        .controls-panel {
-            margin-top: 25px;
+        .runner-controls-bar {
+            margin-top: 15px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-        }
-        .dpad-row {
-            display: flex;
-            gap: 12px;
-        }
-        .dpad-btn {
-            width: 58px;
-            height: 52px;
-            background: rgba(30, 41, 59, 0.85);
-            color: #38bdf8;
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            border-radius: 12px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: all 0.15s;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            user-select: none;
+            gap: 15px;
+            flex-wrap: wrap;
         }
-        .dpad-btn:active, .dpad-btn:hover {
-            background: #2563eb;
+        .btn-runner-action {
+            background: rgba(124, 58, 237, 0.25);
+            color: #c4b5fd;
+            border: 1px solid rgba(124, 58, 237, 0.5);
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        .btn-runner-action:active, .btn-runner-action:hover {
+            background: #7c3aed;
             color: white;
-            border-color: #60a5fa;
-            transform: scale(0.96);
-            box-shadow: 0 0 15px rgba(37, 99, 235, 0.6);
+            box-shadow: 0 0 15px rgba(124, 58, 237, 0.6);
+            transform: scale(0.97);
         }
-        .win-overlay {
+
+        /* Overlays (Win / Game Over) */
+        .game-overlay {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(11, 19, 41, 0.94);
+            background: rgba(9, 14, 26, 0.95);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -220,65 +477,69 @@
             padding: 30px;
             border-radius: 24px;
             z-index: 10;
-            animation: fadeIn 0.3s ease;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-        .win-icon {
+        .overlay-icon {
             font-size: 3.5rem;
-            color: #10b981;
-            margin-bottom: 15px;
-            animation: bounce 1s infinite alternate;
+            margin-bottom: 12px;
         }
-        @keyframes bounce {
-            from { transform: translateY(0); }
-            to { transform: translateY(-8px); }
+        .btn-primary-action {
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white !important;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+            transition: all 0.25s;
+        }
+        .btn-primary-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+        }
+        .btn-green-action {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+        }
+        .btn-green-action:hover {
+            box-shadow: 0 8px 20px rgba(5, 150, 105, 0.4);
         }
 
-        /* Features Grid */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 25px;
-            margin: 40px auto 20px;
-            max-width: 1050px;
-            padding: 0 20px;
+        /* App Promo Showcase */
+        .apps-promo-section {
+            background: var(--bg-section-light);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 20px;
         }
-        .feature-box {
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+        .app-promo-card {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            padding: 30px 22px;
-            border-radius: 18px;
+            padding: 30px;
+            border-radius: 20px;
             text-align: center;
-            transition: all 0.3s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
         }
-        .feature-box:hover {
+        .app-promo-card:hover {
             transform: translateY(-6px);
-            border-color: #10b981;
-            box-shadow: 0 12px 25px rgba(16, 185, 129, 0.1);
         }
-        .feature-icon-wrap {
-            width: 60px;
-            height: 60px;
-            border-radius: 14px;
-            background: rgba(16, 185, 129, 0.1);
-            color: #10b981;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin: 0 auto 16px;
-        }
-        .feature-box h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        .feature-box p {
-            color: var(--text-light);
-            font-size: 0.92rem;
-            line-height: 1.6;
+        .app-promo-img {
+            width: 85px;
+            height: 85px;
+            border-radius: 18px;
+            object-fit: cover;
+            margin: 0 auto 15px;
+            display: block;
         }
     </style>
 </head>
@@ -288,9 +549,6 @@
         <div class="loader"></div>
     </div>
 
-    <!-- Particles.js background -->
-    <div id="tsparticles"></div>
-
     <nav>
         <div class="logo"><a href="index.html">pavan digital service</a></div>
         <div class="nav-links">
@@ -298,7 +556,8 @@
             <a href="index.html#about-me">About</a>
             <a href="blog.html">Blog</a>
             <a href="live-map.html"><i class="fas fa-globe-americas"></i> Live Map</a>
-            <a href="game.html" style="color: #10b981; font-weight: 700;"><i class="fas fa-gamepad"></i> Game</a>
+            <a href="game.html" style="color: #2563eb; font-weight: 700;"><i class="fas fa-gamepad"></i> Games Arcade</a>
+            <a href="resume-maker.html">Resume Maker</a>
             <a href="index.html#contact-me">Contact</a>
         </div>
         <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
@@ -311,33 +570,31 @@
         </button>
     </nav>
 
-    <!-- Game Showcase Hero -->
-    <header class="game-hero">
-        <div class="game-badge">
-            <i class="fas fa-certificate"></i> Official Android Release &bull; Free on Google Play
+    <!-- Arcade Header -->
+    <header class="arcade-hero">
+        <div class="arcade-badge">
+            <i class="fas fa-gamepad"></i> HTML5 Instant Play &bull; No Installation Needed
         </div>
-        <div class="game-header-card animate-on-scroll">
-            <img src="/public/assets/aistudio/app_icon_c642a752.jpeg" alt="Arrow Maze Puzzle Game" class="game-icon-large">
-            <h1 class="game-title">Arrow Maze Puzzle Game</h1>
-            <p class="game-author-tag"><i class="fas fa-code"></i> Developed by Pavan Shilpi (Pavan Digital Service)</p>
-            <p class="game-tagline">
-                रोमांचक नियॉन भूलभुलैया (Maze) और एरो पज़ल का अनोखा संगम! सही दिशा में मुड़ें, तीरों के संकेत पहचानें और चुनौतीपूर्ण भूलभुलैया को पार करके अपने दिमाग को सुपरचार्ज करें।
-            </p>
-            <div class="game-cta-group">
-                <a href="https://play.google.com/store/apps/details?id=com.pavandigitalservice.game.arrow_puzzle&pcampaignid=web_share" class="btn-playstore" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-google-play fa-lg"></i> Google Play से डाउनलोड करें
-                </a>
-                <a href="#demo-area" class="btn-scroll-demo">
-                    <i class="fas fa-play-circle"></i> ऑनलाइन डेमो खेलें
-                </a>
-                <a href="index.html#my-apps" class="btn-scroll-demo">
-                    <i class="fas fa-th-large"></i> सभी ऐप्स देखें
-                </a>
-            </div>
+        <h1 class="arcade-title">🎮 पवन डिजिटल गेम्स आर्केड (Games Arcade)</h1>
+        <p class="arcade-subtitle">
+            सीधे अपने ब्राउज़र में खेलें 3 सुपर-एंटरटेनिंग गेम्स! लूडो ऑनलाइन (Ludo Online), दिमागी क्विज़ (Quiz Rush), और तेज़ रफ्तार साइबर रनर (Neon Dash)।
+        </p>
+
+        <!-- Game Switcher Tabs -->
+        <div class="game-tabs-wrapper">
+            <button class="tab-btn active tab-ludo" data-target="panel-ludo">
+                <i class="fas fa-dice"></i> 1. Ludo Online (लूडो)
+            </button>
+            <button class="tab-btn" data-target="panel-quiz">
+                <i class="fas fa-brain"></i> 2. Quiz Rush: Brain Challenge
+            </button>
+            <button class="tab-btn tab-runner" data-target="panel-runner">
+                <i class="fas fa-running"></i> 3. Neon Dash: Cyber Runner
+            </button>
         </div>
     </header>
 
-    <!-- Ad Unit -->
+    <!-- Ad Unit (Leaderboard) -->
     <div class="ad-section">
         <span class="ad-label">Advertisement</span>
         <div class="ad-unit-responsive">
@@ -362,88 +619,267 @@
         </div>
     </div>
 
-    <!-- Playable Browser Demo -->
-    <section id="demo-area" class="demo-section">
-        <div class="demo-card">
-            <div class="demo-status-bar">
-                <div class="demo-stat">Level: <strong id="level-display">1 / 3</strong></div>
-                <div class="demo-stat">Moves: <strong id="moves-display">0</strong></div>
-                <button id="btn-restart-maze" class="btn-scroll-demo" style="padding: 6px 14px; font-size: 0.85rem; border-color: rgba(255,255,255,0.2); color: #e2e8f0 !important;">
-                    <i class="fas fa-redo"></i> रीसेट लेवल
-                </button>
-            </div>
+    <!-- Main Arcade Container -->
+    <main class="arcade-container">
 
-            <canvas id="mazeCanvas" width="420" height="420"></canvas>
-
-            <div class="controls-panel">
-                <p style="color: #94a3b8; font-size: 0.85rem; margin-bottom: 5px;">
-                    <i class="fas fa-keyboard"></i> कीबोर्ड एरो कीज (Arrow Keys) या नीचे दिए गए बटन्स का उपयोग करें:
-                </p>
-                <div class="dpad-row">
-                    <button class="dpad-btn" id="btn-up" aria-label="Up"><i class="fas fa-arrow-up"></i></button>
+        <!-- ========================================== -->
+        <!-- GAME 1: LUDO ONLINE (लूडो ऑनलाइन)          -->
+        <!-- ========================================== -->
+        <div id="panel-ludo" class="game-panel active">
+            <div class="arcade-card ludo-card">
+                <div class="arcade-status-bar">
+                    <div class="status-pill">Game: <strong style="color: #ef4444;">Ludo Online</strong></div>
+                    <div class="status-pill">Mode: <strong id="ludo-mode-display" style="color: #38bdf8;">vs Computer</strong></div>
+                    <div class="status-pill">Home: <strong id="ludo-score-display" style="color: #10b981;">🔴 0 | 🟢 0</strong></div>
+                    <div style="display: flex; gap: 8px;">
+                        <button id="btn-ludo-sound" class="btn-primary-action" style="padding: 6px 12px; font-size: 0.85rem; background: rgba(255,255,255,0.12);" title="Sound On/Off">
+                            <i class="fas fa-volume-up" id="ludo-sound-icon"></i>
+                        </button>
+                        <button id="btn-ludo-restart" class="btn-primary-action" style="padding: 6px 14px; font-size: 0.85rem; background: rgba(255,255,255,0.15);">
+                            <i class="fas fa-redo"></i> नया गेम
+                        </button>
+                    </div>
                 </div>
-                <div class="dpad-row">
-                    <button class="dpad-btn" id="btn-left" aria-label="Left"><i class="fas fa-arrow-left"></i></button>
-                    <button class="dpad-btn" id="btn-down" aria-label="Down"><i class="fas fa-arrow-down"></i></button>
-                    <button class="dpad-btn" id="btn-right" aria-label="Right"><i class="fas fa-arrow-right"></i></button>
-                </div>
-            </div>
 
-            <!-- Victory Overlay (hidden by default) -->
-            <div id="win-overlay" class="win-overlay" style="display: none;">
-                <div class="win-icon"><i class="fas fa-trophy"></i></div>
-                <h2 style="color: #38bdf8; font-size: 1.8rem; margin-bottom: 8px;">शानदार जीत! (Victory!)</h2>
-                <p style="color: #cbd5e1; max-width: 420px; margin-bottom: 25px; line-height: 1.5;">
-                    आपने यह स्तर पूरा कर लिया! Google Play Store पर पूरा गेम डाउनलोड करें और 100+ नए पहेली स्तरों का आनंद लें।
-                </p>
-                <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
-                    <a href="https://play.google.com/store/apps/details?id=com.pavandigitalservice.game.arrow_puzzle&pcampaignid=web_share" class="btn-playstore" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-google-play"></i> पूरा गेम इंस्टॉल करें
-                    </a>
-                    <button id="btn-next-level" class="btn-scroll-demo" style="background: #2563eb; color: white !important; border: none; cursor: pointer;">
-                        अगला स्तर खेलें →
+                <!-- Mode & Target selection -->
+                <div class="ludo-mode-bar">
+                    <button class="mode-pill-btn active" id="mode-p1-btn">
+                        <i class="fas fa-robot"></i> 1 Player (vs Computer)
+                    </button>
+                    <button class="mode-pill-btn" id="mode-p2-btn">
+                        <i class="fas fa-user-friends"></i> 2 Players (Pass & Play)
+                    </button>
+                    <button class="mode-pill-btn" id="mode-quick-btn" title="First to reach 2 tokens home wins">
+                        <i class="fas fa-bolt"></i> Quick (2 Tokens)
+                    </button>
+                    <button class="mode-pill-btn active" id="mode-classic-btn" title="All 4 tokens to home">
+                        <i class="fas fa-trophy"></i> Classic (4 Tokens)
                     </button>
                 </div>
+
+                <!-- Canvas Board -->
+                <div class="ludo-board-wrap">
+                    <canvas id="ludoCanvas" width="480" height="480"></canvas>
+                </div>
+
+                <!-- Controls & Dice -->
+                <div class="ludo-controls-panel">
+                    <div class="turn-status-banner">
+                        <div class="turn-indicator-pill turn-red" id="ludo-turn-pill">
+                            <span id="turn-dot">🔴</span> <span id="turn-text">लाल (Red) - आपकी बारी</span>
+                        </div>
+                        <div id="ludo-bonus-badge" style="display: none; background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.4); padding: 2px 10px; border-radius: 9999px; font-size: 0.75rem; font-weight: 700;">
+                            🎉 BONUS ROLL!
+                        </div>
+                    </div>
+
+                    <div class="dice-action-row">
+                        <div class="ludo-dice-box" id="ludo-dice" title="पासा फेंकने के लिए क्लिक करें">
+                            <!-- 9 cells for pip dots -->
+                            <div id="pip-0"></div><div id="pip-1"></div><div id="pip-2"></div>
+                            <div id="pip-3"></div><div id="pip-4"></div><div id="pip-5"></div>
+                            <div id="pip-6"></div><div id="pip-7"></div><div id="pip-8"></div>
+                        </div>
+                        <button class="btn-roll-dice" id="btn-roll-dice">
+                            <i class="fas fa-dice"></i> पासा फेंकें (Roll Dice)
+                        </button>
+                    </div>
+
+                    <p class="ludo-instruction-tip" id="ludo-tip">
+                        👉 पासा फेंकने के लिए <strong>पासे या लाल बटन</strong> पर क्लिक करें। <strong>6</strong> आने पर गोटी बाहर निकलेगी!
+                    </p>
+                </div>
+
+                <!-- Win Celebration Overlay -->
+                <div id="ludo-win-overlay" class="game-overlay" style="display: none;">
+                    <div class="overlay-icon" style="color: #f59e0b;"><i class="fas fa-crown"></i></div>
+                    <h2 id="ludo-winner-title" style="color: #f8fafc; font-size: 1.9rem; margin-bottom: 8px;">बधाई हो! जीत आपकी हुई! 🏆</h2>
+                    <p id="ludo-winner-desc" style="color: #cbd5e1; max-width: 440px; margin-bottom: 25px; line-height: 1.5;">
+                        शानदार खेल! आपने सभी गोटियों को घर पहुंचाकर लूडो मैच जीत लिया है!
+                    </p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+                        <button id="btn-ludo-play-again" class="btn-primary-action" style="background: linear-gradient(135deg, #ef4444, #dc2626);">
+                            <i class="fas fa-redo"></i> फिर से खेलें (Play Again)
+                        </button>
+                        <a href="https://play.google.com/store/apps/details?id=com.pavandigitalservice.game.arrow_puzzle&pcampaignid=web_share" class="btn-primary-action btn-green-action" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-google-play"></i> Arrow Maze डाउनलोड करें
+                        </a>
+                        <a href="index.html#my-apps" class="btn-primary-action" style="background: rgba(255,255,255,0.15);">
+                            <i class="fas fa-th-large"></i> अन्य ऐप्स देखें
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
 
-    <!-- Key Game Features -->
-    <section class="section section-light">
-        <h2 class="section-title">गेम की मुख्य विशेषताएं (Key Features)</h2>
-        <div class="features-grid">
-            <div class="feature-box animate-on-scroll">
-                <div class="feature-icon-wrap"><i class="fas fa-compass"></i></div>
-                <h3>अनोखी एरो पज़ल प्रणाली</h3>
-                <p>भूलभुलैया में आगे बढ़ने के लिए तीरों की दिशा का चतुराई से उपयोग करें। हर दिशा नया रास्ता खोलती है।</p>
-            </div>
-            <div class="feature-box animate-on-scroll" style="animation-delay: 0.1s;">
-                <div class="feature-icon-wrap"><i class="fas fa-brain"></i></div>
-                <h3>मस्तिष्क और लॉजिक ट्रेनिंग</h3>
-                <p>बच्चों से लेकर बड़ों तक सभी के लिए आईक्यू, फोकस और लॉजिकल थिंकिंग को मजबूत करने वाले लेवल्स।</p>
-            </div>
-            <div class="feature-box animate-on-scroll" style="animation-delay: 0.2s;">
-                <div class="feature-icon-wrap"><i class="fas fa-bolt"></i></div>
-                <h3>नियॉन साइबर विज़ुअल्स</h3>
-                <p>आकर्षक ग्लोइंग ग्रीन और ब्लू साइबरपंक ग्राफिक्स और सहज टच कंट्रोल्स जो गेमप्ले को मनोरंजक बनाते हैं।</p>
-            </div>
-            <div class="feature-box animate-on-scroll" style="animation-delay: 0.3s;">
-                <div class="feature-icon-wrap"><i class="fas fa-wifi-slash"></i></div>
-                <h3>100% ऑफलाइन प्ले</h3>
-                <p>इंटरनेट डेटा की कोई चिंता नहीं! यात्रा, खाली समय या कहीं भी आराम से बिना इंटरनेट खेलें।</p>
+        <!-- ========================================== -->
+        <!-- GAME 2: QUIZ RUSH TRIVIA CHALLENGE         -->
+        <!-- ========================================== -->
+        <div id="panel-quiz" class="game-panel">
+            <div class="arcade-card quiz-card">
+                <div class="arcade-status-bar">
+                    <div class="status-pill">Question: <strong id="quiz-qnum">1 / 10</strong></div>
+                    <div class="status-pill">Score: <strong id="quiz-score" style="color: #10b981;">0</strong></div>
+                    <div class="status-pill">Best Score: <strong id="quiz-best-score" style="color: #f59e0b;">0</strong></div>
+                    <div class="status-pill">Streak: <strong id="quiz-streak" style="color: #ec4899;">0🔥</strong></div>
+                </div>
+
+                <div class="quiz-timer-bar-wrap">
+                    <div id="quiz-timer-bar" class="quiz-timer-bar"></div>
+                </div>
+
+                <span id="quiz-category" class="quiz-category-badge">सामान्य ज्ञान (General Knowledge)</span>
+                
+                <h3 id="quiz-question" class="quiz-question-text">
+                    भारत के संविधान निर्माता किसे कहा जाता है?
+                </h3>
+
+                <div id="quiz-options-container" class="quiz-options-grid">
+                    <!-- Populated dynamically via JS -->
+                </div>
+
+                <div style="margin-top: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                    <button id="btn-quiz-skip" class="btn-runner-action" style="padding: 8px 18px; font-size: 0.9rem;">
+                        <i class="fas fa-forward"></i> सवाल छोड़ें (Skip)
+                    </button>
+                    <div style="font-size: 0.85rem; color: #94a3b8;">
+                        Powered by <strong>Quiz Master App</strong>
+                    </div>
+                </div>
+
+                <!-- Quiz Over Overlay -->
+                <div id="quiz-over-overlay" class="game-overlay" style="display: none;">
+                    <div class="overlay-icon" style="color: #f59e0b;"><i class="fas fa-award"></i></div>
+                    <h2 style="color: #f8fafc; font-size: 1.8rem; margin-bottom: 6px;">क्विज़ समाप्त! (Quiz Complete)</h2>
+                    <p id="quiz-final-stats" style="color: #cbd5e1; font-size: 1.1rem; margin-bottom: 20px;">
+                        आपका स्कोर: <strong style="color: #10b981;">80 / 100</strong>
+                    </p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+                        <button id="btn-quiz-restart" class="btn-primary-action">
+                            <i class="fas fa-redo"></i> दोबारा खेलें (Play Again)
+                        </button>
+                        <a href="https://play.google.com/store/apps/details?id=com.pavan.quizmaster" class="btn-primary-action btn-green-action" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-google-play"></i> पूरा Quiz Master App डाउनलोड करें
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="section" style="text-align: center; padding: 60px 20px; background: linear-gradient(180deg, var(--bg-section-light) 0%, var(--bg-color) 100%);">
-        <h2 style="font-size: 2rem; margin-bottom: 15px;">आज ही अपने मोबाइल में खेलें!</h2>
-        <p style="color: var(--text-light); max-width: 600px; margin: 0 auto 30px;">
-            Arrow Maze Puzzle Game को Google Play Store से बिल्कुल मुफ्त डाउनलोड करें और अपने परिवार व दोस्तों के साथ शेयर करें।
+        <!-- ========================================== -->
+        <!-- GAME 3: NEON DASH - CYBER RUNNER           -->
+        <!-- ========================================== -->
+        <div id="panel-runner" class="game-panel">
+            <div class="arcade-card">
+                <div class="arcade-status-bar">
+                    <div class="status-pill">Game: <strong style="color: #a855f7;">Neon Dash</strong></div>
+                    <div class="status-pill">Distance: <strong id="runner-distance" style="color: #38bdf8;">0 m</strong></div>
+                    <div class="status-pill">Coins: <strong id="runner-coins" style="color: #facc15;">0 🪙</strong></div>
+                    <div class="status-pill">Best: <strong id="runner-best" style="color: #ec4899;">0 m</strong></div>
+                </div>
+
+                <canvas id="runnerCanvas" width="680" height="280"></canvas>
+
+                <div class="runner-controls-bar">
+                    <button class="btn-runner-action" id="btn-runner-jump">
+                        <i class="fas fa-arrow-up"></i> जंप (Space / Jump)
+                    </button>
+                    <button class="btn-runner-action" id="btn-runner-slide">
+                        <i class="fas fa-arrow-down"></i> झुकें / स्लाइड (Down / Slide)
+                    </button>
+                    <button class="btn-runner-action" id="btn-runner-restart">
+                        <i class="fas fa-redo"></i> रीस्टार्ट
+                    </button>
+                </div>
+                <p style="color: #94a3b8; font-size: 0.85rem; margin-top: 10px;">
+                    <i class="fas fa-info-circle"></i> स्क्रीन पर टैप करें या कीबोर्ड <strong>Space / Up Arrow</strong> से जंप करें, <strong>Down Arrow</strong> से स्लाइड करें!
+                </p>
+
+                <!-- Runner Game Over Overlay -->
+                <div id="runner-over-overlay" class="game-overlay" style="display: none;">
+                    <div class="overlay-icon" style="color: #ef4444;"><i class="fas fa-skull"></i></div>
+                    <h2 style="color: #f8fafc; font-size: 1.8rem; margin-bottom: 6px;">गेम ओवर! (Crashed!)</h2>
+                    <p id="runner-final-msg" style="color: #cbd5e1; font-size: 1.05rem; margin-bottom: 20px;">
+                        आपने कुल <strong style="color: #38bdf8;">140 m</strong> दूरी तय की!
+                    </p>
+                    <div style="display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;">
+                        <button id="btn-runner-play-again" class="btn-primary-action" style="background: linear-gradient(135deg, #7c3aed, #6d28d9);">
+                            <i class="fas fa-redo"></i> फिर से खेलें (Try Again)
+                        </button>
+                        <a href="index.html#my-apps" class="btn-primary-action" style="background: rgba(255,255,255,0.15);">
+                            <i class="fas fa-th-large"></i> अन्य ऐप्स देखें
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Ad Unit 2 -->
+    <div class="ad-section">
+        <span class="ad-label">Advertisement</span>
+        <div class="ad-unit-responsive">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9947170873414654"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+            <script>
+                 if (window.safelyPushAd) {
+                     window.safelyPushAd(document.currentScript.previousElementSibling);
+                 } else {
+                     try {
+                         var el = document.currentScript.previousElementSibling;
+                         if (el && el.offsetWidth > 0) {
+                             (adsbygoogle = window.adsbygoogle || []).push({});
+                         }
+                     } catch(e) {}
+                 }
+            </script>
+        </div>
+    </div>
+
+    <!-- Featured Native Android Apps Showcase -->
+    <section class="apps-promo-section">
+        <h2 class="section-title" style="margin-bottom: 10px;">हमारे मुख्य एंड्रॉइड गेम्स और ऐप्स (Official Apps)</h2>
+        <p style="text-align: center; color: var(--text-light); max-width: 600px; margin: 0 auto 35px;">
+            पवन डिजिटल सर्विस द्वारा विकसित आधिकारिक ऐप्स को Google Play Store से अपने मोबाइल पर इंस्टॉल करें:
         </p>
-        <a href="https://play.google.com/store/apps/details?id=com.pavandigitalservice.game.arrow_puzzle&pcampaignid=web_share" class="btn-playstore" style="font-size: 1.15rem; padding: 16px 36px;" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-google-play fa-lg"></i> Google Play से फ्री डाउनलोड करें
-        </a>
+
+        <div class="apps-grid">
+            <!-- App 1: Arrow Maze -->
+            <div class="app-promo-card">
+                <img src="/public/assets/aistudio/app_icon_c642a752.jpeg" alt="Arrow Maze Puzzle Game" class="app-promo-img" style="box-shadow: 0 4px 15px rgba(34, 197, 94, 0.35); border: 2px solid rgba(34, 197, 94, 0.5);">
+                <h3 style="margin-bottom: 6px;">Arrow Maze Puzzle Game</h3>
+                <span style="display: inline-block; background: rgba(16, 185, 129, 0.15); color: #10b981; font-size: 0.75rem; font-weight: 700; padding: 2px 10px; border-radius: 9999px; margin-bottom: 12px;">NEW RELEASE</span>
+                <p style="color: var(--text-light); font-size: 0.92rem; margin-bottom: 20px;">
+                    चुनौतीपूर्ण नियॉन भूलभुलैया और एरो पज़ल का अनूठा संगम। सही दिशा पहचानें और 100+ लेवल्स जीतें!
+                </p>
+                <a href="https://play.google.com/store/apps/details?id=com.pavandigitalservice.game.arrow_puzzle&pcampaignid=web_share" class="btn-primary-action btn-green-action" style="width: 100%; justify-content: center;" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-google-play"></i> Play Store से डाउनलोड करें
+                </a>
+            </div>
+
+            <!-- App 2: Quiz Master -->
+            <div class="app-promo-card">
+                <img src="logo.png" alt="Quiz Master App" class="app-promo-img" style="box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); border: 2px solid rgba(37, 99, 235, 0.4);">
+                <h3 style="margin-bottom: 6px;">Quiz Master App</h3>
+                <span style="display: inline-block; background: rgba(37, 99, 235, 0.15); color: #2563eb; font-size: 0.75rem; font-weight: 700; padding: 2px 10px; border-radius: 9999px; margin-bottom: 12px;">TOP RATED GK APP</span>
+                <p style="color: var(--text-light); font-size: 0.92rem; margin-bottom: 20px;">
+                    हजारों प्रतियोगी परीक्षा, सामान्य ज्ञान और दिमागी पहेलियों से भरपूर शानदार क्विज़ ऐप।
+                </p>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <a href="https://play.google.com/store/apps/details?id=com.pavan.quizmaster" class="btn-primary-action" style="width: 100%; justify-content: center;" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-google-play"></i> Play Store (Android)
+                    </a>
+                    <a href="https://www.indusappstore.com/apps/educational/quiz-master/com.pavan.quizmaster?page=details&id=com.pavan.quizmaster" class="btn-primary-action" style="width: 100%; justify-content: center; background: #1e293b;" target="_blank" rel="noopener noreferrer">
+                        <i class="fas fa-store"></i> Indus App Store
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer>
@@ -469,215 +905,1486 @@
         <p class="copyright">&copy; 2026 Pavan Digital Service. All rights reserved.</p>
     </footer>
 
-    <!-- Interactive Maze Canvas Game Script -->
+    <!-- ======================================================== -->
+    <!-- JAVASCRIPT: ARCADE TAB SWITCHER & 3 MINI GAMES ENGINE    -->
+    <!-- ======================================================== -->
     <script>
-    (function () {
-        const canvas = document.getElementById('mazeCanvas');
-        if (!canvas) return;
-        const ctx = canvas.getContext('2d');
-        const levelDisplay = document.getElementById('level-display');
-        const movesDisplay = document.getElementById('moves-display');
-        const winOverlay = document.getElementById('win-overlay');
-        const nextLevelBtn = document.getElementById('btn-next-level');
-        const restartBtn = document.getElementById('btn-restart-maze');
+    document.addEventListener('DOMContentLoaded', () => {
 
-        let currentLevel = 0;
-        let moves = 0;
-        let player = { x: 0, y: 0 };
-        let goal = { x: 0, y: 0 };
+        // ----------------------------------------------------
+        // TAB SWITCHER
+        // ----------------------------------------------------
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const panels = document.querySelectorAll('.game-panel');
 
-        // Mini level designs: 0: Path, 1: Wall, 2: Start, 3: Goal
-        const levels = [
-            // Level 1: 7x7 Neon Maze
-            {
-                grid: [
-                    [2, 0, 1, 0, 0, 0, 1],
-                    [1, 0, 1, 0, 1, 0, 0],
-                    [0, 0, 0, 0, 1, 1, 0],
-                    [0, 1, 1, 0, 0, 0, 0],
-                    [0, 0, 1, 1, 1, 1, 0],
-                    [1, 0, 0, 0, 0, 1, 0],
-                    [1, 1, 1, 1, 0, 0, 3]
-                ],
-                cols: 7, rows: 7
-            },
-            // Level 2: 8x8 Circuit Maze
-            {
-                grid: [
-                    [2, 0, 0, 1, 0, 0, 0, 0],
-                    [1, 1, 0, 1, 0, 1, 1, 0],
-                    [0, 0, 0, 0, 0, 1, 0, 0],
-                    [0, 1, 1, 1, 0, 1, 0, 1],
-                    [0, 1, 0, 0, 0, 0, 0, 1],
-                    [0, 1, 0, 1, 1, 1, 0, 0],
-                    [0, 0, 0, 1, 0, 0, 1, 0],
-                    [1, 1, 0, 0, 0, 1, 0, 3]
-                ],
-                cols: 8, rows: 8
-            },
-            // Level 3: 9x9 Arrow Puzzle Maze
-            {
-                grid: [
-                    [2, 0, 1, 0, 0, 0, 1, 0, 0],
-                    [1, 0, 1, 0, 1, 0, 1, 1, 0],
-                    [0, 0, 0, 0, 1, 0, 0, 0, 0],
-                    [0, 1, 1, 0, 1, 1, 1, 1, 0],
-                    [0, 0, 1, 0, 0, 0, 0, 1, 0],
-                    [1, 0, 1, 1, 1, 1, 0, 1, 0],
-                    [0, 0, 0, 0, 0, 1, 0, 0, 0],
-                    [0, 1, 1, 1, 0, 1, 1, 1, 0],
-                    [0, 0, 0, 1, 0, 0, 0, 0, 3]
-                ],
-                cols: 9, rows: 9
-            }
-        ];
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                panels.forEach(p => p.classList.remove('active'));
 
-        let activeMaze = null;
-
-        function loadLevel(idx) {
-            currentLevel = idx % levels.length;
-            const lvl = levels[currentLevel];
-            activeMaze = JSON.parse(JSON.stringify(lvl.grid));
-            moves = 0;
-            movesDisplay.innerText = moves;
-            levelDisplay.innerText = `${currentLevel + 1} / ${levels.length}`;
-            winOverlay.style.display = 'none';
-
-            // Find start and goal
-            for (let r = 0; r < lvl.rows; r++) {
-                for (let c = 0; c < lvl.cols; c++) {
-                    if (activeMaze[r][c] === 2) {
-                        player = { x: c, y: r };
-                    } else if (activeMaze[r][c] === 3) {
-                        goal = { x: c, y: r };
+                btn.classList.add('active');
+                const targetId = btn.getAttribute('data-target');
+                const targetPanel = document.getElementById(targetId);
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                    // Resize/Trigger canvases when tab switches
+                    if (targetId === 'panel-runner' && typeof startRunnerLoop === 'function') {
+                        startRunnerLoop();
                     }
                 }
-            }
-            drawMaze();
-        }
-
-        function drawMaze() {
-            const lvl = levels[currentLevel];
-            const cellW = canvas.width / lvl.cols;
-            const cellH = canvas.height / lvl.rows;
-
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-            // Draw Grid & Walls
-            for (let r = 0; r < lvl.rows; r++) {
-                for (let c = 0; c < lvl.cols; c++) {
-                    const x = c * cellW;
-                    const y = r * cellH;
-
-                    if (activeMaze[r][c] === 1) {
-                        // Wall (Neon Cyber Wall)
-                        ctx.fillStyle = '#1e293b';
-                        ctx.fillRect(x + 2, y + 2, cellW - 4, cellH - 4);
-                        ctx.strokeStyle = '#0284c7';
-                        ctx.lineWidth = 1.5;
-                        ctx.strokeRect(x + 2, y + 2, cellW - 4, cellH - 4);
-                    } else {
-                        // Path Grid Line
-                        ctx.strokeStyle = 'rgba(30, 41, 59, 0.4)';
-                        ctx.lineWidth = 1;
-                        ctx.strokeRect(x, y, cellW, cellH);
-                    }
-                }
-            }
-
-            // Draw Goal Arrow Target
-            const gx = goal.x * cellW + cellW / 2;
-            const gy = goal.y * cellH + cellH / 2;
-            ctx.save();
-            ctx.shadowColor = '#10b981';
-            ctx.shadowBlur = 18;
-            ctx.fillStyle = '#10b981';
-            ctx.beginPath();
-            ctx.arc(gx, gy, cellW * 0.35, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Arrow symbol inside goal
-            ctx.fillStyle = '#0f172a';
-            ctx.beginPath();
-            ctx.moveTo(gx - cellW * 0.15, gy + cellW * 0.15);
-            ctx.lineTo(gx, gy - cellW * 0.2);
-            ctx.lineTo(gx + cellW * 0.15, gy + cellW * 0.15);
-            ctx.lineTo(gx, gy + cellW * 0.05);
-            ctx.closePath();
-            ctx.fill();
-            ctx.restore();
-
-            // Draw Player Arrow
-            const px = player.x * cellW + cellW / 2;
-            const py = player.y * cellH + cellH / 2;
-            ctx.save();
-            ctx.shadowColor = '#38bdf8';
-            ctx.shadowBlur = 16;
-            ctx.fillStyle = '#38bdf8';
-            ctx.beginPath();
-            ctx.arc(px, py, cellW * 0.32, 0, Math.PI * 2);
-            ctx.fill();
-
-            // Arrow shape for player
-            ctx.fillStyle = '#0f172a';
-            ctx.beginPath();
-            ctx.moveTo(px, py - cellW * 0.18);
-            ctx.lineTo(px + cellW * 0.15, py + cellW * 0.12);
-            ctx.lineTo(px, py + cellW * 0.02);
-            ctx.lineTo(px - cellW * 0.15, py + cellW * 0.12);
-            ctx.closePath();
-            ctx.fill();
-            ctx.restore();
-        }
-
-        function move(dx, dy) {
-            const lvl = levels[currentLevel];
-            const nx = player.x + dx;
-            const ny = player.y + dy;
-
-            if (nx < 0 || nx >= lvl.cols || ny < 0 || ny >= lvl.rows) return;
-            if (activeMaze[ny][nx] === 1) return; // Wall
-
-            player.x = nx;
-            player.y = ny;
-            moves++;
-            movesDisplay.innerText = moves;
-            drawMaze();
-
-            // Check Win condition
-            if (player.x === goal.x && player.y === goal.y) {
-                setTimeout(() => {
-                    winOverlay.style.display = 'flex';
-                }, 150);
-            }
-        }
-
-        // Keyboard Controls
-        window.addEventListener('keydown', (e) => {
-            if (['ArrowUp', 'KeyW'].includes(e.code)) { e.preventDefault(); move(0, -1); }
-            else if (['ArrowDown', 'KeyS'].includes(e.code)) { e.preventDefault(); move(0, 1); }
-            else if (['ArrowLeft', 'KeyA'].includes(e.code)) { e.preventDefault(); move(-1, 0); }
-            else if (['ArrowRight', 'KeyD'].includes(e.code)) { e.preventDefault(); move(1, 0); }
+            });
         });
 
-        // Touch / Click D-Pad buttons
-        document.getElementById('btn-up')?.addEventListener('click', () => move(0, -1));
-        document.getElementById('btn-down')?.addEventListener('click', () => move(0, 1));
-        document.getElementById('btn-left')?.addEventListener('click', () => move(-1, 0));
-        document.getElementById('btn-right')?.addEventListener('click', () => move(1, 0));
+        // ====================================================
+        // GAME 1: LUDO ONLINE (लूडो ऑनलाइन) GAME ENGINE
+        // ====================================================
+        (function initLudo() {
+            const canvas = document.getElementById('ludoCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
 
-        restartBtn?.addEventListener('click', () => loadLevel(currentLevel));
-        nextLevelBtn?.addEventListener('click', () => loadLevel(currentLevel + 1));
+            // UI Elements
+            const modeDisplay = document.getElementById('ludo-mode-display');
+            const scoreDisplay = document.getElementById('ludo-score-display');
+            const turnPill = document.getElementById('ludo-turn-pill');
+            const turnText = document.getElementById('turn-text');
+            const turnDot = document.getElementById('turn-dot');
+            const bonusBadge = document.getElementById('ludo-bonus-badge');
+            const diceBox = document.getElementById('ludo-dice');
+            const rollBtn = document.getElementById('btn-roll-dice');
+            const tipEl = document.getElementById('ludo-tip');
+            const restartBtn = document.getElementById('btn-ludo-restart');
+            const soundBtn = document.getElementById('btn-ludo-sound');
+            const soundIcon = document.getElementById('ludo-sound-icon');
+            const winOverlay = document.getElementById('ludo-win-overlay');
+            const winnerTitle = document.getElementById('ludo-winner-title');
+            const winnerDesc = document.getElementById('ludo-winner-desc');
+            const playAgainBtn = document.getElementById('btn-ludo-play-again');
 
-        // Initial Load
-        loadLevel(0);
-    })();
+            const modeP1Btn = document.getElementById('mode-p1-btn');
+            const modeP2Btn = document.getElementById('mode-p2-btn');
+            const modeQuickBtn = document.getElementById('mode-quick-btn');
+            const modeClassicBtn = document.getElementById('mode-classic-btn');
+
+            // Game Settings & Audio
+            let vsComputer = true;
+            let tokenCount = 4; // 2 for Quick, 4 for Classic
+            let soundEnabled = true;
+            let audioCtx = null;
+
+            function getAudio() {
+                if (!audioCtx) {
+                    const AudioCtor = window.AudioContext || window.webkitAudioContext;
+                    if (AudioCtor) audioCtx = new AudioCtor();
+                }
+                if (audioCtx && audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                return audioCtx;
+            }
+
+            function playSound(type) {
+                if (!soundEnabled) return;
+                try {
+                    const actx = getAudio();
+                    if (!actx) return;
+                    const now = actx.currentTime;
+
+                    if (type === 'roll') {
+                        const osc = actx.createOscillator();
+                        const g = actx.createGain();
+                        osc.type = 'triangle';
+                        osc.frequency.setValueAtTime(180, now);
+                        osc.frequency.exponentialRampToValueAtTime(70, now + 0.18);
+                        g.gain.setValueAtTime(0.2, now);
+                        g.gain.linearRampToValueAtTime(0.01, now + 0.18);
+                        osc.connect(g);
+                        g.connect(actx.destination);
+                        osc.start();
+                        osc.stop(now + 0.18);
+                    } else if (type === 'step') {
+                        const osc = actx.createOscillator();
+                        const g = actx.createGain();
+                        osc.type = 'sine';
+                        osc.frequency.setValueAtTime(520, now);
+                        g.gain.setValueAtTime(0.15, now);
+                        g.gain.exponentialRampToValueAtTime(0.001, now + 0.08);
+                        osc.connect(g);
+                        g.connect(actx.destination);
+                        osc.start();
+                        osc.stop(now + 0.08);
+                    } else if (type === 'capture') {
+                        const osc = actx.createOscillator();
+                        const g = actx.createGain();
+                        osc.type = 'sawtooth';
+                        osc.frequency.setValueAtTime(580, now);
+                        osc.frequency.exponentialRampToValueAtTime(110, now + 0.28);
+                        g.gain.setValueAtTime(0.28, now);
+                        g.gain.linearRampToValueAtTime(0.01, now + 0.28);
+                        osc.connect(g);
+                        g.connect(actx.destination);
+                        osc.start();
+                        osc.stop(now + 0.28);
+                    } else if (type === 'win') {
+                        [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => {
+                            setTimeout(() => {
+                                try {
+                                    const osc = actx.createOscillator();
+                                    const g = actx.createGain();
+                                    osc.frequency.value = f;
+                                    g.gain.setValueAtTime(0.22, actx.currentTime);
+                                    g.gain.exponentialRampToValueAtTime(0.001, actx.currentTime + 0.35);
+                                    osc.connect(g);
+                                    g.connect(actx.destination);
+                                    osc.start();
+                                    osc.stop(actx.currentTime + 0.35);
+                                } catch(e) {}
+                            }, i * 130);
+                        });
+                    }
+                } catch(e) {}
+            }
+
+            // Board Geometry
+            const BOARD_GRID = 15;
+            const LOGICAL_SIZE = 480;
+            const CELL = LOGICAL_SIZE / BOARD_GRID; // 32px
+
+            // DPR Retina Setup
+            const dpr = Math.min(window.devicePixelRatio || 1, 2);
+            canvas.width = LOGICAL_SIZE * dpr;
+            canvas.height = LOGICAL_SIZE * dpr;
+            ctx.scale(dpr, dpr);
+
+            // 52 Common Perimeter Track starting at Red Start (1, 6)
+            const COMMON_PATH = [
+                { c: 1, r: 6 }, // 0: Red Start (Safe)
+                { c: 2, r: 6 }, { c: 3, r: 6 }, { c: 4, r: 6 }, { c: 5, r: 6 },
+                { c: 6, r: 5 }, { c: 6, r: 4 }, { c: 6, r: 3 }, { c: 6, r: 2 }, // 8: Safe Star
+                { c: 6, r: 1 }, { c: 6, r: 0 }, { c: 7, r: 0 }, { c: 8, r: 0 },
+                { c: 8, r: 1 }, // 13: Green Start (Safe)
+                { c: 8, r: 2 }, { c: 8, r: 3 }, { c: 8, r: 4 }, { c: 8, r: 5 },
+                { c: 9, r: 6 }, { c: 10, r: 6 }, { c: 11, r: 6 }, { c: 12, r: 6 }, // 21: Safe Star
+                { c: 13, r: 6 }, { c: 14, r: 6 }, { c: 14, r: 7 }, { c: 14, r: 8 },
+                { c: 13, r: 8 }, // 26: Yellow Start (Safe)
+                { c: 12, r: 8 }, { c: 11, r: 8 }, { c: 10, r: 8 }, { c: 9, r: 8 },
+                { c: 8, r: 9 }, { c: 8, r: 10 }, { c: 8, r: 11 }, { c: 8, r: 12 }, // 34: Safe Star
+                { c: 8, r: 13 }, { c: 8, r: 14 }, { c: 7, r: 14 }, { c: 6, r: 14 },
+                { c: 6, r: 13 }, // 39: Blue Start (Safe)
+                { c: 6, r: 12 }, { c: 6, r: 11 }, { c: 6, r: 10 }, { c: 6, r: 9 },
+                { c: 5, r: 8 }, { c: 4, r: 8 }, { c: 3, r: 8 }, { c: 2, r: 8 }, // 47: Safe Star
+                { c: 1, r: 8 }, { c: 0, r: 8 }, { c: 0, r: 7 }, { c: 0, r: 6 }
+            ];
+
+            const SAFE_STEPS = [0, 8, 13, 21, 26, 34, 39, 47];
+
+            // Yard base positions
+            const RED_YARDS = [
+                { c: 1.5, r: 1.5 }, { c: 3.5, r: 1.5 },
+                { c: 1.5, r: 3.5 }, { c: 3.5, r: 3.5 }
+            ];
+            const GREEN_YARDS = [
+                { c: 10.5, r: 1.5 }, { c: 12.5, r: 1.5 },
+                { c: 10.5, r: 3.5 }, { c: 12.5, r: 3.5 }
+            ];
+
+            // Game State
+            let redTokens = [];
+            let greenTokens = [];
+            let currentTurn = 'red'; // 'red' or 'green'
+            let diceValue = 1;
+            let diceRolled = false;
+            let isRolling = false;
+            let isMoving = false;
+            let consecutiveSixes = 0;
+            let gameOver = false;
+            let confettiParticles = [];
+
+            function initGameState() {
+                redTokens = [];
+                greenTokens = [];
+                for (let i = 0; i < 4; i++) {
+                    redTokens.push({ id: i, step: -1, active: i < tokenCount, color: 'red' });
+                    greenTokens.push({ id: i, step: -1, active: i < tokenCount, color: 'green' });
+                }
+                currentTurn = 'red';
+                diceValue = 1;
+                diceRolled = false;
+                isRolling = false;
+                isMoving = false;
+                consecutiveSixes = 0;
+                gameOver = false;
+                confettiParticles = [];
+                winOverlay.style.display = 'none';
+                bonusBadge.style.display = 'none';
+                renderDice(diceValue);
+                updateUI();
+                drawBoard();
+            }
+
+            // Pip Map for 3x3 Dice Face
+            const PIPS = {
+                1: [4],
+                2: [2, 6],
+                3: [2, 4, 6],
+                4: [0, 2, 6, 8],
+                5: [0, 2, 4, 6, 8],
+                6: [0, 2, 3, 5, 6, 8]
+            };
+
+            function renderDice(val) {
+                const activePips = PIPS[val] || [4];
+                for (let i = 0; i < 9; i++) {
+                    const pipEl = document.getElementById(`pip-${i}`);
+                    if (!pipEl) continue;
+                    pipEl.innerHTML = '';
+                    if (activePips.includes(i)) {
+                        const dot = document.createElement('div');
+                        dot.className = 'dice-dot';
+                        if (currentTurn === 'red') dot.style.background = '#dc2626';
+                        else dot.style.background = '#059669';
+                        pipEl.appendChild(dot);
+                    }
+                }
+            }
+
+            function updateUI() {
+                const redHome = redTokens.filter(t => t.active && t.step === 56).length;
+                const greenHome = greenTokens.filter(t => t.active && t.step === 56).length;
+                scoreDisplay.innerText = `🔴 ${redHome}/${tokenCount} | 🟢 ${greenHome}/${tokenCount}`;
+
+                if (currentTurn === 'red') {
+                    turnPill.className = 'turn-indicator-pill turn-red';
+                    turnDot.innerText = '🔴';
+                    turnText.innerText = vsComputer ? 'लाल (Red) - आपकी बारी' : 'लाल (Player 1) की बारी';
+                    rollBtn.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+                    rollBtn.disabled = diceRolled || isRolling || isMoving || gameOver;
+                } else {
+                    turnPill.className = 'turn-indicator-pill turn-green';
+                    turnDot.innerText = '🟢';
+                    turnText.innerText = vsComputer ? 'हरा (Green) - कंप्यूटर की बारी' : 'हरा (Player 2) की बारी';
+                    rollBtn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                    rollBtn.disabled = vsComputer || diceRolled || isRolling || isMoving || gameOver;
+                }
+
+                if (!diceRolled) {
+                    tipEl.innerHTML = vsComputer && currentTurn === 'green'
+                        ? '🤖 कंप्यूटर पासा फेंक रहा है...'
+                        : '👉 <strong>पासा फेंकने</strong> के लिए पासे या बटन पर क्लिक करें।';
+                } else {
+                    const legal = getMovableTokens(currentTurn, diceValue);
+                    if (legal.length > 0) {
+                        tipEl.innerHTML = `🎲 <strong>${diceValue}</strong> आया! बोर्ड पर <strong>चमकती गोटी (Highlight)</strong> पर टैप करके चलें।`;
+                    } else {
+                        tipEl.innerHTML = `🎲 <strong>${diceValue}</strong> आया! कोई चाल संभव नहीं है।`;
+                    }
+                }
+            }
+
+            // Coordinate Calculation for Token
+            function getTokenCoords(token) {
+                const isRed = token.color === 'red';
+                const step = token.step;
+
+                if (step === -1) {
+                    const base = isRed ? RED_YARDS[token.id] : GREEN_YARDS[token.id];
+                    return { x: base.c * CELL, y: base.r * CELL };
+                }
+
+                if (step >= 0 && step <= 50) {
+                    const idx = isRed ? step : (13 + step) % 52;
+                    const cell = COMMON_PATH[idx];
+                    return { x: (cell.c + 0.5) * CELL, y: (cell.r + 0.5) * CELL };
+                }
+
+                if (step >= 51 && step <= 55) {
+                    if (isRed) {
+                        return { x: (step - 50 + 0.5) * CELL, y: 7.5 * CELL };
+                    } else {
+                        return { x: 7.5 * CELL, y: (step - 50 + 0.5) * CELL };
+                    }
+                }
+
+                // Step 56 (Home)
+                if (isRed) {
+                    return { x: (6.5 + (token.id % 2) * 0.4) * CELL, y: (7.2 + Math.floor(token.id / 2) * 0.5) * CELL };
+                } else {
+                    return { x: (7.2 + (token.id % 2) * 0.5) * CELL, y: (6.5 + Math.floor(token.id / 2) * 0.4) * CELL };
+                }
+            }
+
+            // Legal Move Check
+            function canMoveToken(token, roll) {
+                if (!token.active || token.step === 56) return false;
+                if (token.step === -1) return roll === 6;
+                return token.step + roll <= 56;
+            }
+
+            function getMovableTokens(color, roll) {
+                const tokens = color === 'red' ? redTokens : greenTokens;
+                return tokens.filter(t => canMoveToken(t, roll));
+            }
+
+            // Draw Board
+            function drawBoard() {
+                ctx.clearRect(0, 0, LOGICAL_SIZE, LOGICAL_SIZE);
+
+                // Background
+                ctx.fillStyle = '#ffffff';
+                ctx.fillRect(0, 0, LOGICAL_SIZE, LOGICAL_SIZE);
+
+                // Draw Yards
+                drawYard(0, 0, '#ef4444', '#fef2f2', RED_YARDS); // Red: Top-Left
+                drawYard(9 * CELL, 0, '#10b981', '#f0fdf4', GREEN_YARDS); // Green: Top-Right
+                drawYard(9 * CELL, 9 * CELL, '#f59e0b', '#fffbeb', null); // Yellow: Bottom-Right
+                drawYard(0, 9 * CELL, '#3b82f6', '#eff6ff', null); // Blue: Bottom-Left
+
+                // Draw Grid Cells & Home Corridors
+                for (let r = 0; r < BOARD_GRID; r++) {
+                    for (let c = 0; c < BOARD_GRID; c++) {
+                        // Skip Yards & Center
+                        if ((c < 6 && r < 6) || (c > 8 && r < 6) || (c < 6 && r > 8) || (c > 8 && r > 8)) continue;
+                        if (c >= 6 && c <= 8 && r >= 6 && r <= 8) continue;
+
+                        const x = c * CELL;
+                        const y = r * CELL;
+
+                        let fill = '#ffffff';
+                        // Red Home Corridor & Start
+                        if (r === 7 && c >= 1 && c <= 5) fill = '#ef4444';
+                        else if (c === 1 && r === 6) fill = '#fee2e2'; // Red start base
+
+                        // Green Home Corridor & Start
+                        else if (c === 7 && r >= 1 && r <= 5) fill = '#10b981';
+                        else if (c === 8 && r === 1) fill = '#d1fae5'; // Green start base
+
+                        // Yellow Home Corridor
+                        else if (r === 7 && c >= 9 && c <= 13) fill = '#f59e0b';
+                        else if (c === 13 && r === 8) fill = '#fef3c7';
+
+                        // Blue Home Corridor
+                        else if (c === 7 && r >= 9 && r <= 13) fill = '#3b82f6';
+                        else if (c === 6 && r === 13) fill = '#dbeafe';
+
+                        ctx.fillStyle = fill;
+                        ctx.fillRect(x, y, CELL, CELL);
+
+                        ctx.strokeStyle = '#cbd5e1';
+                        ctx.lineWidth = 1;
+                        ctx.strokeRect(x, y, CELL, CELL);
+                    }
+                }
+
+                // Draw Stars on Safe Squares
+                const safeCoords = [
+                    { c: 1, r: 6 }, { c: 6, r: 2 }, { c: 8, r: 1 }, { c: 12, r: 6 },
+                    { c: 13, r: 8 }, { c: 8, r: 12 }, { c: 6, r: 13 }, { c: 2, r: 8 }
+                ];
+                safeCoords.forEach(pos => {
+                    drawStar((pos.c + 0.5) * CELL, (pos.r + 0.5) * CELL, 8, 4, 5, '#eab308');
+                });
+
+                // Center Home Victory Triangles
+                const cx = 7.5 * CELL;
+                const cy = 7.5 * CELL;
+
+                // Red Triangle (Left)
+                ctx.fillStyle = '#ef4444';
+                ctx.beginPath();
+                ctx.moveTo(6 * CELL, 6 * CELL);
+                ctx.lineTo(6 * CELL, 9 * CELL);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+
+                // Green Triangle (Top)
+                ctx.fillStyle = '#10b981';
+                ctx.beginPath();
+                ctx.moveTo(6 * CELL, 6 * CELL);
+                ctx.lineTo(9 * CELL, 6 * CELL);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+
+                // Yellow Triangle (Right)
+                ctx.fillStyle = '#f59e0b';
+                ctx.beginPath();
+                ctx.moveTo(9 * CELL, 6 * CELL);
+                ctx.lineTo(9 * CELL, 9 * CELL);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+
+                // Blue Triangle (Bottom)
+                ctx.fillStyle = '#3b82f6';
+                ctx.beginPath();
+                ctx.moveTo(6 * CELL, 9 * CELL);
+                ctx.lineTo(9 * CELL, 9 * CELL);
+                ctx.lineTo(cx, cy);
+                ctx.closePath();
+                ctx.fill();
+
+                // Center Border
+                ctx.strokeStyle = '#0f172a';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(6 * CELL, 6 * CELL, 3 * CELL, 3 * CELL);
+
+                // Center Gold Star
+                drawStar(cx, cy, 14, 7, 5, '#fef08a');
+
+                // Draw Tokens
+                const movableTokens = diceRolled ? getMovableTokens(currentTurn, diceValue) : [];
+                drawTokensList(greenTokens, movableTokens);
+                drawTokensList(redTokens, movableTokens);
+
+                // Draw Confetti if game over
+                if (gameOver && confettiParticles.length > 0) {
+                    drawConfetti();
+                }
+            }
+
+            function drawYard(x, y, color, innerColor, seats) {
+                const size = 6 * CELL;
+                ctx.fillStyle = color;
+                ctx.fillRect(x, y, size, size);
+
+                ctx.strokeStyle = '#0f172a';
+                ctx.lineWidth = 2;
+                ctx.strokeRect(x, y, size, size);
+
+                // Inner White Card
+                const pad = 0.8 * CELL;
+                ctx.fillStyle = innerColor;
+                ctx.beginPath();
+                ctx.roundRect(x + pad, y + pad, size - pad * 2, size - pad * 2, 16);
+                ctx.fill();
+                ctx.strokeStyle = color;
+                ctx.lineWidth = 3;
+                ctx.stroke();
+
+                // Seat Circles
+                if (seats) {
+                    seats.forEach(s => {
+                        const sx = s.c * CELL;
+                        const sy = s.r * CELL;
+                        ctx.fillStyle = '#ffffff';
+                        ctx.beginPath();
+                        ctx.arc(sx, sy, 0.65 * CELL, 0, Math.PI * 2);
+                        ctx.fill();
+                        ctx.strokeStyle = color;
+                        ctx.lineWidth = 2;
+                        ctx.stroke();
+                    });
+                }
+            }
+
+            function drawStar(cx, cy, outerRadius, innerRadius, spikes, color) {
+                let rot = Math.PI / 2 * 3;
+                let x = cx;
+                let y = cy;
+                const step = Math.PI / spikes;
+
+                ctx.save();
+                ctx.beginPath();
+                ctx.moveTo(cx, cy - outerRadius);
+                for (let i = 0; i < spikes; i++) {
+                    x = cx + Math.cos(rot) * outerRadius;
+                    y = cy + Math.sin(rot) * outerRadius;
+                    ctx.lineTo(x, y);
+                    rot += step;
+
+                    x = cx + Math.cos(rot) * innerRadius;
+                    y = cy + Math.sin(rot) * innerRadius;
+                    ctx.lineTo(x, y);
+                    rot += step;
+                }
+                ctx.lineTo(cx, cy - outerRadius);
+                ctx.closePath();
+                ctx.fillStyle = color;
+                ctx.shadowColor = 'rgba(0,0,0,0.25)';
+                ctx.shadowBlur = 4;
+                ctx.fill();
+                ctx.restore();
+            }
+
+            function drawTokensList(tokens, movableList) {
+                tokens.forEach(t => {
+                    if (!t.active) return;
+                    const coords = getTokenCoords(t);
+                    const isMovable = movableList.includes(t);
+                    const isRed = t.color === 'red';
+
+                    ctx.save();
+                    // Movable Pulsing Glow
+                    if (isMovable) {
+                        ctx.shadowColor = '#f59e0b';
+                        ctx.shadowBlur = 15;
+                        ctx.beginPath();
+                        ctx.arc(coords.x, coords.y, 0.55 * CELL, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(245, 158, 11, 0.4)';
+                        ctx.fill();
+                        ctx.strokeStyle = '#f59e0b';
+                        ctx.lineWidth = 2.5;
+                        ctx.stroke();
+                    }
+
+                    // 3D Sphere Token Body
+                    const grad = ctx.createRadialGradient(
+                        coords.x - 3, coords.y - 3, 2,
+                        coords.x, coords.y, 0.42 * CELL
+                    );
+                    if (isRed) {
+                        grad.addColorStop(0, '#f87171');
+                        grad.addColorStop(0.7, '#dc2626');
+                        grad.addColorStop(1, '#991b1b');
+                    } else {
+                        grad.addColorStop(0, '#34d399');
+                        grad.addColorStop(0.7, '#059669');
+                        grad.addColorStop(1, '#064e3b');
+                    }
+
+                    ctx.beginPath();
+                    ctx.arc(coords.x, coords.y, 0.4 * CELL, 0, Math.PI * 2);
+                    ctx.fillStyle = grad;
+                    ctx.shadowColor = 'rgba(0,0,0,0.45)';
+                    ctx.shadowBlur = 6;
+                    ctx.fill();
+
+                    // Golden/Silver Rim
+                    ctx.strokeStyle = isRed ? '#fef08a' : '#f1f5f9';
+                    ctx.lineWidth = 2;
+                    ctx.stroke();
+
+                    // Inner Dot or Star
+                    ctx.fillStyle = '#ffffff';
+                    ctx.beginPath();
+                    ctx.arc(coords.x, coords.y, 0.14 * CELL, 0, Math.PI * 2);
+                    ctx.fill();
+
+                    ctx.restore();
+                });
+            }
+
+            // Dice Roll Execution
+            function rollDice() {
+                if (diceRolled || isRolling || isMoving || gameOver) return;
+                if (vsComputer && currentTurn === 'green') return;
+
+                performDiceRoll();
+            }
+
+            function performDiceRoll() {
+                isRolling = true;
+                rollBtn.disabled = true;
+                diceBox.classList.add('rolling');
+                playSound('roll');
+
+                let rollsCount = 0;
+                const rollInterval = setInterval(() => {
+                    const temp = Math.floor(Math.random() * 6) + 1;
+                    renderDice(temp);
+                    rollsCount++;
+                    if (rollsCount > 8) {
+                        clearInterval(rollInterval);
+                        diceBox.classList.remove('rolling');
+                        isRolling = false;
+                        finalizeRoll();
+                    }
+                }, 40);
+            }
+
+            function finalizeRoll() {
+                diceValue = Math.floor(Math.random() * 6) + 1;
+                renderDice(diceValue);
+                diceRolled = true;
+
+                if (diceValue === 6) {
+                    consecutiveSixes++;
+                    if (consecutiveSixes >= 3) {
+                        tipEl.innerHTML = '⚠️ <strong>3 लगातार छक्के (Three 6s)!</strong> चाल रद्द की गई।';
+                        bonusBadge.style.display = 'none';
+                        setTimeout(switchTurn, 1000);
+                        return;
+                    }
+                    bonusBadge.style.display = 'inline-block';
+                } else {
+                    consecutiveSixes = 0;
+                    bonusBadge.style.display = 'none';
+                }
+
+                const movable = getMovableTokens(currentTurn, diceValue);
+                updateUI();
+                drawBoard();
+
+                if (movable.length === 0) {
+                    tipEl.innerHTML = `🎲 <strong>${diceValue}</strong> आया! कोई चाल संभव नहीं। बारी बदली जा रही है...`;
+                    setTimeout(switchTurn, 900);
+                } else if (movable.length === 1 && (!vsComputer || currentTurn === 'red')) {
+                    // Single move available: prompt or let player tap
+                    tipEl.innerHTML = `🎲 <strong>${diceValue}</strong> आया! चमकती गोटी पर टैप करें।`;
+                } else if (vsComputer && currentTurn === 'green') {
+                    // Bot move
+                    setTimeout(executeBotMove, 600);
+                }
+            }
+
+            // Move Token with Animation
+            function moveToken(token, roll, onComplete) {
+                isMoving = true;
+                rollBtn.disabled = true;
+
+                const startStep = token.step;
+                const targetStep = startStep === -1 ? 0 : startStep + roll;
+                let current = startStep === -1 ? 0 : startStep;
+
+                if (startStep === -1) {
+                    token.step = 0;
+                    playSound('step');
+                    drawBoard();
+                    finishMove(token, onComplete);
+                    return;
+                }
+
+                const stepInterval = setInterval(() => {
+                    current++;
+                    token.step = current;
+                    playSound('step');
+                    drawBoard();
+
+                    if (current >= targetStep) {
+                        clearInterval(stepInterval);
+                        finishMove(token, onComplete);
+                    }
+                }, 90);
+            }
+
+            function finishMove(token, onComplete) {
+                isMoving = false;
+                const isRed = token.color === 'red';
+
+                // Check for Capture
+                let captured = false;
+                if (token.step >= 0 && token.step <= 50) {
+                    const tokenTrackIdx = isRed ? token.step : (13 + token.step) % 52;
+                    const isSafe = SAFE_STEPS.includes(tokenTrackIdx);
+
+                    if (!isSafe) {
+                        const enemyTokens = isRed ? greenTokens : redTokens;
+                        enemyTokens.forEach(enemy => {
+                            if (enemy.active && enemy.step >= 0 && enemy.step <= 50) {
+                                const enemyTrackIdx = enemy.color === 'red' ? enemy.step : (13 + enemy.step) % 52;
+                                if (enemyTrackIdx === tokenTrackIdx) {
+                                    // Captured!
+                                    enemy.step = -1;
+                                    captured = true;
+                                    playSound('capture');
+                                }
+                            }
+                        });
+                    }
+                }
+
+                drawBoard();
+
+                // Check Win
+                const activeList = isRed ? redTokens : greenTokens;
+                const homeCount = activeList.filter(t => t.active && t.step === 56).length;
+
+                if (homeCount >= tokenCount) {
+                    triggerWin(token.color);
+                    return;
+                }
+
+                // Extra turn conditions: rolled a 6, captured enemy, or reached Home!
+                const getsBonus = (diceValue === 6 && consecutiveSixes < 3) || captured || token.step === 56;
+
+                if (getsBonus) {
+                    bonusBadge.style.display = 'inline-block';
+                    diceRolled = false;
+                    updateUI();
+                    if (vsComputer && currentTurn === 'green') {
+                        setTimeout(performDiceRoll, 750);
+                    }
+                } else {
+                    bonusBadge.style.display = 'none';
+                    switchTurn();
+                }
+
+                if (onComplete) onComplete();
+            }
+
+            function switchTurn() {
+                diceRolled = false;
+                consecutiveSixes = 0;
+                bonusBadge.style.display = 'none';
+                currentTurn = currentTurn === 'red' ? 'green' : 'red';
+                updateUI();
+                drawBoard();
+
+                if (vsComputer && currentTurn === 'green' && !gameOver) {
+                    setTimeout(performDiceRoll, 700);
+                }
+            }
+
+            // Bot Strategy (AI)
+            function executeBotMove() {
+                const movable = getMovableTokens('green', diceValue);
+                if (movable.length === 0) {
+                    switchTurn();
+                    return;
+                }
+
+                // AI Scoring
+                let bestToken = movable[0];
+                let highestScore = -9999;
+
+                movable.forEach(t => {
+                    let score = 0;
+                    const nextStep = t.step === -1 ? 0 : t.step + diceValue;
+
+                    // Reaching Home
+                    if (nextStep === 56) score += 5000;
+
+                    // Exiting Yard
+                    if (t.step === -1 && diceValue === 6) score += 3000;
+
+                    // Checking Capture
+                    if (nextStep >= 0 && nextStep <= 50) {
+                        const trackIdx = (13 + nextStep) % 52;
+                        const isSafe = SAFE_STEPS.includes(trackIdx);
+
+                        if (!isSafe) {
+                            redTokens.forEach(rt => {
+                                if (rt.active && rt.step >= 0 && rt.step <= 50) {
+                                    if (rt.step === trackIdx) score += 10000; // Big capture priority!
+                                }
+                            });
+                        } else {
+                            score += 800; // Safe star bonus
+                        }
+                    }
+
+                    // Advancing token further
+                    score += nextStep * 10;
+
+                    if (score > highestScore) {
+                        highestScore = score;
+                        bestToken = t;
+                    }
+                });
+
+                moveToken(bestToken, diceValue);
+            }
+
+            // Click handling on Canvas to move token
+            canvas.addEventListener('click', (e) => {
+                if (!diceRolled || isRolling || isMoving || gameOver) return;
+                if (vsComputer && currentTurn === 'green') return;
+
+                const rect = canvas.getBoundingClientRect();
+                const scaleX = LOGICAL_SIZE / rect.width;
+                const scaleY = LOGICAL_SIZE / rect.height;
+                const clickX = (e.clientX - rect.left) * scaleX;
+                const clickY = (e.clientY - rect.top) * scaleY;
+
+                const movable = getMovableTokens(currentTurn, diceValue);
+                if (movable.length === 0) return;
+
+                // Find clicked token
+                let clickedToken = null;
+                let minDist = 0.8 * CELL;
+
+                movable.forEach(t => {
+                    const coords = getTokenCoords(t);
+                    const dist = Math.hypot(coords.x - clickX, coords.y - clickY);
+                    if (dist < minDist) {
+                        minDist = dist;
+                        clickedToken = t;
+                    }
+                });
+
+                if (clickedToken) {
+                    moveToken(clickedToken, diceValue);
+                } else if (movable.length === 1) {
+                    // Friendly helper: clicking anywhere on the board moves the sole valid token
+                    moveToken(movable[0], diceValue);
+                }
+            });
+
+            // Win Trigger
+            function triggerWin(winnerColor) {
+                gameOver = true;
+                playSound('win');
+
+                const isRed = winnerColor === 'red';
+                if (vsComputer) {
+                    winnerTitle.innerText = isRed ? '🏆 शानदार जीत! बधाई हो!' : '🤖 कंप्यूटर मैच जीत गया!';
+                    winnerDesc.innerText = isRed
+                        ? `आपने कंप्यूटर को हराकर ${tokenCount} गोटियों के साथ लूडो मैच जीत लिया!`
+                        : `कंप्यूटर ने अपनी सभी गोटियों को घर पहुंचाकर मैच जीत लिया। फिर से खेलें!`;
+                } else {
+                    winnerTitle.innerText = isRed ? '🏆 लाल (Player 1) जीत गया!' : '🏆 हरा (Player 2) जीत गया!';
+                    winnerDesc.innerText = `शानदार मुकाबला! ${isRed ? 'लाल खिलाड़ी' : 'हरे खिलाड़ी'} ने यह मैच जीत लिया।`;
+                }
+
+                // Launch Confetti
+                for (let i = 0; i < 90; i++) {
+                    confettiParticles.push({
+                        x: Math.random() * LOGICAL_SIZE,
+                        y: Math.random() * -LOGICAL_SIZE * 0.5,
+                        vx: (Math.random() - 0.5) * 4,
+                        vy: Math.random() * 3 + 2,
+                        size: Math.random() * 8 + 4,
+                        color: ['#ef4444', '#10b981', '#f59e0b', '#3b82f6', '#ec4899'][Math.floor(Math.random() * 5)]
+                    });
+                }
+
+                winOverlay.style.display = 'flex';
+                drawBoard();
+            }
+
+            function drawConfetti() {
+                confettiParticles.forEach(p => {
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(p.x, p.y, p.size, p.size);
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.y > LOGICAL_SIZE) p.y = -10;
+                });
+            }
+
+            // Controls & Listeners
+            rollBtn?.addEventListener('click', rollDice);
+            diceBox?.addEventListener('click', rollDice);
+            restartBtn?.addEventListener('click', initGameState);
+            playAgainBtn?.addEventListener('click', initGameState);
+
+            soundBtn?.addEventListener('click', () => {
+                soundEnabled = !soundEnabled;
+                soundIcon.className = soundEnabled ? 'fas fa-volume-up' : 'fas fa-volume-mute';
+                soundBtn.title = soundEnabled ? 'Sound On' : 'Muted';
+            });
+
+            modeP1Btn?.addEventListener('click', () => {
+                vsComputer = true;
+                modeP1Btn.classList.add('active');
+                modeP2Btn.classList.remove('active');
+                modeDisplay.innerText = 'vs Computer';
+                initGameState();
+            });
+
+            modeP2Btn?.addEventListener('click', () => {
+                vsComputer = false;
+                modeP2Btn.classList.add('active');
+                modeP1Btn.classList.remove('active');
+                modeDisplay.innerText = '2 Players';
+                initGameState();
+            });
+
+            modeQuickBtn?.addEventListener('click', () => {
+                tokenCount = 2;
+                modeQuickBtn.classList.add('active');
+                modeClassicBtn.classList.remove('active');
+                initGameState();
+            });
+
+            modeClassicBtn?.addEventListener('click', () => {
+                tokenCount = 4;
+                modeClassicBtn.classList.add('active');
+                modeQuickBtn.classList.remove('active');
+                initGameState();
+            });
+
+            // Start Ludo Game
+            initGameState();
+        })();
+
+        // ====================================================
+        // GAME 2: QUIZ RUSH: BRAIN TRIVIA CHALLENGE
+        // ====================================================
+        (function initQuiz() {
+            const qNumEl = document.getElementById('quiz-qnum');
+            const scoreEl = document.getElementById('quiz-score');
+            const bestEl = document.getElementById('quiz-best-score');
+            const streakEl = document.getElementById('quiz-streak');
+            const timerBar = document.getElementById('quiz-timer-bar');
+            const catEl = document.getElementById('quiz-category');
+            const qTextEl = document.getElementById('quiz-question');
+            const optContainer = document.getElementById('quiz-options-container');
+            const skipBtn = document.getElementById('btn-quiz-skip');
+            const overOverlay = document.getElementById('quiz-over-overlay');
+            const finalStats = document.getElementById('quiz-final-stats');
+            const restartBtn = document.getElementById('btn-quiz-restart');
+
+            const QUIZ_QUESTIONS = [
+                {
+                    category: 'भारतीय संविधान (Indian Polity)',
+                    question: 'भारतीय संविधान का मुख्य जनक या निर्माता किसे माना जाता है?',
+                    options: ['महात्मा गांधी', 'डॉ. भीमराव अंबेडकर', 'पंडित जवाहरलाल नेहरू', 'सरदार वल्लभभाई पटेल'],
+                    answer: 1
+                },
+                {
+                    category: 'कंप्यूटर और तकनीक (Technology)',
+                    question: 'Android ऑपरेटिंग सिस्टम का विकास किस कंपनी द्वारा किया जाता है?',
+                    options: ['Microsoft', 'Apple', 'Google', 'IBM'],
+                    answer: 2
+                },
+                {
+                    category: 'भारतीय इतिहास व संस्कृति',
+                    question: 'भारत का राष्ट्रीय जलीय जीव (National Aquatic Animal) कौन सा है?',
+                    options: ['गंगा नदी डॉल्फ़िन', 'नीली व्हेल', 'घड़ियाल', 'कछुआ'],
+                    answer: 0
+                },
+                {
+                    category: 'विज्ञान (General Science)',
+                    question: 'सूर्य के प्रकाश से हमारे शरीर को कौन सा विटामिन प्राप्त होता है?',
+                    options: ['विटामिन A', 'विटामिन B', 'विटामिन C', 'विटामिन D'],
+                    answer: 3
+                },
+                {
+                    category: 'अर्थव्यवस्था (Economy & Business)',
+                    question: 'भारत में डिजिटल भुगतान (UPI) प्रणाली का संचालन कौन सी संस्था करती है?',
+                    options: ['RBI', 'NPCI', 'SBI', 'SEBI'],
+                    answer: 1
+                },
+                {
+                    category: 'भूगोल (Geography)',
+                    question: 'विश्व की सबसे ऊंची पर्वत चोटी माउंट एवरेस्ट किस देश में स्थित है?',
+                    options: ['भारत', 'चीन (तिब्बत)', 'नेपाल', 'भूटान'],
+                    answer: 2
+                },
+                {
+                    category: 'खेलकूद (Sports)',
+                    question: 'अंतरराष्ट्रीय क्रिकेट परिषद (ICC) का मुख्यालय कहाँ स्थित है?',
+                    options: ['दुबई (UAE)', 'लंदन (UK)', 'मेलबर्न (ऑस्ट्रेलिया)', 'मुंबई (भारत)'],
+                    answer: 0
+                },
+                {
+                    category: 'रोचक दिमागी पहेली (Brain Teaser)',
+                    question: 'वह क्या है जो सुबह 4 पैरों पर, दोपहर को 2 पैरों पर और शाम को 3 पैरों पर चलता है?',
+                    options: ['मनुष्य (इंसान)', 'समय', 'परछाई', 'सूरज'],
+                    answer: 0
+                },
+                {
+                    category: 'भारतीय अंतरिक्ष अनुसंधान (ISRO)',
+                    question: 'भारत के चंद्रयान-3 मिशन के लैंडर का क्या नाम था?',
+                    options: ['प्रज्ञान', 'विक्रम', 'आदित्य', 'ध्रुव'],
+                    answer: 1
+                },
+                {
+                    category: 'डिजिटल इंडिया (Digital Knowledge)',
+                    question: 'कंप्यूटर प्रोग्रामिंग में HTML का पूर्ण रूप (Full Form) क्या है?',
+                    options: ['Hyper Text Markup Language', 'High Tech Modern Language', 'Home Tool Multi Language', 'Hyperlink Text Maker Language'],
+                    answer: 0
+                }
+            ];
+
+            let currentQIndex = 0;
+            let score = 0;
+            let streak = 0;
+            let timerInterval = null;
+            let timeLeft = 15;
+            const TOTAL_TIME = 15;
+
+            // Load best score from localStorage
+            let bestScore = parseInt(localStorage.getItem('quiz_rush_best') || '0', 10);
+            if (bestEl) bestEl.innerText = bestScore;
+
+            function startTimer() {
+                clearInterval(timerInterval);
+                timeLeft = TOTAL_TIME;
+                if (timerBar) timerBar.style.width = '100%';
+
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    const pct = (timeLeft / TOTAL_TIME) * 100;
+                    if (timerBar) timerBar.style.width = `${pct}%`;
+
+                    if (timeLeft <= 0) {
+                        clearInterval(timerInterval);
+                        handleTimeOut();
+                    }
+                }, 1000);
+            }
+
+            function loadQuestion(index) {
+                if (index >= QUIZ_QUESTIONS.length) {
+                    endQuiz();
+                    return;
+                }
+
+                currentQIndex = index;
+                const q = QUIZ_QUESTIONS[index];
+                qNumEl.innerText = `${index + 1} / ${QUIZ_QUESTIONS.length}`;
+                scoreEl.innerText = score;
+                streakEl.innerText = `${streak}🔥`;
+                catEl.innerText = q.category;
+                qTextEl.innerText = q.question;
+                optContainer.innerHTML = '';
+
+                const letters = ['A', 'B', 'C', 'D'];
+                q.options.forEach((opt, idx) => {
+                    const btn = document.createElement('button');
+                    btn.className = 'quiz-option-btn';
+                    btn.innerHTML = `<span class="quiz-opt-letter">${letters[idx]}</span> <span>${opt}</span>`;
+                    btn.addEventListener('click', () => checkAnswer(idx, btn));
+                    optContainer.appendChild(btn);
+                });
+
+                startTimer();
+            }
+
+            function checkAnswer(selectedIdx, selectedBtn) {
+                clearInterval(timerInterval);
+                const q = QUIZ_QUESTIONS[currentQIndex];
+                const allButtons = optContainer.querySelectorAll('.quiz-option-btn');
+                allButtons.forEach(b => b.disabled = true);
+
+                if (selectedIdx === q.answer) {
+                    selectedBtn.classList.add('correct');
+                    streak++;
+                    const points = 10 + (streak > 1 ? (streak - 1) * 2 : 0);
+                    score += points;
+                    scoreEl.innerText = score;
+                    streakEl.innerText = `${streak}🔥`;
+                } else {
+                    selectedBtn.classList.add('wrong');
+                    if (allButtons[q.answer]) allButtons[q.answer].classList.add('correct');
+                    streak = 0;
+                    streakEl.innerText = '0🔥';
+                }
+
+                if (score > bestScore) {
+                    bestScore = score;
+                    localStorage.setItem('quiz_rush_best', bestScore.toString());
+                    if (bestEl) bestEl.innerText = bestScore;
+                }
+
+                setTimeout(() => {
+                    loadQuestion(currentQIndex + 1);
+                }, 1200);
+            }
+
+            function handleTimeOut() {
+                streak = 0;
+                streakEl.innerText = '0🔥';
+                const q = QUIZ_QUESTIONS[currentQIndex];
+                const allButtons = optContainer.querySelectorAll('.quiz-option-btn');
+                allButtons.forEach(b => b.disabled = true);
+                if (allButtons[q.answer]) allButtons[q.answer].classList.add('correct');
+
+                setTimeout(() => {
+                    loadQuestion(currentQIndex + 1);
+                }, 1400);
+            }
+
+            function endQuiz() {
+                clearInterval(timerInterval);
+                overOverlay.style.display = 'flex';
+                finalStats.innerHTML = `आपका कुल स्कोर: <strong style="color: #10b981; font-size: 1.4rem;">${score}</strong> अंक! (${bestScore > score ? `सर्वश्रेष्ठ स्कोर: ${bestScore}` : '🎉 नया व्यक्तिगत रिकॉर्ड!'})`;
+            }
+
+            function resetQuiz() {
+                clearInterval(timerInterval);
+                currentQIndex = 0;
+                score = 0;
+                streak = 0;
+                overOverlay.style.display = 'none';
+                loadQuestion(0);
+            }
+
+            skipBtn?.addEventListener('click', () => {
+                clearInterval(timerInterval);
+                streak = 0;
+                streakEl.innerText = '0🔥';
+                loadQuestion(currentQIndex + 1);
+            });
+
+            restartBtn?.addEventListener('click', resetQuiz);
+
+            loadQuestion(0);
+        })();
+
+        // ====================================================
+        // GAME 3: NEON DASH - 2D ENDLESS RUNNER
+        // ====================================================
+        (function initRunner() {
+            const canvas = document.getElementById('runnerCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            const distEl = document.getElementById('runner-distance');
+            const coinsEl = document.getElementById('runner-coins');
+            const bestEl = document.getElementById('runner-best');
+            const overlay = document.getElementById('runner-over-overlay');
+            const finalMsg = document.getElementById('runner-final-msg');
+            const jumpBtn = document.getElementById('btn-runner-jump');
+            const slideBtn = document.getElementById('btn-runner-slide');
+            const restartBtn = document.getElementById('btn-runner-restart');
+            const playAgainBtn = document.getElementById('btn-runner-play-again');
+
+            let bestDistance = parseInt(localStorage.getItem('neon_runner_best') || '0', 10);
+            if (bestEl) bestEl.innerText = `${bestDistance} m`;
+
+            let isRunning = false;
+            let scoreDistance = 0;
+            let coinsCollected = 0;
+            let gameSpeed = 5;
+            let animId = null;
+
+            // Player State
+            const player = {
+                x: 80,
+                y: 190,
+                width: 34,
+                height: 48,
+                baseHeight: 48,
+                slideHeight: 26,
+                vy: 0,
+                gravity: 0.85,
+                jumpPower: -14.5,
+                isGrounded: true,
+                isSliding: false,
+                slideTimer: 0,
+                color: '#38bdf8'
+            };
+
+            const groundY = 240;
+
+            // Obstacles & Collectibles
+            let obstacles = [];
+            let coins = [];
+            let particles = [];
+            let lastSpawnTime = 0;
+
+            function resetRunner() {
+                isRunning = true;
+                scoreDistance = 0;
+                coinsCollected = 0;
+                gameSpeed = 5;
+                obstacles = [];
+                coins = [];
+                particles = [];
+                player.y = groundY - player.baseHeight;
+                player.height = player.baseHeight;
+                player.vy = 0;
+                player.isGrounded = true;
+                player.isSliding = false;
+                overlay.style.display = 'none';
+
+                distEl.innerText = '0 m';
+                coinsEl.innerText = '0 🪙';
+            }
+
+            function jump() {
+                if (!isRunning) return;
+                if (player.isGrounded) {
+                    player.vy = player.jumpPower;
+                    player.isGrounded = false;
+                    player.isSliding = false;
+                    player.height = player.baseHeight;
+                    createParticles(player.x + player.width / 2, player.y + player.height, '#38bdf8', 6);
+                }
+            }
+
+            function slide() {
+                if (!isRunning) return;
+                if (player.isGrounded && !player.isSliding) {
+                    player.isSliding = true;
+                    player.height = player.slideHeight;
+                    player.y = groundY - player.slideHeight;
+                    player.slideTimer = 35; // frames of sliding
+                    createParticles(player.x, groundY, '#a855f7', 4);
+                }
+            }
+
+            function createParticles(x, y, color, count = 8) {
+                for (let i = 0; i < count; i++) {
+                    particles.push({
+                        x: x,
+                        y: y,
+                        vx: (Math.random() - 0.5) * 6,
+                        vy: (Math.random() - 0.5) * 6,
+                        radius: Math.random() * 3 + 1,
+                        color: color,
+                        alpha: 1
+                    });
+                }
+            }
+
+            function spawnElements() {
+                // Spawn Obstacle
+                if (Math.random() < 0.02 && (obstacles.length === 0 || canvas.width - obstacles[obstacles.length - 1].x > 220)) {
+                    const isHigh = Math.random() < 0.35; // high obstacle requires slide!
+                    if (isHigh) {
+                        obstacles.push({
+                            x: canvas.width + 10,
+                            y: groundY - 60,
+                            width: 30,
+                            height: 25,
+                            type: 'flying',
+                            color: '#ec4899'
+                        });
+                    } else {
+                        obstacles.push({
+                            x: canvas.width + 10,
+                            y: groundY - 38,
+                            width: 26,
+                            height: 38,
+                            type: 'ground',
+                            color: '#ef4444'
+                        });
+                    }
+                }
+
+                // Spawn Coin
+                if (Math.random() < 0.025) {
+                    coins.push({
+                        x: canvas.width + 20,
+                        y: groundY - 45 - (Math.random() * 40),
+                        radius: 8,
+                        collected: false
+                    });
+                }
+            }
+
+            function update() {
+                if (!isRunning) return;
+
+                // Increase Distance & Speed
+                scoreDistance += 0.25;
+                gameSpeed = 5 + Math.min(scoreDistance * 0.005, 5.5);
+                distEl.innerText = `${Math.floor(scoreDistance)} m`;
+
+                if (Math.floor(scoreDistance) > bestDistance) {
+                    bestDistance = Math.floor(scoreDistance);
+                    localStorage.setItem('neon_runner_best', bestDistance.toString());
+                    bestEl.innerText = `${bestDistance} m`;
+                }
+
+                // Player Physics
+                if (!player.isGrounded) {
+                    player.vy += player.gravity;
+                    player.y += player.vy;
+                    if (player.y >= groundY - player.height) {
+                        player.y = groundY - player.height;
+                        player.vy = 0;
+                        player.isGrounded = true;
+                    }
+                }
+
+                // Slide Timer
+                if (player.isSliding) {
+                    player.slideTimer--;
+                    if (player.slideTimer <= 0) {
+                        player.isSliding = false;
+                        player.height = player.baseHeight;
+                        player.y = groundY - player.baseHeight;
+                    }
+                }
+
+                spawnElements();
+
+                // Update Obstacles
+                for (let i = obstacles.length - 1; i >= 0; i--) {
+                    const obs = obstacles[i];
+                    obs.x -= gameSpeed;
+
+                    // Collision Detection (AABB)
+                    if (
+                        player.x < obs.x + obs.width &&
+                        player.x + player.width > obs.x &&
+                        player.y < obs.y + obs.height &&
+                        player.y + player.height > obs.y
+                    ) {
+                        gameOver();
+                        return;
+                    }
+
+                    if (obs.x + obs.width < -10) {
+                        obstacles.splice(i, 1);
+                    }
+                }
+
+                // Update Coins
+                for (let i = coins.length - 1; i >= 0; i--) {
+                    const c = coins[i];
+                    c.x -= gameSpeed;
+
+                    // Coin collision
+                    const dx = (player.x + player.width / 2) - c.x;
+                    const dy = (player.y + player.height / 2) - c.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < player.width / 2 + c.radius) {
+                        coinsCollected++;
+                        coinsEl.innerText = `${coinsCollected} 🪙`;
+                        createParticles(c.x, c.y, '#facc15', 8);
+                        coins.splice(i, 1);
+                        continue;
+                    }
+
+                    if (c.x < -20) {
+                        coins.splice(i, 1);
+                    }
+                }
+
+                // Update Particles
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    const p = particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.alpha -= 0.03;
+                    if (p.alpha <= 0) particles.splice(i, 1);
+                }
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Neon Cyber Grid Background
+                ctx.strokeStyle = 'rgba(124, 58, 237, 0.15)';
+                ctx.lineWidth = 1;
+                for (let x = (scoreDistance * 2) % 40; x < canvas.width; x += 40) {
+                    ctx.beginPath();
+                    ctx.moveTo(canvas.width - x, 0);
+                    ctx.lineTo(canvas.width - x, groundY);
+                    ctx.stroke();
+                }
+
+                // Neon Ground
+                ctx.strokeStyle = '#a855f7';
+                ctx.lineWidth = 3;
+                ctx.shadowColor = '#a855f7';
+                ctx.shadowBlur = 12;
+                ctx.beginPath();
+                ctx.moveTo(0, groundY);
+                ctx.lineTo(canvas.width, groundY);
+                ctx.stroke();
+
+                ctx.fillStyle = '#0f172a';
+                ctx.fillRect(0, groundY, canvas.width, canvas.height - groundY);
+                ctx.shadowBlur = 0;
+
+                // Draw Obstacles
+                obstacles.forEach(obs => {
+                    ctx.save();
+                    ctx.shadowColor = obs.color;
+                    ctx.shadowBlur = 14;
+                    ctx.fillStyle = obs.color;
+                    ctx.fillRect(obs.x, obs.y, obs.width, obs.height);
+                    ctx.strokeStyle = '#ffffff';
+                    ctx.lineWidth = 1;
+                    ctx.strokeRect(obs.x, obs.y, obs.width, obs.height);
+                    ctx.restore();
+                });
+
+                // Draw Coins
+                coins.forEach(c => {
+                    ctx.save();
+                    ctx.shadowColor = '#facc15';
+                    ctx.shadowBlur = 15;
+                    ctx.fillStyle = '#facc15';
+                    ctx.beginPath();
+                    ctx.arc(c.x, c.y, c.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                });
+
+                // Draw Particles
+                particles.forEach(p => {
+                    ctx.save();
+                    ctx.globalAlpha = p.alpha;
+                    ctx.fillStyle = p.color;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                    ctx.fill();
+                    ctx.restore();
+                });
+
+                // Draw Player (Neon Runner)
+                ctx.save();
+                ctx.shadowColor = player.isSliding ? '#a855f7' : player.color;
+                ctx.shadowBlur = 16;
+                ctx.fillStyle = player.isSliding ? '#a855f7' : player.color;
+
+                if (player.isSliding) {
+                    // Sliding pose (low rectangle with trailing glow)
+                    ctx.beginPath();
+                    ctx.roundRect(player.x, player.y, player.width + 12, player.height, 6);
+                    ctx.fill();
+                } else {
+                    // Running pose
+                    ctx.beginPath();
+                    ctx.roundRect(player.x, player.y, player.width, player.height, 8);
+                    ctx.fill();
+
+                    // Visor / eyes
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fillRect(player.x + 16, player.y + 10, 12, 5);
+                }
+                ctx.restore();
+            }
+
+            function gameLoop() {
+                update();
+                draw();
+                if (isRunning) {
+                    animId = requestAnimationFrame(gameLoop);
+                }
+            }
+
+            function gameOver() {
+                isRunning = false;
+                cancelAnimationFrame(animId);
+                overlay.style.display = 'flex';
+                finalMsg.innerHTML = `आपने कुल <strong style="color: #38bdf8;">${Math.floor(scoreDistance)} m</strong> दूरी तय की और <strong style="color: #facc15;">${coinsCollected}</strong> सिक्के एकत्र किए!`;
+            }
+
+            window.startRunnerLoop = function () {
+                if (!isRunning) {
+                    resetRunner();
+                    gameLoop();
+                }
+            };
+
+            // Keyboard
+            window.addEventListener('keydown', (e) => {
+                const panel = document.getElementById('panel-runner');
+                if (!panel || !panel.classList.contains('active')) return;
+                if (['Space', 'ArrowUp', 'KeyW'].includes(e.code)) {
+                    e.preventDefault();
+                    jump();
+                } else if (['ArrowDown', 'KeyS'].includes(e.code)) {
+                    e.preventDefault();
+                    slide();
+                }
+            });
+
+            // Touch / Clicks on Canvas
+            canvas.addEventListener('pointerdown', (e) => {
+                const rect = canvas.getBoundingClientRect();
+                const clickY = e.clientY - rect.top;
+                if (clickY > rect.height * 0.65) {
+                    slide();
+                } else {
+                    jump();
+                }
+            });
+
+            jumpBtn?.addEventListener('click', jump);
+            slideBtn?.addEventListener('click', slide);
+            restartBtn?.addEventListener('click', () => { resetRunner(); gameLoop(); });
+            playAgainBtn?.addEventListener('click', () => { resetRunner(); gameLoop(); });
+
+            resetRunner();
+            gameLoop();
+        })();
+
+    });
     </script>
 
     <script src="animations.js"></script>
     <script src="main.js"></script>
     <script src="whatsapp-widget.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
-    <script src="particles-config.js"></script>
 </body>
 </html>

@@ -78,67 +78,11 @@ async function syncUserProfile(user) {
 
 // Inject Auth UI HTML dynamically
 function injectAuthUI() {
-  // Inject into NAV if not existing
-  const nav = document.querySelector('nav');
-  const themeToggle = document.getElementById('theme-toggle');
-
-  if (nav && !document.getElementById('auth-nav-container')) {
-    const navContainer = document.createElement('div');
-    navContainer.id = 'auth-nav-container';
-    navContainer.style.display = 'inline-flex';
-    navContainer.style.alignItems = 'center';
-
-    navContainer.innerHTML = `
-      <button id="auth-nav-btn" class="auth-nav-btn">
-        <i class="fas fa-user"></i> Login / Signup
-      </button>
-
-      <div id="user-nav-container" class="user-nav-container" style="display: none;">
-        <div class="user-nav-bar-section">
-          <div id="user-nav-profile" class="user-nav-profile" title="View options">
-            <div id="user-avatar" class="user-avatar">U</div>
-            <div class="user-nav-details">
-              <span id="user-nav-name" class="user-nav-name">User</span>
-              <span id="user-nav-email" class="user-nav-email">user@example.com</span>
-            </div>
-            <i class="fas fa-chevron-down" style="font-size: 0.75rem; color: var(--text-light); margin-left: 2px;"></i>
-          </div>
-
-          <button id="nav-direct-logout" class="nav-logout-btn" title="Logout">
-            <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
-          </button>
-        </div>
-
-        <div id="user-dropdown-menu" class="user-dropdown-menu">
-          <div class="dropdown-header">
-            <div id="dropdown-user-name" class="user-full-name">User Name</div>
-            <div id="dropdown-user-email" class="user-email">user@example.com</div>
-          </div>
-          <button id="btn-view-profile" class="dropdown-item">
-            <i class="fas fa-id-card"></i> My Profile
-          </button>
-          <button id="btn-reset-pw" class="dropdown-item">
-            <i class="fas fa-key"></i> Reset Password
-          </button>
-          <button id="btn-logout" class="dropdown-item danger">
-            <i class="fas fa-sign-out-alt"></i> Logout
-          </button>
-        </div>
-      </div>
-    `;
-
-    if (themeToggle) {
-      nav.insertBefore(navContainer, themeToggle);
-    } else {
-      nav.appendChild(navContainer);
-    }
-  }
-
-  // Inject Modals into body
+  // Inject Modals into body only if requested and keep them hidden
   if (!document.getElementById('auth-modal-overlay')) {
     const modalHTML = `
       <!-- Authentication Modal -->
-      <div id="auth-modal-overlay" class="auth-modal-overlay">
+      <div id="auth-modal-overlay" class="auth-modal-overlay" style="display: none;">
         <div class="auth-modal-card">
           <button id="auth-modal-close" class="modal-close-btn"><i class="fas fa-times"></i></button>
           
@@ -220,7 +164,7 @@ function injectAuthUI() {
       </div>
 
       <!-- User Profile Modal -->
-      <div id="profile-modal-overlay" class="auth-modal-overlay">
+      <div id="profile-modal-overlay" class="auth-modal-overlay" style="display: none;">
         <div class="auth-modal-card">
           <button id="profile-modal-close" class="modal-close-btn"><i class="fas fa-times"></i></button>
           

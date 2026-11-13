@@ -77,32 +77,27 @@ function renderCommentForm() {
         </form>
       </div>
     `;
-
-    const form = document.getElementById('add-comment-form');
-    if (form) {
-      form.addEventListener('submit', handleAddComment);
-    }
   } else {
     formContainer.innerHTML = `
-      <div class="comment-login-prompt">
-        <i class="fas fa-comments" style="font-size: 2rem; color: #2563eb; margin-bottom: 10px;"></i>
-        <h4>टिप्पणी करने के लिए लॉगिन करें (Log in to Comment)</h4>
-        <p>अपनी प्रतिक्रिया साझा करने के लिए कृपया अपने खाते में लॉगिन या नया खाता बनाएं।</p>
-        <button id="btn-open-auth-from-comments" class="btn-comments-login">
-          <i class="fas fa-sign-in-alt"></i> लॉगिन या नया खाता बनाएं (Login / Signup)
-        </button>
+      <div class="comment-input-box">
+        <form id="add-comment-form">
+          <div style="margin-bottom: 12px;">
+            <input type="text" id="comment-author-name" class="contact-input" placeholder="आपका नाम (Your Name) *" required style="width: 100%; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: 8px; background: var(--input-bg); color: var(--text-main); font-family: inherit;">
+          </div>
+          <textarea id="comment-text-input" class="comment-textarea" rows="3" placeholder="अपनी टिप्पणी या विचार लिखें... (Write your comment here...)" required></textarea>
+          <div class="comment-form-actions">
+            <button type="submit" id="btn-submit-comment" class="btn-post-comment">
+              <i class="fas fa-paper-plane"></i> टिप्पणी पोस्ट करें (Post Comment)
+            </button>
+          </div>
+        </form>
       </div>
     `;
+  }
 
-    const loginBtn = document.getElementById('btn-open-auth-from-comments');
-    if (loginBtn) {
-      loginBtn.addEventListener('click', () => {
-        const authModal = document.getElementById('auth-modal-overlay');
-        if (authModal) {
-          authModal.classList.add('active');
-        }
-      });
-    }
+  const form = document.getElementById('add-comment-form');
+  if (form) {
+    form.addEventListener('submit', handleAddComment);
   }
 }
 
@@ -110,32 +105,36 @@ function renderCommentForm() {
 async function handleAddComment(e) {
   e.preventDefault();
   const textInput = document.getElementById('comment-text-input');
+  const nameInput = document.getElementById('comment-author-name');
   const btnSubmit = document.getElementById('btn-submit-comment');
   const commentsContainer = document.getElementById('blog-comments-container');
 
-  if (!textInput || !currentUser || !commentsContainer) return;
+  if (!textInput || !commentsContainer) return;
 
   const postId = commentsContainer.getAttribute('data-post-id') || 'general';
   const text = textInput.value.trim();
+  const authorName = currentUser 
+    ? (currentUser.displayName || currentUser.email?.split('@')[0] || 'User')
+    : (nameInput ? nameInput.value.trim() : 'Guest Reader');
 
-  if (!text) return;
+  if (!text || !authorName) return;
 
   btnSubmit.disabled = true;
   btnSubmit.innerHTML = '<i class="fas fa-spinner fa-spin"></i> पोस्ट हो रहा है...';
 
   try {
-    const authorName = currentUser.displayName || currentUser.email?.split('@')[0] || 'User';
     await addDoc(collection(db, 'comments'), {
       postId: postId,
-      userId: currentUser.uid,
+      userId: currentUser ? currentUser.uid : 'guest',
       authorName: authorName,
-      authorEmail: currentUser.email || '',
-      authorAvatar: currentUser.photoURL || '',
+      authorEmail: currentUser ? (currentUser.email || '') : '',
+      authorAvatar: currentUser ? (currentUser.photoURL || '') : '',
       text: text,
       createdAt: new Date().toISOString()
     });
 
     textInput.value = '';
+    if (nameInput) nameInput.value = '';
   } catch (err) {
     console.error('Error adding comment:', err);
     alert('टिप्पणी पोस्ट करने में त्रुटि हुई। कृपया पुनः प्रयास करें। (Error posting comment)');

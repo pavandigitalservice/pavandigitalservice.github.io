@@ -14,14 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const SAMPLE_STATE = {
         theme: 'navy',
         photoDataUrl: '',
-        fullName: 'Rahul Kumar Sharma',
+        fullName: 'Rahul Kumar',
         jobTitle: 'Office Executive & Computer Operator',
-        fatherName: 'Shri Ramesh Kumar Sharma',
+        fatherName: 'Shri Ramesh Kumar',
         dob: '2001-08-15',
         gender: 'Male',
         maritalStatus: 'Unmarried',
         mobile: '+91 98765 43210',
-        email: 'rahul.sharma@example.com',
+        email: 'rahul.kumar@example.com',
         address: '42, Shastri Nagar, Near Central Park, Jaipur, Rajasthan - 302016',
         objective: OBJECTIVE_PRESETS.office,
         education: [

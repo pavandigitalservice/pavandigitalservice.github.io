@@ -4,27 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Pavan Digital Service</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <style>
+        .section.legal-section {
+            padding-top: 120px;
+            padding-bottom: 80px;
+        }
+        .section.legal-section .section-title {
+            margin-top: 10px;
+            margin-bottom: 36px;
+            padding-top: 8px;
+            font-size: clamp(1.85rem, 4vw, 2.5rem);
+            line-height: 1.35;
+        }
         .legal-content {
-            background: white;
+            background: var(--bg-card, #ffffff);
             padding: 40px;
-            border-radius: 10px;
-            max-width: 800px;
+            border-radius: 12px;
+            max-width: 840px;
             margin: 0 auto;
+            border: 1px solid var(--border-color, #e2e8f0);
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
         }
         .legal-content h3 {
-            margin-top: 20px;
+            margin-top: 26px;
             margin-bottom: 10px;
-            color: #1e293b;
+            color: var(--heading-color, #1e293b);
+            font-size: 1.2rem;
         }
         .legal-content p {
             margin-bottom: 15px;
-            color: #64748b;
+            color: var(--text-light, #475569);
             line-height: 1.8;
+        }
+        .legal-contact-box {
+            margin-top: 14px;
+            padding: 18px 20px;
+            background: var(--bg-section-light, #f8fafc);
+            border: 1px solid var(--border-color, #cbd5e1);
+            border-radius: 10px;
+            color: var(--text-main, #334155);
+            line-height: 1.75;
+        }
+        .legal-contact-box p {
+            margin-bottom: 6px;
+            color: var(--text-main, #334155);
+        }
+        .legal-contact-box p:last-child {
+            margin-bottom: 0;
+        }
+        @media (max-width: 768px) {
+            .section.legal-section {
+                padding-top: 100px;
+                padding-bottom: 60px;
+            }
+            .legal-content {
+                padding: 24px 18px;
+            }
         }
     </style>
 </head>
@@ -38,14 +76,15 @@
     <div id="tsparticles"></div>
 
     <nav>
-        <div class="logo"><a href="index.htm" style="text-decoration: none; color: #2563eb;">pavan digital service</a></div>
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: #2563eb;">pavan digital service</a></div>
         <div class="nav-links">
-            <a href="index.htm#my-apps">Apps</a>
-            <a href="index.htm#about-me">About</a>
+            <a href="index.html#my-apps">Apps</a>
+            <a href="index.html#about-me">About</a>
             <a href="blog.html">Blog</a>
             <a href="live-map.html"><i class="fas fa-globe-americas"></i> Live Map</a>
             <a href="game.html">Game</a>
-            <a href="index.htm#contact-me">Contact</a>
+            <a href="resume-maker.html">Resume Maker</a>
+            <a href="index.html#contact-me">Contact</a>
         </div>
         <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
             <i class="fas fa-moon"></i>
@@ -57,17 +96,25 @@
         </button>
     </nav>
 
-    <section class="section section-light">
-        <h2 class="section-title">Privacy Policy</h2>
+    <section class="section section-light legal-section">
+        <h1 class="section-title">Privacy Policy</h1>
         <div class="legal-content">
-            <p><strong>Last updated: March 03, 2026</strong></p>
-            <p>यह गोपनीयता नीति हमारी सेवाओं के उपयोग के दौरान आपकी जानकारी के संग्रह, उपयोग और प्रकटीकरण पर हमारी नीतियों और प्रक्रियाओं का वर्णन करती है।</p>
+            <p><strong>Last updated: November 13, 2026</strong></p>
+            <p>यह गोपनीयता नीति हमारी वेबसाइट, मोबाइल ऐप्स और ऑनलाइन टूल्स (Pavan Digital Service) के उपयोग के दौरान आपकी जानकारी के संग्रह, उपयोग और सुरक्षा पर हमारी नीतियों और प्रक्रियाओं का वर्णन करती है।</p>
 
             <h3>जानकारी का संग्रह और उपयोग</h3>
-            <p>हमारी सेवा का उपयोग करते समय, हम आपसे कुछ व्यक्तिगत रूप से पहचान योग्य जानकारी प्रदान करने के लिए कह सकते हैं जिसका उपयोग आपसे संपर्क करने या पहचानने के लिए किया जा सकता है। इसमें शामिल हो सकते हैं, लेकिन यह इन्हीं तक सीमित नहीं है: नाम, ईमेल पता, और संपर्क फ़ॉर्म के माध्यम से प्रदान किया गया कोई अन्य डेटा।</p>
+            <p>हमारी सेवा का उपयोग करते समय, हम आपसे कुछ व्यक्तिगत रूप से पहचान योग्य जानकारी प्रदान करने के लिए कह सकते हैं जिसका उपयोग आपसे संपर्क करने या आपके अनुरोध का उत्तर देने के लिए किया जा सकता है। इसमें संपर्क फ़ॉर्म के माध्यम से प्रदान किया गया नाम, ईमेल पता, मोबाइल नंबर और संदेश शामिल हो सकते हैं।</p>
+
+            <h3>Google AdSense &amp; Cookies</h3>
+            <p>हमारी वेबसाइट पर विज्ञापन दिखाने के लिए <strong>Google AdSense</strong> सहित थर्ड-पार्टी वेंडर्स (Third-party vendors) कुकीज़ (Cookies) का उपयोग करते हैं। Google द्वारा विज्ञापन कुकीज़ के उपयोग से वह और उसके पार्टनर इस वेबसाइट और इंटरनेट पर अन्य साइटों पर आपकी पिछली विज़िट के आधार पर आपको उपयुक्त विज्ञापन दिखा सकते हैं।</p>
+            <p>यूज़र्स चाहें तो Google की <a href="https://adssettings.google.com" target="_blank" rel="noopener noreferrer" style="color: #2563eb; text-decoration: underline;">Ads Settings</a> पर जाकर पर्सनलाइज़्ड विज्ञापन (Personalized Advertising) से ऑप्ट-आउट कर सकते हैं।</p>
+
+            <h3>Resume Maker &amp; Tools Data</h3>
+            <p>हमारी वेबसाइट पर मौजूद <strong>Resume / CV Maker</strong> और अन्य ऑनलाइन टूल्स में आपके द्वारा भरी गई सभी जानकारी (जैसे नाम, पता, शैक्षणिक योग्यता, कार्य अनुभव, मोबाइल नंबर) और अपलोड की गई फोटो <strong>केवल आपके अपने ब्राउज़र के अंदर ही प्रोसेस होती है</strong>।</p>
+            <p>आपका रिज़्यूमे डेटा या अपलोड की गई फोटो <strong>हमारे किसी भी सर्वर पर अपलोड या स्टोर नहीं की जाती है</strong>। सुविधा के लिए डेटा अस्थायी रूप से आपके ही ब्राउज़र के <code>localStorage</code> में सुरक्षित रहता है ताकि पेज रिफ्रेश होने पर आपकी मेहनत न खोए, जिसे आप कभी भी "Reset" बटन से हटा सकते हैं।</p>
 
             <h3>डेटा का उपयोग</h3>
-            <p>हम आपके डेटा का उपयोग आपको हमारी सेवाएं प्रदान करने, आपके अनुरोधों का जवाब देने और हमारे उत्पादों को बेहतर बनाने के लिए करते हैं। हम आपकी अनुमति के बिना आपकी जानकारी किसी तीसरे पक्ष को नहीं बेचेंगे या साझा नहीं करेंगे, सिवाय कानून द्वारा आवश्यक होने के।</p>
+            <p>हम संपर्क फ़ॉर्म से प्राप्त आपके डेटा का उपयोग केवल आपको हमारी सेवाएं प्रदान करने, आपके प्रश्नों का जवाब देने और हमारे उत्पादों को बेहतर बनाने के लिए करते हैं। हम आपकी अनुमति के बिना आपकी जानकारी किसी तीसरे पक्ष को नहीं बेचते या साझा नहीं करते हैं, सिवाय कानून द्वारा आवश्यक होने के।</p>
 
             <h3>सुरक्षा</h3>
             <p>आपकी व्यक्तिगत जानकारी की सुरक्षा हमारे लिए महत्वपूर्ण है, लेकिन याद रखें कि इंटरनेट पर प्रसारण का कोई भी तरीका या इलेक्ट्रॉनिक भंडारण का तरीका 100% सुरक्षित नहीं है। जबकि हम आपकी व्यक्तिगत जानकारी की सुरक्षा के लिए व्यावसायिक रूप से स्वीकार्य साधनों का उपयोग करने का प्रयास करते हैं, हम इसकी पूर्ण सुरक्षा की गारंटी नहीं दे सकते।</p>
@@ -76,12 +123,18 @@
             <p>हम समय-समय पर अपनी गोपनीयता नीति को अपडेट कर सकते हैं। हम आपको इस पृष्ठ पर नई गोपनीयता नीति पोस्ट करके किसी भी परिवर्तन के बारे में सूचित करेंगे।</p>
 
             <h3>हमसे संपर्क करें</h3>
-            <p>यदि इस गोपनीयता नीति के बारे में आपके कोई प्रश्न हैं, तो आप हमारी वेबसाइट पर संपर्क फ़ॉर्म का उपयोग करके हमसे संपर्क कर सकते हैं।</p>
+            <p>यदि इस गोपनीयता नीति के बारे में आपके कोई प्रश्न या सुझाव हैं, तो आप हमारी वेबसाइट के <a href="index.html#contact-me" style="color: #2563eb; text-decoration: underline;">संपर्क फ़ॉर्म</a> या नीचे दिए गए पते पर हमसे संपर्क कर सकते हैं:</p>
+            <div class="legal-contact-box">
+                <p><strong>Pavan Digital Service Center</strong></p>
+                <p>Near Bus Stand, Ward No. 09, Badi, Dist. Raisen (M.P.)</p>
+                <p><strong>Email:</strong> psingh718371@gmail.com</p>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="social-links">
+            <a href="https://play.google.com/store/apps/details?id=com.pavandigitalservice.game.arrow_puzzle&pcampaignid=web_share" target="_blank" title="Arrow Maze on Google Play"><i class="fab fa-google-play"></i></a>
             <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
             <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
@@ -89,7 +142,8 @@
         <div class="footer-links">
             <a href="privacy-policy.html">Privacy Policy</a>
             <a href="terms-of-service.html">Terms of Service</a>
-            <a href="index.htm#contact-me">Contact Us</a>
+            <a href="resume-maker.html">Resume Maker</a>
+            <a href="index.html#contact-me">Contact Us</a>
         </div>
         <p class="copyright">&copy; 2026 Pavan Digital Service. All rights reserved.</p>
     </footer>

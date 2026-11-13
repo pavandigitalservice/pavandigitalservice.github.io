@@ -22,24 +22,24 @@ const BLOG_POSTS_DATA = [
         url: 'blog-post-1.html',
         title: 'भारतीय राजनीती में सुधार',
         excerpt: 'भारतीय राजनीति में पार्टियों का वर्चस्व, धनबल और करप्शन के खिलाफ 1 करोड़ निर्दलीय उम्मीदवारों का विजन।',
-        image: 'politics.png',
-        date: 'March 03, 2026'
+        image: 'src/assets/images/politics_reform_1794570266533.jpg',
+        date: 'Last updated: November 13, 2026'
     },
     {
         id: 'blog-post-2',
         url: 'blog-2.html',
         title: 'भारत की शिक्षा व्यावस्था और उसमे सुधार',
         excerpt: 'भारत की वर्तमान शिक्षा प्रणाली में बदलाव, डिग्रियों के बजाय स्किल्स और रोजगार उन्मुख शिक्षा की आवश्यकता।',
-        image: 'education.png',
-        date: 'February 25, 2026'
+        image: 'src/assets/images/skill_education_1794570268151.jpg',
+        date: 'Last updated: November 13, 2026'
     },
     {
         id: 'blog-post-3',
         url: 'blog-3.html',
         title: 'विकसित भारत',
         excerpt: 'कर्ज के जाल और आर्थिक चुनौतियों से निकलकर कैसे बनेगा वास्तव में विकसित और आत्मनिर्भर भारत।',
-        image: 'growindia.png',
-        date: 'February 18, 2026'
+        image: 'src/assets/images/viksit_bharat_1794570312771.jpg',
+        date: 'Last updated: November 13, 2026'
     }
 ];
 
